@@ -8,8 +8,25 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <local:UserControl_Sandshrew x:Name="Sandshrew" HorizontalAlignment="Center" VerticalAlignment="Center" Height="782" Width="1198"/>
-
+    <Grid x:Name="Grid_Principal">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Frame x:Name="FrameMain" Grid.Column="1" Grid.Row="1">
+            <Grid x:Name="Grid_FrameMain">
+                <local:UserControl_Sandshrew x:Name="PokemonSandshrew"/>
+            </Grid>
+        </Frame>
+        <StackPanel x:Name="StackPanel_BotonesIzquierda" Grid.Row="1">
+            <Button x:Name="btn_Inicio" Content="Inicio" Width="284" Margin="8,8,8,0" Click="btn_Inicio_Click"/>
+            <Button x:Name="btn_Pokedex" Content="Pokedex" Width="284" Margin="8,8,8,0" Click="btn_Pokedex_Click"/>
+            <Button x:Name="btn_CombatePokemon" Content="Combate Pokemon" Width="284" Margin="8,8,8,0" Click="btn_CombatePokemon_Click"/>
+            <Button x:Name="btn_AcercaDe" Content="Acerca De" Width="284" Margin="8,8,8,0" Click="btn_AcercaDe_Click"/>
+        </StackPanel>
     </Grid>
 </Page>
