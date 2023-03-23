@@ -14,7 +14,10 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
-// La plantilla de elemento Control de usuario está documentada en https://go.microsoft.com/fwlink/?LinkId=234236
+/// <summary>
+/// Página dedicada al primer trabajo del laboratorio de IPO2
+/// Enrique Sánchez-Migallón Ochoa
+/// </summary>
 
 namespace IPO2_Pokemon_Pokedex
 {

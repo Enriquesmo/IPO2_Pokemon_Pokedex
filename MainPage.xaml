@@ -14,19 +14,45 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="319.2"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Frame x:Name="FrameMain" Grid.Column="1" Grid.Row="1">
-            <Grid x:Name="Grid_FrameMain">
-                <local:UserControl_Sandshrew x:Name="PokemonSandshrew"/>
-            </Grid>
-        </Frame>
-        <StackPanel x:Name="StackPanel_BotonesIzquierda" Grid.Row="1">
-            <Button x:Name="btn_Inicio" Content="Inicio" Width="284" Margin="8,8,8,0" Click="btn_Inicio_Click"/>
-            <Button x:Name="btn_Pokedex" Content="Pokedex" Width="284" Margin="8,8,8,0" Click="btn_Pokedex_Click"/>
-            <Button x:Name="btn_CombatePokemon" Content="Combate Pokemon" Width="284" Margin="8,8,8,0" Click="btn_CombatePokemon_Click"/>
-            <Button x:Name="btn_AcercaDe" Content="Acerca De" Width="284" Margin="8,8,8,0" Click="btn_AcercaDe_Click"/>
-        </StackPanel>
+
+        <Border Grid.ColumnSpan="2">
+            <Button Margin="4" Click="Button_Click">
+                <FontIcon Foreground="White" Glyph="&#xE700;" FontFamily="Segoe MDL2 Assets" />
+            </Button>
+        </Border>
+
+        <SplitView x:Name="sView" IsPaneOpen="True" DisplayMode="CompactInline" CompactPaneLength="50" Grid.ColumnSpan="2" Margin="0,50,0,0" Grid.RowSpan="2">
+            <SplitView.Pane>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <SymbolIcon Grid.Row="0" Margin="4" Symbol="Home"></SymbolIcon>
+                    <SymbolIcon Grid.Row="1" Margin="4" Symbol="Pictures"></SymbolIcon>
+                    <SymbolIcon Grid.Row="2" Margin="4" Symbol="People"></SymbolIcon>
+                    <SymbolIcon Grid.Row="3" Margin="4" Symbol="Help"></SymbolIcon>
+                    <Button x:Name="btn_Inicio" Content="Inicio" Width="284" Margin="8,8,8,0" Click="btn_Inicio_Click" Grid.Column="1" Grid.Row="0"/>
+                    <Button x:Name="btn_Pokedex" Content="Pokedex" Width="284" Margin="8,8,8,0" Click="btn_Pokedex_Click" Grid.Column="1" Grid.Row="1"/>
+                    <Button x:Name="btn_CombatePokemon" Content="Combate Pokemon" Width="284" Margin="8,8,8,0" Click="btn_CombatePokemon_Click" Grid.Column="1" Grid.Row="2"/>
+                    <Button x:Name="btn_AcercaDe" Content="Acerca De" Width="284" Margin="8,8,8,0" Click="btn_AcercaDe_Click" Grid.Column="1" Grid.Row="3"/>
+
+                </Grid>
+            </SplitView.Pane>
+            <Frame x:Name="FrameMain">
+                <Grid x:Name="Grid_FrameMain">
+                    <TextBlock HorizontalAlignment="Left" Margin="45,23,0,0" TextWrapping="WrapWholeWords" Text="Hola                            " VerticalAlignment="Top" Height="56" Width="199"/>
+                </Grid>
+            </Frame>
+        </SplitView>
     </Grid>
 </Page>

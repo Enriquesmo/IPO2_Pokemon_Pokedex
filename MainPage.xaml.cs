@@ -28,12 +28,34 @@ namespace IPO2_Pokemon_Pokedex
             this.InitializeComponent();
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += opcionVolver;
-            PokemonSandshrew.VerFondo = false;
-            PokemonSandshrew.VerNombre = false;
-            PokemonSandshrew.VerVida = false;
-            PokemonSandshrew.VerEnergia = false;
-        }
 
+
+            Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetPreferredMinSize
+            (new Size(320, 320));
+            Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().VisibleBoundsChanged
+           += MainPage_VisibleBoundsChanged;
+        }
+        private void MainPage_VisibleBoundsChanged(Windows.UI.ViewManagement.ApplicationView
+       sender, object args)
+        {
+            var Width =
+           Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().VisibleBounds.Width;
+            if (Width >= 720)
+            {
+                sView.DisplayMode = SplitViewDisplayMode.CompactInline;
+                sView.IsPaneOpen = true;
+            }
+            else if (Width >= 360)
+            {
+                sView.DisplayMode = SplitViewDisplayMode.CompactOverlay;
+                sView.IsPaneOpen = false;
+            }
+            else
+            {
+                sView.DisplayMode = SplitViewDisplayMode.Overlay;
+                sView.IsPaneOpen = false;
+            }
+        }
 
         private void btn_Inicio_Click(object sender, RoutedEventArgs e)
         {
@@ -53,7 +75,7 @@ namespace IPO2_Pokemon_Pokedex
 
         private void btn_AcercaDe_Click(object sender, RoutedEventArgs e)
         {
-
+            FrameMain.Navigate(typeof(Acerca_De), this); // Este this es para que se le pase como parámetro a la pagina creada, la pagina anterior
         }
 
         /**/
@@ -64,6 +86,11 @@ namespace IPO2_Pokemon_Pokedex
                 FrameMain.GoBack();
             }
             // Que el boton de hacia atras vuelva tras la primera accion
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            sView.IsPaneOpen = !sView.IsPaneOpen;
         }
     }
 }

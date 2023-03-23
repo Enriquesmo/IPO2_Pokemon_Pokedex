@@ -8,8 +8,5 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <TextBox HorizontalAlignment="Left" Margin="379,237,0,0" TextWrapping="Wrap" Text="Pokedex" VerticalAlignment="Top"/>
-
-    </Grid>
+    <Grid/>
 </Page>
