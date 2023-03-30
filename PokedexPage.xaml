@@ -11,10 +11,12 @@
     <Viewbox Margin="0,0,10,-1">
 
         <Grid Height="3006" Width="4556">
-            <local:UserControl_Darumaka HorizontalAlignment="Left" VerticalAlignment="Top" Height="1488" Width="2268" Margin="2278,15,0,0"/>
-            <local:UserControl_Sandshrew HorizontalAlignment="Left" VerticalAlignment="Top" Height="1503" Width="2277" Margin="2278,1503,0,0"/>
-            <local:UserControl_Raichu HorizontalAlignment="Left" VerticalAlignment="Top" Height="1498" Width="2278"/>
-            <local:UserControl_Snorlax HorizontalAlignment="Left" VerticalAlignment="Top" Height="1503" Width="2281" Margin="-3,1503,0,0"/>
+            <ListView x:Name="Control4" MinWidth="550" BorderThickness="1" BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}" Margin="73,65,2926,74">
+                <local:UserControl_Darumaka/>
+                <local:UserControl_Raichu/>
+                <local:UserControl_Sandshrew/>
+                <local:UserControl_Snorlax/>
+            </ListView>
         </Grid>
     </Viewbox>
 </Page>
