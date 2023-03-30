@@ -162,6 +162,7 @@
     <Content Include="Assets\Bocadillo Habla.png" />
     <Content Include="Assets\BurbujasVeneno.png" />
     <Content Include="Assets\corazon.png" />
+    <Content Include="Assets\EP946_Bosque_de_Melemele.png" />
     <Content Include="Assets\espiral.png" />
     <Content Include="Assets\fire.png" />
     <Content Include="Assets\FlechaVeneno.png" />
@@ -172,6 +173,8 @@
     <Content Include="Assets\HealthPotion.png" />
     <Content Include="Assets\Heart.png" />
     <Content Include="Assets\Hipnotizar.png" />
+    <Content Include="Assets\iconoenergia.png" />
+    <Content Include="Assets\iconovida.png" />
     <Content Include="Assets\Icono_Energía_Tierra.png" />
     <Content Include="Assets\ImagenEscudo.png" />
     <Content Include="Assets\ImagenVida.png" />
@@ -182,10 +185,13 @@
     <Content Include="Assets\PngItem_1374629.png" />
     <Content Include="Assets\Pocion de Escudo.png" />
     <Content Include="Assets\Pocion de Vida.png" />
+    <Content Include="Assets\pocionenergia.png" />
+    <Content Include="Assets\pocionvida.png" />
     <Content Include="Assets\pocion_amarilla.png" />
     <Content Include="Assets\pocion_roja.png" />
     <Content Include="Assets\protect.png" />
     <Content Include="Assets\rayo %282%29.png" />
+    <Content Include="Assets\rayo.png" />
     <Content Include="Assets\Red-Cross-Mark-PNG-180x180-215232080.png" />
     <Content Include="Assets\Rock Pile.png" />
     <Content Include="Assets\rock-576669_960_720-1801202442.png" />
