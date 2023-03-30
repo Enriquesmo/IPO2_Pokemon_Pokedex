@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Core;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -28,7 +29,9 @@ namespace IPO2_Pokemon_Pokedex
             this.InitializeComponent();
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += opcionVolver;
-
+            sView.IsPaneOpen = false;
+            sView.DisplayMode = SplitViewDisplayMode.CompactOverlay;
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.FullScreen;
 
             Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetPreferredMinSize
             (new Size(320, 320));
@@ -91,6 +94,12 @@ namespace IPO2_Pokemon_Pokedex
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             sView.IsPaneOpen = !sView.IsPaneOpen;
+        }
+
+        private void MediaElement_PointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            sView.DisplayMode = SplitViewDisplayMode.CompactInline;
+            sView.IsPaneOpen = true;
         }
     }
 }

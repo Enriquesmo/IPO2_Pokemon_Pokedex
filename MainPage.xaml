@@ -50,7 +50,9 @@
             </SplitView.Pane>
             <Frame x:Name="FrameMain">
                 <Grid x:Name="Grid_FrameMain">
-                    <TextBlock HorizontalAlignment="Left" Margin="45,23,0,0" TextWrapping="WrapWholeWords" Text="Hola                            " VerticalAlignment="Top" Height="56" Width="199"/>
+                    <MediaElement x:Name="MediaVideoIntro" Source="/Assets/Original Pokemon Intro (Sprite Edition!).mp4" PointerReleased="MediaElement_PointerReleased"/>
+                    <TextBlock x:Name="txtTitulo2" HorizontalAlignment="Center" TextWrapping="WrapWholeWords" Text="¡Bienvenidos a Pokémon!" VerticalAlignment="Top" FontSize="72" FontFamily="MV Boli" Foreground="#FF84A4FF" FocusVisualPrimaryBrush="White" Margin="0,5,0,0"/>
+                    <TextBlock x:Name="txtTitulo" HorizontalAlignment="Center" TextWrapping="WrapWholeWords" Text="¡Bienvenidos a Pokémon!" VerticalAlignment="Top" FontSize="72" FontFamily="MV Boli" Foreground="White" FocusVisualPrimaryBrush="White"/>
                 </Grid>
             </Frame>
         </SplitView>
