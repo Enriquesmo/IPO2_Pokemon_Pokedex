@@ -1,29 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Media.Imaging;
-using Windows.UI.Xaml.Navigation;
 
-// La plantilla de elemento Control de usuario está documentada en https://go.microsoft.com/fwlink/?LinkId=234236
+/// <summary>
+/// User control dedicado al pokemon Darumaka
+/// Javier Santos Sanz
+/// </summary>
 
 namespace IPO2_Pokemon_Pokedex
 {
     public sealed partial class UserControl_Darumaka : UserControl
     {
+        /************************************************************************************************/
+
+        /*Inicializacion de las variables globales*/
+
         DispatcherTimer dtTimeHealth;
         DispatcherTimer dtTimeEnergy;
-
         public Storyboard _sbSudorCD;
         public Storyboard _sbSudorCI;
         public Storyboard _sbSudorI;
@@ -37,6 +33,10 @@ namespace IPO2_Pokemon_Pokedex
         private bool verVida = true;
         private bool verAtaquesYNombre = true;
 
+        /************************************************************************************************/
+
+        /*Inicializacion de la pagina UserControl_Darumaka*/
+
         public UserControl_Darumaka()
         {
             this.InitializeComponent();
@@ -44,18 +44,20 @@ namespace IPO2_Pokemon_Pokedex
             energy = pbEnergy.Value;
         }
 
+        /************************************************************************************************/
+
+        /*Variables y Metodos para el UserControl*/
+
         public Double Health
         {
             get { return health; }
             set { pbHealth.Value = value; }
         }
-
         public Double Energy
         {
             get { return energy; }
             set { pbEnergy.Value = value; }
         }
-
         public bool VerVida
         {
             get { return verVida; }
@@ -67,7 +69,6 @@ namespace IPO2_Pokemon_Pokedex
                 GridUnitType.Star);
             }
         }
-
         public bool VerEnergia
         {
             get { return verEnergia; }
@@ -79,7 +80,6 @@ namespace IPO2_Pokemon_Pokedex
                 GridUnitType.Star);
             }
         }
-
         public bool VerAtaquesYNombre
         {
             get { return verAtaquesYNombre; }
@@ -91,7 +91,6 @@ namespace IPO2_Pokemon_Pokedex
                 GridUnitType.Star);
             }
         }
-
         public void VerFondo(bool verfondo)
         {
             if (!verfondo) { this.imFondo.Source = null; }
@@ -100,17 +99,19 @@ namespace IPO2_Pokemon_Pokedex
                 this.imFondo.Source = new BitmapImage(new Uri(@"Assets/back.jpg"));
             }
         }
-
         public void CambiarFondo(String URI)
         {
             this.imFondo.Source = new BitmapImage(new Uri(@URI));
         }
 
+        /************************************************************************************************/
+
+        /*Botones y metodos de la propia Página*/
+
         private void usePotionRed(object sender, PointerRoutedEventArgs e)
         {
             Regenerate();
         }
-
         private void Regenerate()
         {
             dtTimeHealth = new DispatcherTimer();
@@ -131,7 +132,6 @@ namespace IPO2_Pokemon_Pokedex
             Pupila_Derecha.Visibility = Visibility.Visible;
             PupilaIzquierda.Visibility = Visibility.Visible;
         }
-
         private void increaseHealth(object sender, object e)
         {
             this.pbHealth.Value += 2.0;
@@ -144,7 +144,6 @@ namespace IPO2_Pokemon_Pokedex
                 btProteccion.IsEnabled = true;
             }
         }
-
         private void btProteccion_Click(object sender, RoutedEventArgs e)
         {
             if (ReducirEnergía())
@@ -155,7 +154,6 @@ namespace IPO2_Pokemon_Pokedex
             }
 
         }
-
         private void btDescanso_Click(object sender, RoutedEventArgs e)
         {
             _sbDescanso = (Storyboard)this.Resources["Descanso"];
@@ -165,7 +163,6 @@ namespace IPO2_Pokemon_Pokedex
             Regenerate();
             EnergyRegeneration();
         }
-
         private void btTumbarocas_Click(object sender, RoutedEventArgs e)
         {
             if (ReducirEnergía())
@@ -184,7 +181,6 @@ namespace IPO2_Pokemon_Pokedex
                 sbLlamarada.Begin();
             }
         }
-
         private Boolean ReducirEnergía()
         {
             if (pbEnergy.Value >= 10.0)
@@ -220,7 +216,6 @@ namespace IPO2_Pokemon_Pokedex
             }
             return false;
         }
-
         private void InfligirDano(object sender, PointerRoutedEventArgs e)
         {
             if (this.pbHealth.Value > 0.0)
@@ -252,12 +247,10 @@ namespace IPO2_Pokemon_Pokedex
                 }
             }
         }
-
         private void UseEnergyPotion(object sender, PointerRoutedEventArgs e)
         {
             EnergyRegeneration();
         }
-
         private void EnergyRegeneration()
         {
             dtTimeEnergy = new DispatcherTimer();
@@ -270,7 +263,6 @@ namespace IPO2_Pokemon_Pokedex
             if (_sbSudorCD != null) { _sbSudorCD.Stop(); }
             if (_sbSudorD != null) { _sbSudorD.Stop(); }
         }
-
         private void increaseEnergy(object sender, object e)
         {
             this.pbEnergy.Value += 2.0;
@@ -280,7 +272,6 @@ namespace IPO2_Pokemon_Pokedex
                 this.imYPotion.Opacity = 1;
             }
         }
-
 
     }
 }

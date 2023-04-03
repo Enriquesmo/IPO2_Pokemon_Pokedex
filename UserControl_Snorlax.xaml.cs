@@ -15,42 +15,75 @@ using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
-// La plantilla de elemento Control de usuario está documentada en https://go.microsoft.com/fwlink/?LinkId=234236
+/// <summary>
+/// User control dedicado al pokemon Snorlax
+/// Felipe Alcázar Gómez
+/// </summary>
 
 namespace IPO2_Pokemon_Pokedex
 {
     public sealed partial class UserControl_Snorlax : UserControl
     {
+        /************************************************************************************************/
+
+        /*Inicializacion de las variables globales*/
+
         public Double currentSpellAmount = 0;
         public Double currentHealthAmount = 0;
         DispatcherTimer clock;
 
         private DispatcherTimer cooldownTimer = new DispatcherTimer();
         private Button myButton;
+
+        /************************************************************************************************/
+
+        /*Inicializacion de la pagina UserControl_Snorlax*/
+
+        public UserControl_Snorlax()
+        {
+            this.InitializeComponent();
+            currentSpellAmount = Spell;
+            currentHealthAmount = Vida;
+
+            Storyboard sb = (Storyboard)this.Resources["sbMoverBrazos"];
+            sb.AutoReverse = true;
+            sb.RepeatBehavior = RepeatBehavior.Forever;
+            sb.Begin();
+
+            Storyboard sb2 = (Storyboard)this.Resources["sbSaltar"];
+            sb2.AutoReverse = true;
+            sb2.Begin();
+
+            myButton = (Button)this.FindName("btnBodySlam");
+
+            cooldownTimer.Interval = TimeSpan.FromSeconds(5);
+            cooldownTimer.Tick += CooldownTimer_Tick;
+        }
+
+        /************************************************************************************************/
+
+        /*Variables y Metodos para el UserControl*/
+
         public double Vida
         {
             get { return this.barHP.Value; }
             set { this.barHP.Value = value; }
         }
-
         public double Spell
         {
             get { return this.barSpell.Value; }
             set { this.barSpell.Value = value; }
         }
-
         public ImageSource FondoSource
         {
             get { return this.imgBackground.Source; }
             set { this.imgBackground.Source = value; }
         }
-
         public void verFondo(bool ver)
         {
             if (ver) imgBackground.Visibility = Visibility.Visible;
             else imgBackground.Visibility = Visibility.Collapsed;
         }
-
         public void verFormaPokedex(bool ver)
         {
             if (ver)
@@ -85,6 +118,10 @@ namespace IPO2_Pokemon_Pokedex
             }
         }
 
+        /************************************************************************************************/
+
+        /*Botones y metodos de la propia Página*/
+
         public Boolean comprobarEstadoCritico()
         {
             Boolean estadoCritico = false;
@@ -107,28 +144,6 @@ namespace IPO2_Pokemon_Pokedex
 
             return estadoCritico;
         }
-
-        public UserControl_Snorlax()
-        {
-            this.InitializeComponent();
-            currentSpellAmount = Spell;
-            currentHealthAmount = Vida;
-
-            Storyboard sb = (Storyboard)this.Resources["sbMoverBrazos"];
-            sb.AutoReverse = true;
-            sb.RepeatBehavior = RepeatBehavior.Forever;
-            sb.Begin();
-
-            Storyboard sb2 = (Storyboard)this.Resources["sbSaltar"];
-            sb2.AutoReverse = true;
-            sb2.Begin();
-
-            myButton = (Button)this.FindName("btnBodySlam");
-
-            cooldownTimer.Interval = TimeSpan.FromSeconds(5);
-            cooldownTimer.Tick += CooldownTimer_Tick;
-        }
-
         private void CooldownTimer_Tick(object sender, object e)
         {
             // Enable the button and stop the timer
@@ -138,7 +153,6 @@ namespace IPO2_Pokemon_Pokedex
             enableAllSpells();
             comprobarEstadoCritico();
         }
-
         private void imgHealthIconRestorePointerReleased(object sender, PointerRoutedEventArgs e)
         {
             clock = new DispatcherTimer();
@@ -148,8 +162,6 @@ namespace IPO2_Pokemon_Pokedex
             clock.Start();
             imgHealthIRestore.Opacity = 0.2;
         }
-
-
         private void imgManaPotion_PointerReleased(object sender, PointerRoutedEventArgs e)
         {
             clock = new DispatcherTimer();
@@ -159,7 +171,6 @@ namespace IPO2_Pokemon_Pokedex
             clock.Start();
             imgManaPotion.Opacity = 0.2;
         }
-
         private void increaseHealth(object sender, object e)
         {
             barHP.Value += 0.2;
@@ -170,19 +181,16 @@ namespace IPO2_Pokemon_Pokedex
                 comprobarEstadoCritico();
             }
         }
-
         private void pathOjoIzq_PointerReleased(object sender, PointerRoutedEventArgs e)
         {
             Storyboard sb = (Storyboard)this.pathOjoIzq.Resources["animarOjoIzqKey"];
             sb.Begin();
         }
-
         private void pathOjoDer_PointerReleased(object sender, PointerRoutedEventArgs e)
         {
             Storyboard sb = (Storyboard)this.pathOjoDer.Resources["animarOjoDerKey"];
             sb.Begin();
         }
-
         private void pathCuerpo_PointerReleased(object sender, PointerRoutedEventArgs e)
         {
             DoubleAnimation da = new DoubleAnimation();
@@ -200,7 +208,6 @@ namespace IPO2_Pokemon_Pokedex
             sb.Begin();
 
         }
-
         private void btnDormir_PointerReleased(object sender, PointerRoutedEventArgs e)
         {
             Storyboard sbDormir = (Storyboard)this.Resources["sbDormir"];
@@ -217,7 +224,6 @@ namespace IPO2_Pokemon_Pokedex
             }
 
         }
-
         private void increaseSpell(object sender, object e)
         {
             barSpell.Value += 0.2;
@@ -228,7 +234,6 @@ namespace IPO2_Pokemon_Pokedex
                 enableAllSpells();
             }
         }
-
         private void increaseHealthEnfado(object sender, object e)
         {
             barHP.Value += 0.2;
@@ -238,8 +243,6 @@ namespace IPO2_Pokemon_Pokedex
                 enableAllSpells();
             }
         }
-
-
         private void disableAllSpells()
         {
             btnDormir.IsEnabled = false;
@@ -248,7 +251,6 @@ namespace IPO2_Pokemon_Pokedex
             btnHipnotizar.IsEnabled = false;
             txtCoolDown.Visibility = Visibility.Collapsed;
         }
-
         private void enableAllSpells()
         {
             btnDormir.IsEnabled = true;
@@ -257,7 +259,6 @@ namespace IPO2_Pokemon_Pokedex
             btnHipnotizar.IsEnabled = true;
             txtCoolDown.Visibility = Visibility.Visible;
         }
-
         private void btnBodySlam_PointerReleased(object sender, PointerRoutedEventArgs e)
         {
             if (!(this.barSpell.Value - 5 <= 0))
@@ -271,7 +272,6 @@ namespace IPO2_Pokemon_Pokedex
             }
 
         }
-
         private void btnEnfado_PointerReleased(object sender, PointerRoutedEventArgs e)
         {
             clock = new DispatcherTimer();
@@ -289,7 +289,6 @@ namespace IPO2_Pokemon_Pokedex
                 cooldownTimer.Start();
             }
         }
-
         private void btnHipnotizar_PointerReleased(object sender, PointerRoutedEventArgs e)
         {
             if (!(this.barSpell.Value - 5 <= 0))

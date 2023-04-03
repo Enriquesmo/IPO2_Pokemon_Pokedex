@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
 /// <summary>
-/// Página dedicada al primer trabajo del laboratorio de IPO2
+/// User control dedicado al pokemon Sandshrew
 /// Enrique Sánchez-Migallón Ochoa
 /// </summary>
 
@@ -32,7 +32,7 @@ namespace IPO2_Pokemon_Pokedex
 
         /************************************************************************************************/
 
-        /*Inicializacion de la pagina MainPage*/
+        /*Inicializacion de la pagina UserControl_Sandshrew*/
 
         public UserControl_Sandshrew() // Terminado
         {

@@ -8,8 +8,13 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <TextBox HorizontalAlignment="Left" Margin="113,103,0,0" TextWrapping="Wrap" Text="Pagina del Combate pokemon" VerticalAlignment="Top"/>
+    <Viewbox>
 
-    </Grid>
+        <Grid Height="1000" Width="1500">
+            <local:UserControl_Darumaka HorizontalAlignment="Left" Margin="750,500,0,0" VerticalAlignment="Top" Height="492" Width="750"/>
+            <local:UserControl_Raichu HorizontalAlignment="Left" Margin="10,500,0,0" VerticalAlignment="Top" Height="500" Width="735"/>
+            <local:UserControl_Sandshrew HorizontalAlignment="Left" Margin="750,-5,0,0" VerticalAlignment="Top" Height="500" Width="740"/>
+            <local:UserControl_Snorlax HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="489" Width="735"/>
+        </Grid>
+    </Viewbox>
 </Page>
