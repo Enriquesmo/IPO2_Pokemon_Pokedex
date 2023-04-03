@@ -5,7 +5,6 @@
     xmlns:local="using:IPO2_Pokemon_Pokedex"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid x:Name="Grid_Principal">
@@ -19,10 +18,11 @@
         </Grid.ColumnDefinitions>
 
         <Border Grid.ColumnSpan="2">
-            <Button Margin="4" Click="Button_Click">
+            <Button x:Name="Btn_Menu" Margin="4" Click="Btn_Menu_Click">
                 <FontIcon Foreground="White" Glyph="&#xE700;" FontFamily="Segoe MDL2 Assets" />
             </Button>
-        </Border>
+        </Border>
+
 
         <SplitView x:Name="sView" IsPaneOpen="True" DisplayMode="CompactInline" CompactPaneLength="50" Grid.ColumnSpan="2" Margin="0,50,0,0" Grid.RowSpan="2">
             <SplitView.Pane>

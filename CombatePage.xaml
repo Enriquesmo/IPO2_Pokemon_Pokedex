@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBox HorizontalAlignment="Left" Margin="145,54,0,0" TextWrapping="Wrap" Text="Combate" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="113,103,0,0" TextWrapping="Wrap" Text="Pagina del Combate pokemon" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

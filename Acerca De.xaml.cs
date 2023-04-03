@@ -14,23 +14,41 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
-
 namespace IPO2_Pokemon_Pokedex
 {
     /// <summary>
-    /// Una página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
+    /// Página dedicada a la funcionalidad de Acerca de, la cual consiste en dar los datos de los desarrolladores del proyecto
+    /// 
+    /// Hecho por:
+    /// Enrique Sánchez-Migallón Ochoa
+    /// Javier Santos Sanz
+    /// Alonso Crespo Fernández
+    /// Felipe Alcázar Gómez
     /// </summary>
+
+    /************************************************************************************************/
+
+    /*Inicializacion de las variables globales*/
+
+
+
+    /************************************************************************************************/
     public sealed partial class Acerca_De : Page
     {
+        /************************************************************************************************/
+
+        /*Inicializacion de la pagina CombatePage*/
         public Acerca_De()
         {
             this.InitializeComponent();
             ApplicationView.GetForCurrentView().VisibleBoundsChanged
              += UcRatingText_VisibleBoundsChanged;
         }
-        private void UcRatingText_VisibleBoundsChanged
-        (ApplicationView sender, object args)
+
+        /************************************************************************************************/
+
+        /*Botones de la propia pagina*/
+        private void UcRatingText_VisibleBoundsChanged(ApplicationView sender, object args)
         {
             var Width =
             ApplicationView.GetForCurrentView().VisibleBounds.Width;
@@ -49,5 +67,17 @@ namespace IPO2_Pokemon_Pokedex
                 RelativePanel.SetAlignVerticalCenterWithPanel(rcStars, false);
             }
         }
+
+        /************************************************************************************************/
+
+        /*Metodos funcionales en la pagina*/
+
+
+
+        /************************************************************************************************/
+
+        /*Metodos Auxiliares*/
+
+
     }
 }

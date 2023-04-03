@@ -1,29 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
+﻿using System.Linq;
 using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Core;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-
-// La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0xc0a
 
 namespace IPO2_Pokemon_Pokedex
 {
     /// <summary>
-    /// Página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
+    /// Página principal del programa, gestiona todo el menu principal junto con sus opciones.
+    /// 
+    /// Hecho por:
+    /// Enrique Sánchez-Migallón Ochoa
+    /// Javier Santos Sanz
+    /// Alonso Crespo Fernández
+    /// Felipe Alcázar Gómez
     /// </summary>
+
+    /************************************************************************************************/
+
+    /*Inicializacion de las variables globales*/
+
+
+
+    /************************************************************************************************/
+
     public sealed partial class MainPage : Page
     {
+
+        /************************************************************************************************/
+
+        /*Inicializacion de la pagina MainPage*/
         public MainPage()
         {
             this.InitializeComponent();
@@ -35,12 +43,54 @@ namespace IPO2_Pokemon_Pokedex
 
             Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetPreferredMinSize
             (new Size(320, 320));
-            Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().VisibleBoundsChanged
-           += MainPage_VisibleBoundsChanged;
+            Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().VisibleBoundsChanged += MainPage_VisibleBoundsChanged;
         }
-        private void MainPage_VisibleBoundsChanged(Windows.UI.ViewManagement.ApplicationView
-       sender, object args)
+
+        /************************************************************************************************/
+
+        /*Botones de la propia Página*/
+
+        private void btn_Inicio_Click(object sender, RoutedEventArgs e)
         {
+            FrameMain.Navigate(typeof(MainPage));
+            // ARREGLAR PORQUE SE DUPLICA
+        }
+        private void btn_Pokedex_Click(object sender, RoutedEventArgs e) // Hecho
+        {
+            // Este boton sirve para que aparezca la pagina de "Pokedex"
+            FrameMain.Navigate(typeof(PokedexPage), this); // Este this es para que se le pase como parámetro a la pagina creada, la pagina anterior
+        }
+        private void btn_CombatePokemon_Click(object sender, RoutedEventArgs e) // Hecho
+        {
+            // Este boton sirve para que aparezca la pagina de "CombatePokemon"
+            FrameMain.Navigate(typeof(CombatePage), this); // Este this es para que se le pase como parámetro a la pagina creada, la pagina anterior
+        }
+        private void btn_AcercaDe_Click(object sender, RoutedEventArgs e) // Hecho
+        {
+            // Este boton sirve para que aparezca la pagina de "Acerca De"
+            FrameMain.Navigate(typeof(Acerca_De), this); // Este this es para que se le pase como parámetro a la pagina creada, la pagina anterior
+        }
+        private void Btn_Menu_Click(object sender, RoutedEventArgs e) // Hecho
+        {
+            // Este boton sirve para que el boton de las Tres rallitas de arriba a la izquierda oculte o haga aparecer el menu
+            sView.IsPaneOpen = !sView.IsPaneOpen;
+        }
+        private void opcionVolver(object sender, BackRequestedEventArgs e) // Hecho
+        {
+            // Este metodo sirve para que el boton de hacia atras vuelva tras la primera accion, ademas que lo hace aparecer
+            if (FrameMain.BackStack.Any())
+            {
+                FrameMain.GoBack();
+            }
+        }
+
+        /************************************************************************************************/
+
+        /*Metodos funcionales en la ventana*/
+
+        private void MainPage_VisibleBoundsChanged(Windows.UI.ViewManagement.ApplicationView sender, object args) // Hecho
+        {
+            // Este metodo lo que hace es hacer que el menu lateral se redimensione conforme vaya ajustandose el tamaño de la ventana
             var Width =
            Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().VisibleBounds.Width;
             if (Width >= 720)
@@ -59,47 +109,17 @@ namespace IPO2_Pokemon_Pokedex
                 sView.IsPaneOpen = false;
             }
         }
-
-        private void btn_Inicio_Click(object sender, RoutedEventArgs e)
-        {
-            FrameMain.Navigate(typeof(MainPage));
-            // ARREGLAR PORQUE SE DUPLICA
-        }
-
-        private void btn_Pokedex_Click(object sender, RoutedEventArgs e)
-        {
-            FrameMain.Navigate(typeof(PokedexPage), this); // Este this es para que se le pase como parámetro a la pagina creada, la pagina anterior
-        }
-
-        private void btn_CombatePokemon_Click(object sender, RoutedEventArgs e)
-        {
-            FrameMain.Navigate(typeof(CombatePage), this); // Este this es para que se le pase como parámetro a la pagina creada, la pagina anterior
-        }
-
-        private void btn_AcercaDe_Click(object sender, RoutedEventArgs e)
-        {
-            FrameMain.Navigate(typeof(Acerca_De), this); // Este this es para que se le pase como parámetro a la pagina creada, la pagina anterior
-        }
-
-        /**/
-        private void opcionVolver(object sender, BackRequestedEventArgs e)
-        {
-            if (FrameMain.BackStack.Any())
-            {
-                FrameMain.GoBack();
-            }
-            // Que el boton de hacia atras vuelva tras la primera accion
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            sView.IsPaneOpen = !sView.IsPaneOpen;
-        }
-
         private void MediaElement_PointerReleased(object sender, PointerRoutedEventArgs e)
         {
+            // Este metodo sirve para
             sView.DisplayMode = SplitViewDisplayMode.CompactInline;
             sView.IsPaneOpen = true;
         }
+
+        /************************************************************************************************/
+
+        /*Metodos Auxiliares*/
+
+
     }
 }
