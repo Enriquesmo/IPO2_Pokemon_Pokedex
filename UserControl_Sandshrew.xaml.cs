@@ -89,9 +89,22 @@ namespace IPO2_Pokemon_Pokedex
             set
             {
                 this.verNombreyBotones = value;
-                if (!verNombreyBotones) this.Grid_HUD.RowDefinitions[3].Height = new GridLength(0);
-                else this.Grid_HUD.RowDefinitions[3].Height = new GridLength(100,
-               GridUnitType.Star);
+                if (!verNombreyBotones)
+                {
+                    this.Grid_HUD.RowDefinitions[3].Height = new GridLength(0);
+                    btn_CuartoAtaque.Visibility = Visibility.Collapsed;
+                    btn_SegundoAtaque.Visibility = Visibility.Collapsed;
+                    btn_PrimerAtaque.Visibility = Visibility.Collapsed;
+                    btn_TercerAtaque.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    this.Grid_HUD.RowDefinitions[3].Height = new GridLength(10,GridUnitType.Star);
+                    btn_CuartoAtaque.Visibility = Visibility.Visible;
+                    btn_SegundoAtaque.Visibility = Visibility.Visible;
+                    btn_PrimerAtaque.Visibility = Visibility.Visible;
+                    btn_TercerAtaque.Visibility = Visibility.Visible;
+                }
             }
         }
         public double Vida
@@ -108,17 +121,17 @@ namespace IPO2_Pokemon_Pokedex
         {
             if (ver)
             {
-                VerVida = false;
-                VerEnergia = false;
-                VerFondo = false;
-                VerNombreyBotones = false;
-            }
-            else
-            {
                 VerVida = true;
                 VerEnergia = true;
                 VerFondo = true;
                 VerNombreyBotones = true;
+            }
+            else
+            {
+                VerVida = false;
+                VerEnergia = false;
+                VerFondo = false;
+                VerNombreyBotones = false;
             }
         }
         public void herirPokemon(int damage) // Terminado
@@ -150,7 +163,7 @@ namespace IPO2_Pokemon_Pokedex
                 opacityElementosExtras();
             }
         }
-        public void ataque1_Aranazo() // Terminado
+        public void realizar_ataque1() // Terminado
         {
             Boolean sePuede = restarBarraEnergia(20);
             if (sePuede == true)
@@ -165,7 +178,7 @@ namespace IPO2_Pokemon_Pokedex
                 animacionNoEnergia();
             }
         }
-        public void ataque2_AtaqueArena() // Terminado
+        public void realizar_ataque2() // Terminado
         {
             Boolean sePuede = restarBarraEnergia(10);
             if (sePuede == true)
@@ -183,7 +196,7 @@ namespace IPO2_Pokemon_Pokedex
                 animacionNoEnergia();
             }
         }
-        public void ataque3_PicotazoVenenoso() // Terminado
+        public void realizar_ataque3() // Terminado
         {
             Boolean sePuede = restarBarraEnergia(25);
             if (sePuede == true)
@@ -203,7 +216,7 @@ namespace IPO2_Pokemon_Pokedex
                 animacionNoEnergia();
             }
         }
-        public void ataque4_Terremoto() // Terminado
+        public void realizar_ataque4() // Terminado
         {
             Boolean sePuede = restarBarraEnergia(40);
             if (sePuede == true)
