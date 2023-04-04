@@ -39,7 +39,6 @@ namespace IPO2_Pokemon_Pokedex
             SystemNavigationManager.GetForCurrentView().BackRequested += opcionVolver;
             sView.IsPaneOpen = false;
             sView.DisplayMode = SplitViewDisplayMode.CompactOverlay;
-            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.FullScreen;
 
             Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetPreferredMinSize
             (new Size(320, 320));
