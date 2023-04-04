@@ -40,6 +40,10 @@ namespace IPO2_Pokemon_Pokedex
         public PokedexPage()
         {
             this.InitializeComponent();
+            Raichu.verFormaPokedex(false);
+            Sandshrew.verFormaPokedex(false);
+            Darumaka.verFormaPokedex(false);
+            Snorlax.verFormaPokedex(false);
         }
 
         /************************************************************************************************/

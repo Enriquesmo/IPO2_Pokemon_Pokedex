@@ -32,10 +32,6 @@ namespace IPO2_Pokemon_Pokedex
         DispatcherTimer miReloj;
         bool bttnVidaActivado = false;
         bool bttnEnergiaActivado = false;
-        private bool verVida = true;
-        private bool verEnergia = true;
-        private bool verFondo = true;
-        private bool verNombreyBotones = true;
         double valorAtaque1 = 15;
         double valorAtaque2 = 10;
         double valorAtaque3 = 20;
@@ -55,6 +51,25 @@ namespace IPO2_Pokemon_Pokedex
 
         /*Variables y Metodos para el UserControl*/
 
+        private bool verVida = true;
+        private bool verEnergia = true;
+        private bool verFondo = true;
+        private bool verNombreyBotones = true;
+        public double Vida
+        {
+            get { return this.barraVida.Value; }
+            set { this.barraVida.Value = value; }
+        }
+        public double Energia
+        {
+            get { return this.barraEnergia.Value; }
+            set { this.barraEnergia.Value = value; }
+        }
+        public double Escudo
+        {
+            get { return this.barraEscudo.Value; }
+            set { this.barraEscudo.Value = value; }
+        }
         public bool VerVida
         {
             get { return verVida; }
@@ -98,21 +113,6 @@ namespace IPO2_Pokemon_Pokedex
                GridUnitType.Star);
             }
         }
-        public double Vida
-        {
-            get { return this.barraVida.Value; }
-            set { this.barraVida.Value = value; }
-        }
-        public double Energia
-        {
-            get { return this.barraEnergia.Value; }
-            set { this.barraEnergia.Value = value; }
-        }
-        public double Escudo
-        {
-            get { return this.barraEscudo.Value; }
-            set { this.barraEscudo.Value = value; }
-        }
         public void verFormaPokedex(bool ver)
         {
             if (ver)
@@ -129,30 +129,6 @@ namespace IPO2_Pokemon_Pokedex
                 VerFondo = false;
                 VerNombreyBotones = false;
             }
-        }
-        public void herirPokemon(double damage) // Terminado
-        {
-            if (Escudo > damage)
-                Escudo -= damage;
-            else
-            {
-                double dañoRestante = Escudo - damage;
-                Escudo = 0;
-                if (Vida > dañoRestante)
-                    Vida -= dañoRestante;
-                else
-                {
-                    Vida = 0;
-                }
-
-            }
-        }
-        private void DesactivarAtaques()
-        {
-            bttnAtaque1.IsEnabled = false;
-            bttnAtaque2.IsEnabled = false;
-            bttnAtaque3.IsEnabled = false;
-            bttnAtaque4.IsEnabled = false;
         }
         public void realizarAtaque1() // Terminado
         {
@@ -210,11 +186,35 @@ namespace IPO2_Pokemon_Pokedex
                 AnimacionEnergiaInsuficiente();
             }
         }
+        public void herirPokemon(double damage) // Terminado
+        {
+            if (Escudo > damage)
+                Escudo -= damage;
+            else
+            {
+                double dañoRestante = Escudo - damage;
+                Escudo = 0;
+                if (Vida > dañoRestante)
+                    Vida -= dañoRestante;
+                else
+                {
+                    Vida = 0;
+                }
+
+            }
+        }
 
         /************************************************************************************************/
 
         /*Botones y metodos de la propia Página*/
 
+        private void DesactivarAtaques()
+        {
+            bttnAtaque1.IsEnabled = false;
+            bttnAtaque2.IsEnabled = false;
+            bttnAtaque3.IsEnabled = false;
+            bttnAtaque4.IsEnabled = false;
+        }
         private void AtaqueCompletado(object sender, object e)
         {
             bttnAtaque1.IsEnabled = true;

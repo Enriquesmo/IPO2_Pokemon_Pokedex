@@ -51,6 +51,16 @@ namespace IPO2_Pokemon_Pokedex
         private bool verEnergia = true;
         private bool verFondo = true;
         private bool verNombreyBotones = true;
+        public double Vida
+        {
+            get { return this.ProgressBar_Vida.Value; }
+            set { this.ProgressBar_Vida.Value = value; }
+        }
+        public double Energia
+        {
+            get { return this.ProgressBar_Energia.Value; }
+            set { this.ProgressBar_Energia.Value = value; }
+        }
         public bool VerVida
         {
             get { return verVida; }
@@ -107,17 +117,7 @@ namespace IPO2_Pokemon_Pokedex
                 }
             }
         }
-        public double Vida
-        {
-            get { return this.ProgressBar_Vida.Value; }
-            set { this.ProgressBar_Vida.Value = value; }
-        }
-        public double Energia
-        {
-            get { return this.ProgressBar_Energia.Value; }
-            set { this.ProgressBar_Energia.Value = value; }
-        }      
-        public void VerFormaPokedex(bool ver)
+        public void verFormaPokedex(bool ver)
         {
             if (ver)
             {
@@ -132,35 +132,6 @@ namespace IPO2_Pokemon_Pokedex
                 VerEnergia = false;
                 VerFondo = false;
                 VerNombreyBotones = false;
-            }
-        }
-        public void herirPokemon(double damage) // Terminado
-        {
-            restarBarraVida(damage);
-            if (this.ProgressBar_Vida.Value <= 50 && this.ProgressBar_Vida.Value > 25)
-            {
-                Vida50_Tirita1.Visibility = Visibility.Visible;
-                Vida50_Tirita1.Opacity = 100;
-                Vida50_Tirita2.Visibility = Visibility.Visible;
-                Vida50_Tirita2.Opacity = 100;
-                Vida50_Tirita3.Visibility = Visibility.Visible;
-                Vida50_Tirita3.Opacity = 100;
-            }
-            else if (this.ProgressBar_Vida.Value <= 25 && this.ProgressBar_Vida.Value > 0)
-            {
-                Vida25_Arañazo1.Visibility = Visibility.Visible;
-                Vida25_Arañazo1.Opacity = 100;
-                Vida25_Arañazo2.Visibility = Visibility.Visible;
-                Vida25_Arañazo2.Opacity = 100;
-                Vida25_Arañazo3.Visibility = Visibility.Visible;
-                Vida25_Arañazo3.Opacity = 100;
-                Vida25_Arañazo4.Visibility = Visibility.Visible;
-                Vida25_Arañazo4.Opacity = 100;
-            }
-            else if (this.ProgressBar_Vida.Value <= 0)
-            {
-                animacionVida0();
-                opacityElementosExtras();
             }
         }
         public void realizarAtaque1() // Terminado
@@ -233,6 +204,35 @@ namespace IPO2_Pokemon_Pokedex
             else
             {
                 animacionNoEnergia();
+            }
+        }
+        public void herirPokemon(double damage) // Terminado
+        {
+            restarBarraVida(damage);
+            if (this.ProgressBar_Vida.Value <= 50 && this.ProgressBar_Vida.Value > 25)
+            {
+                Vida50_Tirita1.Visibility = Visibility.Visible;
+                Vida50_Tirita1.Opacity = 100;
+                Vida50_Tirita2.Visibility = Visibility.Visible;
+                Vida50_Tirita2.Opacity = 100;
+                Vida50_Tirita3.Visibility = Visibility.Visible;
+                Vida50_Tirita3.Opacity = 100;
+            }
+            else if (this.ProgressBar_Vida.Value <= 25 && this.ProgressBar_Vida.Value > 0)
+            {
+                Vida25_Arañazo1.Visibility = Visibility.Visible;
+                Vida25_Arañazo1.Opacity = 100;
+                Vida25_Arañazo2.Visibility = Visibility.Visible;
+                Vida25_Arañazo2.Opacity = 100;
+                Vida25_Arañazo3.Visibility = Visibility.Visible;
+                Vida25_Arañazo3.Opacity = 100;
+                Vida25_Arañazo4.Visibility = Visibility.Visible;
+                Vida25_Arañazo4.Opacity = 100;
+            }
+            else if (this.ProgressBar_Vida.Value <= 0)
+            {
+                animacionVida0();
+                opacityElementosExtras();
             }
         }
 

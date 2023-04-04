@@ -42,12 +42,12 @@ namespace IPO2_Pokemon_Pokedex
             this.InitializeComponent();
             Raichu.verFormaPokedex(false);
             Raichu.realizarAtaque1();
-            Sandshrew.VerFormaPokedex(false);
-            Sandshrew.realizarAtaque1();
-            Darumaka.VerFormaPokedex(false);
-            Darumaka.RealizarAtaque1();
+            Sandshrew.verFormaPokedex(false);
+            Sandshrew.realizarAtaque2();
+            Darumaka.verFormaPokedex(false);
+            Darumaka.realizarAtaque3();
             Snorlax.verFormaPokedex(false);
-            Snorlax.realizarAtaque1();
+            Snorlax.realizarAtaque4();
         }
 
         /************************************************************************************************/

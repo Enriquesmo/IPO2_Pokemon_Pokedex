@@ -30,11 +30,6 @@ namespace IPO2_Pokemon_Pokedex
 
         public Double currentSpellAmount = 0;
         public Double currentHealthAmount = 0;
-        private bool verVida = true;
-        private bool verEnergia = true;
-        private bool verFondo = true;
-        private bool verNombreyBotones = true;
-
         private Button myButton;
 
         /************************************************************************************************/
@@ -64,6 +59,10 @@ namespace IPO2_Pokemon_Pokedex
 
         /*Variables y Metodos para el UserControl*/
 
+        private bool verVida = true;
+        private bool verEnergia = true;
+        private bool verFondo = true;
+        private bool verNombreyBotones = true;
         public double Vida
         {
             get { return this.barHP.Value; }
@@ -129,11 +128,6 @@ namespace IPO2_Pokemon_Pokedex
                 }
             }
         }
-        public ImageSource FondoSource
-        {
-            get { return this.imgBackground.Source; }
-            set { this.imgBackground.Source = value; }
-        }
         public void verFormaPokedex(bool ver)
         {
             if (ver)
@@ -195,7 +189,11 @@ namespace IPO2_Pokemon_Pokedex
         /************************************************************************************************/
 
         /*Botones y metodos de la propia Página*/
-
+        public ImageSource FondoSource
+        {
+            get { return this.imgBackground.Source; }
+            set { this.imgBackground.Source = value; }
+        }
         private void restarBarraVida(double valorARestar) // Terminado
         {
             this.barHP.Value -= valorARestar;

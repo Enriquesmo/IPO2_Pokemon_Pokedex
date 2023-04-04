@@ -29,10 +29,7 @@ namespace IPO2_Pokemon_Pokedex
         private Double health;
         private Double energy;
 
-        private bool verEnergia = true;
-        private bool verVida = true;
-        private bool verNombreyBotones = true;
-        private bool verFondo = true;
+
 
         /************************************************************************************************/
 
@@ -49,12 +46,16 @@ namespace IPO2_Pokemon_Pokedex
 
         /*Variables y Metodos para el UserControl*/
 
-        public Double Health
+        private bool verVida = true;
+        private bool verEnergia = true;
+        private bool verFondo = true;
+        private bool verNombreyBotones = true;
+        public double Vida
         {
             get { return health; }
             set { pbHealth.Value = value; }
         }
-        public Double Energy
+        public double Energia
         {
             get { return energy; }
             set { pbEnergy.Value = value; }
@@ -81,6 +82,16 @@ namespace IPO2_Pokemon_Pokedex
                 GridUnitType.Star);
             }
         }
+        public bool VerFondo
+        {
+            get { return verFondo; }
+            set
+            {
+                this.verFondo = value;
+                if (!verFondo) this.imFondo.Opacity = 0;
+                else this.imFondo.Opacity = 100;
+            }
+        }
         public bool VerNombreyBotones
         {
             get { return verNombreyBotones; }
@@ -92,17 +103,7 @@ namespace IPO2_Pokemon_Pokedex
                 GridUnitType.Star);
             }
         }
-        public bool VerFondo
-        {
-            get { return verFondo; }
-            set
-            {
-                this.verFondo = value;
-                if (!verFondo) this.imFondo.Opacity = 0;
-                else this.imFondo.Opacity = 100;
-            }
-        }
-        public void VerFormaPokedex(bool ver)
+        public void verFormaPokedex(bool ver)
         {
             if (ver)
             {
@@ -119,16 +120,81 @@ namespace IPO2_Pokemon_Pokedex
                 VerNombreyBotones = false;
             }
         }
-
-        public void CambiarFondo(String URI)
+        public void realizarAtaque1()
         {
-            this.imFondo.Source = new BitmapImage(new Uri(@URI));
+            if (ReducirEnergía())
+            {
+                Storyboard sbProteger = (Storyboard)this.Resources["Proteger"];
+                if (_sbDescanso != null) { _sbDescanso.Stop(); }
+                sbProteger.Begin();
+            }
         }
+        public void realizarAtaque2()
+        {
+            _sbDescanso = (Storyboard)this.Resources["Descanso"];
+            _sbDescanso.RepeatBehavior = RepeatBehavior.Forever;
+            _sbDescanso.AutoReverse = true;
+            _sbDescanso.Begin();
+            Regenerate();
+            EnergyRegeneration();
+        }
+        public void realizarAtaque3()
+        {
+            if (ReducirEnergía())
+            {
+                Storyboard sbTumbarocas = (Storyboard)this.Resources["Tumbarocas"];
+                if (_sbDescanso != null) { _sbDescanso.Stop(); }
+                sbTumbarocas.Begin();
+            }
+        }
+        public void realizarAtaque4()
+        {
+            if (ReducirEnergía())
+            {
+                Storyboard sbLlamarada = (Storyboard)this.Resources["Llamarada"];
+                if (_sbDescanso != null) { _sbDescanso.Stop(); }
+                sbLlamarada.Begin();
+            }
+        }
+        public void herirPokemon(double Dano)
+        {
+            if (this.pbHealth.Value > 0.0)
+            {
+                if (this.pbHealth.Value <= 10.0)
+                {
+                    this.pbHealth.Value = 0.0;
+                    imgEspiralI.Visibility = Visibility.Visible;
+                    imgEspiralD.Visibility = Visibility.Visible;
+                    PupilaIzquierda.Visibility = Visibility.Collapsed;
+                    Pupila_Derecha.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    this.pbHealth.Value -= Dano;
+                }
 
+                if (this.pbHealth.Value <= 10.0)
+                {
+                    imgTiritaD.Visibility = Visibility.Visible;
+                }
+                else if (this.pbHealth.Value <= 20.0)
+                {
+                    imgTiritaI.Visibility = Visibility.Visible;
+                }
+                else if (this.pbHealth.Value <= 30.0)
+                {
+                    imgTiritaC.Visibility = Visibility.Visible;
+                }
+            }
+        }
 
         /************************************************************************************************/
 
         /*Botones y metodos de la propia Página*/
+        public void CambiarFondo(String URI)
+        {
+            this.imFondo.Source = new BitmapImage(new Uri(@URI));
+        }
 
         private void usePotionRed(object sender, PointerRoutedEventArgs e)
         {
@@ -166,58 +232,22 @@ namespace IPO2_Pokemon_Pokedex
                 btProteccion.IsEnabled = true;
             }
         }
-        public void RealizarAtaque1()
-        {
-            if (ReducirEnergía())
-            {
-                Storyboard sbProteger = (Storyboard)this.Resources["Proteger"];
-                if (_sbDescanso != null) { _sbDescanso.Stop(); }
-                sbProteger.Begin();
-            }
-        }
         private void btProteccion_Click(object sender, RoutedEventArgs e)
         {
-            RealizarAtaque1();
+            realizarAtaque1();
 
-        }
-        public void RealizarAtaque2()
-        {
-            _sbDescanso = (Storyboard)this.Resources["Descanso"];
-            _sbDescanso.RepeatBehavior = RepeatBehavior.Forever;
-            _sbDescanso.AutoReverse = true;
-            _sbDescanso.Begin();
-            Regenerate();
-            EnergyRegeneration();
         }
         private void btDescanso_Click(object sender, RoutedEventArgs e)
         {
-            RealizarAtaque2();
-        }
-        public void RealizarAtaque3()
-        {
-            if (ReducirEnergía())
-            {
-                Storyboard sbTumbarocas = (Storyboard)this.Resources["Tumbarocas"];
-                if (_sbDescanso != null) { _sbDescanso.Stop(); }
-                sbTumbarocas.Begin();
-            }
+            realizarAtaque2();
         }
         private void btTumbarocas_Click(object sender, RoutedEventArgs e)
         {
-            RealizarAtaque3();
-        }
-        public void RealizarAtaque4()
-        {
-            if (ReducirEnergía())
-            {
-                Storyboard sbLlamarada = (Storyboard)this.Resources["Llamarada"];
-                if (_sbDescanso != null) { _sbDescanso.Stop(); }
-                sbLlamarada.Begin();
-            }
+            realizarAtaque3();
         }
         private void btLlamarada_Click(object sender, RoutedEventArgs e)
         {
-            RealizarAtaque4();
+            realizarAtaque4();
         }
         private Boolean ReducirEnergía()
         {
@@ -257,37 +287,6 @@ namespace IPO2_Pokemon_Pokedex
         private void InfligirDano(object sender, PointerRoutedEventArgs e)
         {
             herirPokemon(10.00);
-        }
-        public void herirPokemon(double Dano)
-        {
-            if (this.pbHealth.Value > 0.0)
-            {
-                if (this.pbHealth.Value <= 10.0)
-                {
-                    this.pbHealth.Value = 0.0;
-                    imgEspiralI.Visibility = Visibility.Visible;
-                    imgEspiralD.Visibility = Visibility.Visible;
-                    PupilaIzquierda.Visibility = Visibility.Collapsed;
-                    Pupila_Derecha.Visibility = Visibility.Collapsed;
-                }
-                else
-                {
-                    this.pbHealth.Value -= Dano;
-                }
-
-                if (this.pbHealth.Value <= 10.0)
-                {
-                    imgTiritaD.Visibility = Visibility.Visible;
-                }
-                else if (this.pbHealth.Value <= 20.0)
-                {
-                    imgTiritaI.Visibility = Visibility.Visible;
-                }
-                else if (this.pbHealth.Value <= 30.0)
-                {
-                    imgTiritaC.Visibility = Visibility.Visible;
-                }
-            }
         }
         private void UseEnergyPotion(object sender, PointerRoutedEventArgs e)
         {
