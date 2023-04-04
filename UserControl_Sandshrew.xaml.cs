@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Xml.Linq;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -41,6 +42,7 @@ namespace IPO2_Pokemon_Pokedex
             dtTimeEnergia = new DispatcherTimer();
             ocultarElementosExtras();
         }
+        
         /************************************************************************************************/
 
         /*Variables y Metodos para el UserControl*/
@@ -48,7 +50,7 @@ namespace IPO2_Pokemon_Pokedex
         private bool verVida = true;
         private bool verEnergia = true;
         private bool verFondo = true;
-        private bool verNombre = true;
+        private bool verNombreyBotones = true;
         public bool VerVida
         {
             get { return verVida; }
@@ -81,14 +83,15 @@ namespace IPO2_Pokemon_Pokedex
                 else this.imagenFondo.Opacity = 100;
             }
         }
-        public bool VerNombre
+        public bool VerNombreyBotones
         {
-            get { return verNombre; }
+            get { return verNombreyBotones; }
             set
             {
-                this.verNombre = value;
-                if (!verNombre) this.TextBlock_NombrePokemon.Opacity = 0;
-                else this.TextBlock_NombrePokemon.Opacity = 100;
+                this.verNombreyBotones = value;
+                if (!verNombreyBotones) this.Grid_HUD.RowDefinitions[3].Height = new GridLength(0);
+                else this.Grid_HUD.RowDefinitions[3].Height = new GridLength(100,
+               GridUnitType.Star);
             }
         }
         public double Vida
@@ -100,6 +103,23 @@ namespace IPO2_Pokemon_Pokedex
         {
             get { return this.ProgressBar_Energia.Value; }
             set { this.ProgressBar_Energia.Value = value; }
+        }      
+        public void verFormaPokedex(bool ver)
+        {
+            if (ver)
+            {
+                VerVida = false;
+                VerEnergia = false;
+                VerFondo = false;
+                VerNombreyBotones = false;
+            }
+            else
+            {
+                VerVida = true;
+                VerEnergia = true;
+                VerFondo = true;
+                VerNombreyBotones = true;
+            }
         }
         public void herirPokemon(int damage) // Terminado
         {
