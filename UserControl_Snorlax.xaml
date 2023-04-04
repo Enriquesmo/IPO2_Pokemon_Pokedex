@@ -434,10 +434,10 @@
         <Image x:Name="imgMana" Source="/Assets/Manalightning.png" Grid.Row="1"/>
         <Image x:Name="imgManaPotion" Source="/Assets/manaPotion.png" Grid.Row="1" Grid.Column="6" PointerReleased="imgManaPotion_PointerReleased"/>
         <TextBlock x:Name="txtName" Grid.Row="4" TextWrapping="Wrap" Text="SNORLAX" FontSize="36" FocusVisualPrimaryBrush="White" Foreground="Black" FocusVisualSecondaryBrush="#99000000" Grid.Column="1" Margin="32,0,0,0" Grid.ColumnSpan="5" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <Button x:Name="btnDormir" Grid.Column="1" Content="DORMIR" VerticalAlignment="Stretch" Background="#FFFFC700" FontSize="12" BorderBrush="#7F000000" FocusVisualPrimaryBrush="Black" HorizontalAlignment="Stretch" Grid.RowSpan="1" Grid.Row="2" PointerReleased="btnDormir_PointerReleased" IsTabStop="False"/>
-        <Button x:Name="btnBodySlam" Grid.Column="2" Content="BODY SLAM" Grid.Row="2" FontSize="12" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="#7F000000" FocusVisualPrimaryBrush="Black" Background="#FF1300FF" IsTabStop="False" PointerReleased="btnBodySlam_PointerReleased"/>
-        <Button x:Name="btnEnfado" Grid.Column="3" Content="ENFADO" Grid.Row="2" FocusVisualPrimaryBrush="Black" BorderBrush="#7F000000" Background="Red" FontSize="12" HorizontalAlignment="Stretch" PointerReleased="btnEnfado_PointerReleased" IsTabStop="False" VerticalAlignment="Stretch"/>
-        <Button x:Name="btnHipnotizar" Grid.Column="4" Content="HIPNOTIZAR" VerticalAlignment="Stretch" Background="#FF9400FF" FontSize="12" BorderBrush="#7F000000" FocusVisualPrimaryBrush="Black" HorizontalAlignment="Stretch" Grid.RowSpan="1" Grid.Row="2" PointerReleased="btnHipnotizar_PointerReleased" IsTabStop="False"/>
+        <Button x:Name="btnDormir" Grid.Column="1" Content="DORMIR" VerticalAlignment="Stretch" Background="#FFFFC700" FontSize="12" BorderBrush="#7F000000" FocusVisualPrimaryBrush="Black" HorizontalAlignment="Stretch" Grid.RowSpan="1" Grid.Row="2" IsTabStop="False" Click="btnDormir_Click"/>
+        <Button x:Name="btnBodySlam" Grid.Column="2" Content="BODY SLAM" Grid.Row="2" FontSize="12" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="#7F000000" FocusVisualPrimaryBrush="Black" Background="#FF1300FF" IsTabStop="False" Click="btnBodySlam_Click"/>
+        <Button x:Name="btnEnfado" Grid.Column="3" Content="ENFADO" Grid.Row="2" FocusVisualPrimaryBrush="Black" BorderBrush="#7F000000" Background="Red" FontSize="12" HorizontalAlignment="Stretch" IsTabStop="False" VerticalAlignment="Stretch" Click="btnEnfado_Click"/>
+        <Button x:Name="btnHipnotizar" Grid.Column="4" Content="HIPNOTIZAR" VerticalAlignment="Stretch" Background="#FF9400FF" FontSize="12" BorderBrush="#7F000000" FocusVisualPrimaryBrush="Black" HorizontalAlignment="Stretch" Grid.RowSpan="1" Grid.Row="2" IsTabStop="False" Click="btnHipnotizar_Click"/>
         <Viewbox x:Name="viewBoxPokemon" Grid.Column="1"   Grid.Row="2" Grid.ColumnSpan="5" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Canvas x:Name="canvasPokemon" RenderTransformOrigin="0.5,0.5" Height="442" Width="463" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Canvas.RenderTransform>
@@ -668,7 +668,6 @@
 
             </Canvas>
         </Viewbox>
-        <TextBlock x:Name="txtCoolDown" Grid.Column="5" Grid.Row="2" TextWrapping="Wrap" Text="Ready" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center"/>
 
 
 

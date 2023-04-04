@@ -32,7 +32,6 @@ namespace IPO2_Pokemon_Pokedex
         public Double currentHealthAmount = 0;
         DispatcherTimer clock;
 
-        private DispatcherTimer cooldownTimer = new DispatcherTimer();
         private Button myButton;
 
         /************************************************************************************************/
@@ -56,8 +55,6 @@ namespace IPO2_Pokemon_Pokedex
 
             myButton = (Button)this.FindName("btnBodySlam");
 
-            cooldownTimer.Interval = TimeSpan.FromSeconds(5);
-            cooldownTimer.Tick += CooldownTimer_Tick;
         }
 
         /************************************************************************************************/
@@ -98,7 +95,6 @@ namespace IPO2_Pokemon_Pokedex
                 btnBodySlam.Visibility = Visibility.Collapsed;
                 btnEnfado.Visibility = Visibility.Collapsed;
                 btnHipnotizar.Visibility = Visibility.Collapsed;
-                txtCoolDown.Visibility = Visibility.Collapsed;
                 txtName.Visibility = Visibility.Collapsed;
             }
             else
@@ -113,7 +109,6 @@ namespace IPO2_Pokemon_Pokedex
                 btnBodySlam.Visibility = Visibility.Visible;
                 btnEnfado.Visibility = Visibility.Visible;
                 btnHipnotizar.Visibility = Visibility.Visible;
-                txtCoolDown.Visibility = Visibility.Visible;
                 txtName.Visibility = Visibility.Visible;
             }
         }
@@ -143,15 +138,6 @@ namespace IPO2_Pokemon_Pokedex
             }
 
             return estadoCritico;
-        }
-        private void CooldownTimer_Tick(object sender, object e)
-        {
-            // Enable the button and stop the timer
-            myButton.IsEnabled = true;
-            cooldownTimer.Stop();
-            txtCoolDown.Visibility = Visibility.Visible;
-            enableAllSpells();
-            comprobarEstadoCritico();
         }
         private void imgHealthIconRestorePointerReleased(object sender, PointerRoutedEventArgs e)
         {
@@ -208,7 +194,25 @@ namespace IPO2_Pokemon_Pokedex
             sb.Begin();
 
         }
-        private void btnDormir_PointerReleased(object sender, PointerRoutedEventArgs e)
+        private void increaseSpell(object sender, object e)
+        {
+            barSpell.Value += 0.2;
+            if (barSpell.Value >= 100 || barSpell.Value >= currentSpellAmount + 10)
+            {
+                imgManaPotion.Opacity = 1;
+                clock.Stop();
+            }
+        }
+        private void increaseHealthEnfado(object sender, object e)
+        {
+            barHP.Value += 0.2;
+            if (barHP.Value >= 100 || barHP.Value >= currentHealthAmount + 10)
+            {
+                clock.Stop();
+            }
+        }
+
+        private void btnDormir_Click(object sender, RoutedEventArgs e)
         {
             Storyboard sbDormir = (Storyboard)this.Resources["sbDormir"];
             sbDormir.Begin();
@@ -220,64 +224,24 @@ namespace IPO2_Pokemon_Pokedex
                 clock.Interval = TimeSpan.FromMilliseconds(100);
                 clock.Tick += increaseSpell;
                 clock.Start();
-                disableAllSpells();
             }
+        }
 
-        }
-        private void increaseSpell(object sender, object e)
-        {
-            barSpell.Value += 0.2;
-            if (barSpell.Value >= 100 || barSpell.Value >= currentSpellAmount + 10)
-            {
-                imgManaPotion.Opacity = 1;
-                clock.Stop();
-                enableAllSpells();
-            }
-        }
-        private void increaseHealthEnfado(object sender, object e)
-        {
-            barHP.Value += 0.2;
-            if (barHP.Value >= 100 || barHP.Value >= currentHealthAmount + 10)
-            {
-                clock.Stop();
-                enableAllSpells();
-            }
-        }
-        private void disableAllSpells()
-        {
-            btnDormir.IsEnabled = false;
-            btnBodySlam.IsEnabled = false;
-            btnEnfado.IsEnabled = false;
-            btnHipnotizar.IsEnabled = false;
-            txtCoolDown.Visibility = Visibility.Collapsed;
-        }
-        private void enableAllSpells()
-        {
-            btnDormir.IsEnabled = true;
-            btnBodySlam.IsEnabled = true;
-            btnEnfado.IsEnabled = true;
-            btnHipnotizar.IsEnabled = true;
-            txtCoolDown.Visibility = Visibility.Visible;
-        }
-        private void btnBodySlam_PointerReleased(object sender, PointerRoutedEventArgs e)
+        private void btnBodySlam_Click(object sender, RoutedEventArgs e)
         {
             if (!(this.barSpell.Value - 5 <= 0))
             {
-                disableAllSpells();
                 Storyboard sbBodySlam = (Storyboard)this.Resources["sbBodySlam"];
                 sbBodySlam.Begin();
                 this.barSpell.Value = this.barSpell.Value - 5;
-                // Disable the button and start the timer
-                cooldownTimer.Start();
             }
-
         }
-        private void btnEnfado_PointerReleased(object sender, PointerRoutedEventArgs e)
+
+        private void btnEnfado_Click(object sender, RoutedEventArgs e)
         {
             clock = new DispatcherTimer();
             if (!(this.barSpell.Value - 5 <= 0))
             {
-                disableAllSpells();
                 currentHealthAmount = this.barHP.Value;
                 Storyboard sbBodySlam = (Storyboard)this.Resources["sbEnfado"];
                 sbBodySlam.Begin();
@@ -286,19 +250,17 @@ namespace IPO2_Pokemon_Pokedex
                 clock.Interval = TimeSpan.FromMilliseconds(100);
                 clock.Tick += increaseHealthEnfado;
                 clock.Start();
-                cooldownTimer.Start();
             }
         }
-        private void btnHipnotizar_PointerReleased(object sender, PointerRoutedEventArgs e)
+
+        private void btnHipnotizar_Click(object sender, RoutedEventArgs e)
         {
             if (!(this.barSpell.Value - 5 <= 0))
             {
-                disableAllSpells();
                 Storyboard sbHipnotizar = (Storyboard)this.Resources["sbHipnotizar"];
                 sbHipnotizar.Begin();
                 this.barSpell.Value = this.barSpell.Value - 5;
                 // Disable the button and start the timer
-                cooldownTimer.Start();
             }
         }
     }
