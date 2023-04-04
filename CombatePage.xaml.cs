@@ -40,8 +40,7 @@ namespace IPO2_Pokemon_Pokedex
         public CombatePage()
         {
             this.InitializeComponent();
-            Sandshrew.verFormaPokedex(false);
-            Sandshrew.realizar_ataque4();
+            ucRaichu.verFormaPokedex(false);
         }
 
         /************************************************************************************************/

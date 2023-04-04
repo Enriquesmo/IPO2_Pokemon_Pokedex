@@ -130,7 +130,7 @@ namespace IPO2_Pokemon_Pokedex
                 VerNombreyBotones = false;
             }
         }
-        public void herirPokemon(int damage) // Terminado
+        public void herirPokemon(double damage) // Terminado
         {
             if (Escudo > damage)
                 Escudo -= damage;
@@ -142,7 +142,7 @@ namespace IPO2_Pokemon_Pokedex
                     Vida -= dañoRestante;
                 else
                 {
-
+                    Vida = 0;
                 }
 
             }
