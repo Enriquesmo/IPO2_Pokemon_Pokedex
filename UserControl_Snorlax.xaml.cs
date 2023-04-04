@@ -30,6 +30,10 @@ namespace IPO2_Pokemon_Pokedex
 
         public Double currentSpellAmount = 0;
         public Double currentHealthAmount = 0;
+        private bool verVida = true;
+        private bool verEnergia = true;
+        private bool verFondo = true;
+        private bool verNombreyBotones = true;
         DispatcherTimer clock;
 
         private Button myButton;
@@ -54,7 +58,7 @@ namespace IPO2_Pokemon_Pokedex
             sb2.Begin();
 
             myButton = (Button)this.FindName("btnBodySlam");
-
+            
         }
 
         /************************************************************************************************/
@@ -71,45 +75,79 @@ namespace IPO2_Pokemon_Pokedex
             get { return this.barSpell.Value; }
             set { this.barSpell.Value = value; }
         }
+        public bool VerVida
+        {
+            get { return verVida; }
+            set
+            {
+                this.verVida = value;
+                if (!verVida)
+                {
+                    this.GridApp.RowDefinitions[0].Height = new GridLength(0);
+                }
+                else 
+                {
+                    this.GridApp.RowDefinitions[0].Height = new GridLength(10, GridUnitType.Star);
+                }
+            }
+        }
+        public bool VerEnergia
+        {
+            get { return verEnergia; }
+            set
+            {
+                this.verEnergia = value;
+                if (!verEnergia) this.GridApp.RowDefinitions[1].Height = new GridLength(0);
+                else this.GridApp.RowDefinitions[1].Height = new GridLength(10,
+               GridUnitType.Star);
+            }
+        }
+        public bool VerFondo
+        {
+            get { return verFondo; }
+            set
+            {
+                this.verFondo = value;
+                if (!verFondo) this.imgBackground.Opacity = 0;
+                else this.imgBackground.Opacity = 100;
+            }
+        }
+        public bool VerNombreyBotones
+        {
+            get { return verNombreyBotones; }
+            set
+            {
+                this.verNombreyBotones = value;
+                if (!verNombreyBotones)
+                {
+                    this.GridApp.RowDefinitions[2].Height = new GridLength(0);
+                }
+                else {
+                    this.GridApp.RowDefinitions[4].Height = new GridLength(100,
+                   GridUnitType.Star);
+                } 
+            }
+        }
         public ImageSource FondoSource
         {
             get { return this.imgBackground.Source; }
             set { this.imgBackground.Source = value; }
         }
-        public void verFondo(bool ver)
-        {
-            if (ver) imgBackground.Visibility = Visibility.Visible;
-            else imgBackground.Visibility = Visibility.Collapsed;
-        }
         public void verFormaPokedex(bool ver)
         {
             if (ver)
             {
-                barHP.Visibility = Visibility.Collapsed;
-                barSpell.Visibility = Visibility.Collapsed;
-                imgHealthIRestore.Visibility = Visibility.Collapsed;
-                imgManaPotion.Visibility = Visibility.Collapsed;
-                imgMana.Visibility = Visibility.Collapsed;
-                imgHealthIcon.Visibility = Visibility.Collapsed;
-                btnDormir.Visibility = Visibility.Collapsed;
-                btnBodySlam.Visibility = Visibility.Collapsed;
-                btnEnfado.Visibility = Visibility.Collapsed;
-                btnHipnotizar.Visibility = Visibility.Collapsed;
-                txtName.Visibility = Visibility.Collapsed;
+                VerVida = false;
+                VerEnergia = false;
+                VerFondo = false;
+                VerNombreyBotones = false;
             }
             else
             {
-                barHP.Visibility = Visibility.Visible;
-                barSpell.Visibility = Visibility.Visible;
-                imgHealthIRestore.Visibility = Visibility.Visible;
-                imgManaPotion.Visibility = Visibility.Visible;
-                imgMana.Visibility = Visibility.Visible;
-                imgHealthIcon.Visibility = Visibility.Visible;
-                btnDormir.Visibility = Visibility.Visible;
-                btnBodySlam.Visibility = Visibility.Visible;
-                btnEnfado.Visibility = Visibility.Visible;
-                btnHipnotizar.Visibility = Visibility.Visible;
-                txtName.Visibility = Visibility.Visible;
+                VerVida = true;
+                VerEnergia = true;
+                VerFondo = true;
+                VerNombreyBotones = true;
             }
         }
 
