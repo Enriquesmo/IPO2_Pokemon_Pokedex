@@ -136,6 +136,7 @@ namespace IPO2_Pokemon_Pokedex
                 VerEnergia = true;
                 VerFondo = true;
                 VerNombreyBotones = true;
+
             }
             else
             {
@@ -210,7 +211,6 @@ namespace IPO2_Pokemon_Pokedex
             }
             return sePuede;
         }
-
         private Boolean incrementarBarraVida(int valorASumar) // Terminado
         {
             Boolean sePuede = false;
@@ -228,7 +228,6 @@ namespace IPO2_Pokemon_Pokedex
             }
             return sePuede;
         }
-
         private Boolean incrementarBarraSpell(int valorASumar) // Terminado
         {
             Boolean sePuede = false;
@@ -246,7 +245,6 @@ namespace IPO2_Pokemon_Pokedex
             }
             return sePuede;
         }
-
         public Boolean comprobarEstadoCritico()
         {
             Boolean estadoCritico = false;
@@ -304,7 +302,6 @@ namespace IPO2_Pokemon_Pokedex
             sb.Begin();
 
         }
-
         private void btnDormir_Click(object sender, RoutedEventArgs e)
         {
             Boolean sePuede = restarBarraEnergia(20);
@@ -314,7 +311,6 @@ namespace IPO2_Pokemon_Pokedex
                 sbDormir.Begin();
             }
         }
-
         private void btnBodySlam_Click(object sender, RoutedEventArgs e)
         {
             Boolean sePuede = restarBarraEnergia(20);
@@ -324,7 +320,6 @@ namespace IPO2_Pokemon_Pokedex
                 sbBodySlam.Begin();
             }
         }
-
         private void btnEnfado_Click(object sender, RoutedEventArgs e)
         {
             Boolean sePuede = incrementarBarraVida(20);
@@ -334,7 +329,6 @@ namespace IPO2_Pokemon_Pokedex
                 enfado.Begin();
             }
         }
-
         private void btnHipnotizar_Click(object sender, RoutedEventArgs e)
         {
             Boolean sePuede = restarBarraEnergia(20);
