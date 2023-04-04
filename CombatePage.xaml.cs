@@ -40,6 +40,14 @@ namespace IPO2_Pokemon_Pokedex
         public CombatePage()
         {
             this.InitializeComponent();
+            Raichu.verFormaPokedex(false);
+            Raichu.realizarAtaque1();
+            Sandshrew.VerFormaPokedex(false);
+            Sandshrew.realizarAtaque1();
+            Darumaka.VerFormaPokedex(false);
+            Darumaka.RealizarAtaque1();
+            Snorlax.verFormaPokedex(false);
+            Snorlax.realizarAtaque1();
         }
 
         /************************************************************************************************/

@@ -31,8 +31,8 @@ namespace IPO2_Pokemon_Pokedex
 
         private bool verEnergia = true;
         private bool verVida = true;
-        private bool verAtaquesYNombre = true;
-        private bool verFormaPokedex = true;
+        private bool verNombreyBotones = true;
+        private bool verFondo = true;
 
         /************************************************************************************************/
 
@@ -81,37 +81,45 @@ namespace IPO2_Pokemon_Pokedex
                 GridUnitType.Star);
             }
         }
-        public bool VerAtaquesYNombre
+        public bool VerNombreyBotones
         {
-            get { return verAtaquesYNombre; }
+            get { return verNombreyBotones; }
             set
             {
-                this.verAtaquesYNombre = value;
-                if (!verAtaquesYNombre) this.GridPadre.RowDefinitions[3].Height = new GridLength(0);
+                this.verNombreyBotones = value;
+                if (!verNombreyBotones) this.GridPadre.RowDefinitions[3].Height = new GridLength(0);
                 else this.GridPadre.RowDefinitions[3].Height = new GridLength(100,
                 GridUnitType.Star);
             }
         }
-        public bool VerFormaPokedex
+        public bool VerFondo
         {
-            get { return verFormaPokedex; }
+            get { return verFondo; }
             set
+            {
+                this.verFondo = value;
+                if (!verFondo) this.imFondo.Opacity = 0;
+                else this.imFondo.Opacity = 100;
+            }
+        }
+        public void VerFormaPokedex(bool ver)
+        {
+            if (ver)
+            {
+                VerVida = true;
+                VerEnergia = true;
+                VerFondo = true;
+                VerNombreyBotones = true;
+            }
+            else
             {
                 VerVida = false;
                 VerEnergia = false;
-                VerFondo(false);
-                VerAtaquesYNombre = false;
+                VerFondo = false;
+                VerNombreyBotones = false;
             }
+        }
 
-        }
-        public void VerFondo(bool verfondo)
-        {
-            if (!verfondo) { this.imFondo.Source = null; }
-            else
-            {
-                this.imFondo.Source = new BitmapImage(new Uri(@"Assets/back.jpg"));
-            }
-        }
         public void CambiarFondo(String URI)
         {
             this.imFondo.Source = new BitmapImage(new Uri(@URI));
@@ -248,7 +256,7 @@ namespace IPO2_Pokemon_Pokedex
         }
         private void InfligirDano(object sender, PointerRoutedEventArgs e)
         {
-            HerirPokemon(10.00);
+            herirPokemon(10.00);
         }
         public void herirPokemon(double Dano)
         {

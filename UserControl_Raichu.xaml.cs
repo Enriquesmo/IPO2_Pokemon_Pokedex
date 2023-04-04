@@ -154,6 +154,62 @@ namespace IPO2_Pokemon_Pokedex
             bttnAtaque3.IsEnabled = false;
             bttnAtaque4.IsEnabled = false;
         }
+        public void realizarAtaque1() // Terminado
+        {
+            if (barraEnergia.Value - valorAtaque1 >= 0)
+            {
+                barraEnergia.Value -= valorAtaque1;
+                DesactivarAtaques();
+                Storyboard sb = (Storyboard)this.Resources["ColaFerreaKey"];
+                sb.Begin();
+            }
+            else
+            {
+                AnimacionEnergiaInsuficiente();
+            }
+        }
+        public void realizarAtaque2() // Terminado
+        {
+            if (barraEnergia.Value - valorAtaque2 >= 0)
+            {
+                barraEnergia.Value -= valorAtaque2;
+                DesactivarAtaques();
+                Storyboard sb = (Storyboard)this.Resources["PlacajeKey"];
+                sb.Begin();
+            }
+            else
+            {
+                AnimacionEnergiaInsuficiente();
+            }
+        }
+        public void realizarAtaque3() // Terminado
+        {
+            if (barraEnergia.Value - valorAtaque3 >= 0)
+            {
+                barraEnergia.Value -= valorAtaque3;
+                DesactivarAtaques();
+                Storyboard sb = (Storyboard)this.Resources["ProteccionKey"];
+                sb.Begin();
+            }
+            else
+            {
+                AnimacionEnergiaInsuficiente();
+            }
+        }
+        public void realizarAtaque4() // Terminado
+        {
+            if (barraEnergia.Value - valorAtaque4 >= 0)
+            {
+                barraEnergia.Value -= valorAtaque4;
+                DesactivarAtaques();
+                Storyboard sb = (Storyboard)this.Resources["RayoKey"];
+                sb.Begin();
+            }
+            else
+            {
+                AnimacionEnergiaInsuficiente();
+            }
+        }
 
         /************************************************************************************************/
 

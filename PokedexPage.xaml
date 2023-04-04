@@ -12,10 +12,10 @@
 
         <Grid Height="3006" Width="4556">
             <ListView x:Name="Control4" MinWidth="550" BorderThickness="1" BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}" Margin="73,65,2926,74">
-                <local:UserControl_Darumaka/>
-                <local:UserControl_Raichu/>
-                <local:UserControl_Sandshrew/>
-                <local:UserControl_Snorlax/>
+                <local:UserControl_Darumaka x:Name="Darumaka"/>
+                <local:UserControl_Raichu x:Name="Raichu"/>
+                <local:UserControl_Sandshrew x:Name="Sandshrew"/>
+                <local:UserControl_Snorlax x:Name="Snorlax"/>
             </ListView>
         </Grid>
     </Viewbox>

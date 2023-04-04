@@ -117,7 +117,7 @@ namespace IPO2_Pokemon_Pokedex
             get { return this.ProgressBar_Energia.Value; }
             set { this.ProgressBar_Energia.Value = value; }
         }      
-        public void verFormaPokedex(bool ver)
+        public void VerFormaPokedex(bool ver)
         {
             if (ver)
             {
@@ -163,7 +163,7 @@ namespace IPO2_Pokemon_Pokedex
                 opacityElementosExtras();
             }
         }
-        public void realizar_ataque1() // Terminado
+        public void realizarAtaque1() // Terminado
         {
             Boolean sePuede = restarBarraEnergia(20);
             if (sePuede == true)
@@ -178,7 +178,7 @@ namespace IPO2_Pokemon_Pokedex
                 animacionNoEnergia();
             }
         }
-        public void realizar_ataque2() // Terminado
+        public void realizarAtaque2() // Terminado
         {
             Boolean sePuede = restarBarraEnergia(10);
             if (sePuede == true)
@@ -196,7 +196,7 @@ namespace IPO2_Pokemon_Pokedex
                 animacionNoEnergia();
             }
         }
-        public void realizar_ataque3() // Terminado
+        public void realizarAtaque3() // Terminado
         {
             Boolean sePuede = restarBarraEnergia(25);
             if (sePuede == true)
@@ -216,7 +216,7 @@ namespace IPO2_Pokemon_Pokedex
                 animacionNoEnergia();
             }
         }
-        public void realizar_ataque4() // Terminado
+        public void realizarAtaque4() // Terminado
         {
             Boolean sePuede = restarBarraEnergia(40);
             if (sePuede == true)

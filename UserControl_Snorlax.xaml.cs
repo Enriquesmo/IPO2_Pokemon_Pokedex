@@ -34,7 +34,6 @@ namespace IPO2_Pokemon_Pokedex
         private bool verEnergia = true;
         private bool verFondo = true;
         private bool verNombreyBotones = true;
-        DispatcherTimer clock;
 
         private Button myButton;
 
@@ -45,7 +44,7 @@ namespace IPO2_Pokemon_Pokedex
         public UserControl_Snorlax()
         {
             this.InitializeComponent();
-            currentSpellAmount = Spell;
+            currentSpellAmount = Energia;
             currentHealthAmount = Vida;
 
             Storyboard sb = (Storyboard)this.Resources["sbMoverBrazos"];
@@ -58,7 +57,7 @@ namespace IPO2_Pokemon_Pokedex
             sb2.Begin();
 
             myButton = (Button)this.FindName("btnBodySlam");
-            
+
         }
 
         /************************************************************************************************/
@@ -70,7 +69,7 @@ namespace IPO2_Pokemon_Pokedex
             get { return this.barHP.Value; }
             set { this.barHP.Value = value; }
         }
-        public double Spell
+        public double Energia
         {
             get { return this.barSpell.Value; }
             set { this.barSpell.Value = value; }
@@ -85,7 +84,7 @@ namespace IPO2_Pokemon_Pokedex
                 {
                     this.GridApp.RowDefinitions[0].Height = new GridLength(0);
                 }
-                else 
+                else
                 {
                     this.GridApp.RowDefinitions[0].Height = new GridLength(10, GridUnitType.Star);
                 }
@@ -121,11 +120,13 @@ namespace IPO2_Pokemon_Pokedex
                 if (!verNombreyBotones)
                 {
                     this.GridApp.RowDefinitions[2].Height = new GridLength(0);
+                    this.GridApp.RowDefinitions[4].Height = new GridLength(0);
                 }
-                else {
-                    this.GridApp.RowDefinitions[4].Height = new GridLength(100,
-                   GridUnitType.Star);
-                } 
+                else
+                {
+                    this.GridApp.RowDefinitions[2].Height = new GridLength(100, GridUnitType.Star);
+                    this.GridApp.RowDefinitions[4].Height = new GridLength(100, GridUnitType.Star);
+                }
             }
         }
         public ImageSource FondoSource
@@ -137,23 +138,116 @@ namespace IPO2_Pokemon_Pokedex
         {
             if (ver)
             {
-                VerVida = false;
-                VerEnergia = false;
-                VerFondo = false;
-                VerNombreyBotones = false;
-            }
-            else
-            {
                 VerVida = true;
                 VerEnergia = true;
                 VerFondo = true;
                 VerNombreyBotones = true;
             }
+            else
+            {
+                VerVida = false;
+                VerEnergia = false;
+                VerFondo = false;
+                VerNombreyBotones = false;
+            }
+        }
+        public void realizarAtaque1()
+        {
+            Boolean sePuede = restarBarraEnergia(20);
+            if (sePuede == true)
+            {
+                Storyboard sbDormir = (Storyboard)this.Resources["sbDormir"];
+                sbDormir.Begin();
+            }
+        }
+        public void realizarAtaque2()
+        {
+            Boolean sePuede = restarBarraEnergia(20);
+            if (sePuede == true)
+            {
+                Storyboard sbBodySlam = (Storyboard)this.Resources["sbBodySlam"];
+                sbBodySlam.Begin();
+            }
+        }
+        public void realizarAtaque3()
+        {
+            Boolean sePuede = incrementarBarraVida(20);
+            if (sePuede == true)
+            {
+                Storyboard enfado = (Storyboard)this.Resources["sbEnfado"];
+                enfado.Begin();
+            }
+        }
+        public void realizarAtaque4()
+        {
+            Boolean sePuede = restarBarraEnergia(20);
+            if (sePuede == true)
+            {
+                Storyboard sbHipnotizar = (Storyboard)this.Resources["sbHipnotizar"];
+                sbHipnotizar.Begin();
+            }
+        }
+        public void herirPokemon(double damage)
+        {
+            restarBarraVida(damage);
         }
 
         /************************************************************************************************/
 
         /*Botones y metodos de la propia Página*/
+
+        private void restarBarraVida(double valorARestar) // Terminado
+        {
+            this.barHP.Value -= valorARestar;
+            this.imgHealthIcon.Opacity = 1;
+        }
+        private Boolean restarBarraEnergia(int valorARestar) // Terminado
+        {
+            Boolean sePuede = false;
+            if (barSpell.Value >= valorARestar)
+            {
+                this.barSpell.Value -= valorARestar;
+                this.imgMana.Opacity = 1;
+                sePuede = true;
+            }
+            return sePuede;
+        }
+
+        private Boolean incrementarBarraVida(int valorASumar) // Terminado
+        {
+            Boolean sePuede = false;
+            if (barHP.Value + valorASumar >= 100)
+            {
+                this.barHP.Value = 100;
+                this.imgHealthIcon.Opacity = 1;
+                sePuede = true;
+            }
+            else
+            {
+                this.barHP.Value += valorASumar;
+                this.imgHealthIcon.Opacity = 1;
+                sePuede = true;
+            }
+            return sePuede;
+        }
+
+        private Boolean incrementarBarraSpell(int valorASumar) // Terminado
+        {
+            Boolean sePuede = false;
+            if (barSpell.Value + valorASumar >= 100)
+            {
+                this.barSpell.Value = 100;
+                this.imgMana.Opacity = 1;
+                sePuede = true;
+            }
+            else
+            {
+                this.barSpell.Value += valorASumar;
+                this.imgMana.Opacity = 1;
+                sePuede = true;
+            }
+            return sePuede;
+        }
 
         public Boolean comprobarEstadoCritico()
         {
@@ -179,31 +273,11 @@ namespace IPO2_Pokemon_Pokedex
         }
         private void imgHealthIconRestorePointerReleased(object sender, PointerRoutedEventArgs e)
         {
-            clock = new DispatcherTimer();
-            clock.Interval = TimeSpan.FromMilliseconds(100);
-            currentHealthAmount = this.barHP.Value;
-            clock.Tick += increaseHealth; //When a tick appears we increase the total health. We use += to add that specific tic functionlality
-            clock.Start();
-            imgHealthIRestore.Opacity = 0.2;
+            incrementarBarraVida(20);
         }
         private void imgManaPotion_PointerReleased(object sender, PointerRoutedEventArgs e)
         {
-            clock = new DispatcherTimer();
-            clock.Interval = TimeSpan.FromMilliseconds(100);
-            currentSpellAmount = this.barSpell.Value;
-            clock.Tick += increaseSpell; //When a tick appears we increase the total health. We use += to add that specific tic functionlality
-            clock.Start();
-            imgManaPotion.Opacity = 0.2;
-        }
-        private void increaseHealth(object sender, object e)
-        {
-            barHP.Value += 0.2;
-            if (barHP.Value >= 100 || barHP.Value >= currentHealthAmount + 10)
-            {
-                clock.Stop();
-                imgHealthIRestore.Opacity = 1;
-                comprobarEstadoCritico();
-            }
+            incrementarBarraSpell(20);
         }
         private void pathOjoIzq_PointerReleased(object sender, PointerRoutedEventArgs e)
         {
@@ -232,73 +306,44 @@ namespace IPO2_Pokemon_Pokedex
             sb.Begin();
 
         }
-        private void increaseSpell(object sender, object e)
-        {
-            barSpell.Value += 0.2;
-            if (barSpell.Value >= 100 || barSpell.Value >= currentSpellAmount + 10)
-            {
-                imgManaPotion.Opacity = 1;
-                clock.Stop();
-            }
-        }
-        private void increaseHealthEnfado(object sender, object e)
-        {
-            barHP.Value += 0.2;
-            if (barHP.Value >= 100 || barHP.Value >= currentHealthAmount + 10)
-            {
-                clock.Stop();
-            }
-        }
 
         private void btnDormir_Click(object sender, RoutedEventArgs e)
         {
-            Storyboard sbDormir = (Storyboard)this.Resources["sbDormir"];
-            sbDormir.Begin();
-            clock = new DispatcherTimer();
-            if (this.barSpell.Value - 2 >= 0)
+            Boolean sePuede = restarBarraEnergia(20);
+            if (sePuede == true)
             {
-                this.barSpell.Value = this.barSpell.Value - 2;
-                currentSpellAmount = this.barSpell.Value;
-                clock.Interval = TimeSpan.FromMilliseconds(100);
-                clock.Tick += increaseSpell;
-                clock.Start();
+                Storyboard sbDormir = (Storyboard)this.Resources["sbDormir"];
+                sbDormir.Begin();
             }
         }
 
         private void btnBodySlam_Click(object sender, RoutedEventArgs e)
         {
-            if (!(this.barSpell.Value - 5 <= 0))
+            Boolean sePuede = restarBarraEnergia(20);
+            if (sePuede == true)
             {
                 Storyboard sbBodySlam = (Storyboard)this.Resources["sbBodySlam"];
                 sbBodySlam.Begin();
-                this.barSpell.Value = this.barSpell.Value - 5;
             }
         }
 
         private void btnEnfado_Click(object sender, RoutedEventArgs e)
         {
-            clock = new DispatcherTimer();
-            if (!(this.barSpell.Value - 5 <= 0))
+            Boolean sePuede = incrementarBarraVida(20);
+            if (sePuede == true)
             {
-                currentHealthAmount = this.barHP.Value;
-                Storyboard sbBodySlam = (Storyboard)this.Resources["sbEnfado"];
-                sbBodySlam.Begin();
-                this.barSpell.Value = this.barSpell.Value - 10;
-                // Disable the button and start the timer
-                clock.Interval = TimeSpan.FromMilliseconds(100);
-                clock.Tick += increaseHealthEnfado;
-                clock.Start();
+                Storyboard enfado = (Storyboard)this.Resources["sbEnfado"];
+                enfado.Begin();
             }
         }
 
         private void btnHipnotizar_Click(object sender, RoutedEventArgs e)
         {
-            if (!(this.barSpell.Value - 5 <= 0))
+            Boolean sePuede = restarBarraEnergia(20);
+            if (sePuede == true)
             {
                 Storyboard sbHipnotizar = (Storyboard)this.Resources["sbHipnotizar"];
                 sbHipnotizar.Begin();
-                this.barSpell.Value = this.barSpell.Value - 5;
-                // Disable the button and start the timer
             }
         }
     }
