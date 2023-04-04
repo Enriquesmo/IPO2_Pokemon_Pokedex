@@ -72,7 +72,7 @@
         </Storyboard>
     </UserControl.Resources>
 
-    <Grid>
+    <Grid x:Name="Grid_HUD">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="43*"/>
             <ColumnDefinition Width="415*"/>
@@ -84,7 +84,7 @@
             <RowDefinition Height="70*"/>
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
-        <Image Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="UniformToFill" Source="/Assets/EP946_Bosque_de_Melemele.png"/>
+        <Image x:Name="imgFondo" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="UniformToFill" Source="/Assets/EP946_Bosque_de_Melemele.png"/>
         <Image Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Source="/Assets/iconovida.png"/>
         <ProgressBar x:Name="barraVida" Grid.Row="0" Grid.Column="1" Height="30" MaxHeight="50" Background="#33FF0000" Foreground="Red" Value="50" Margin="10"/>
         <ProgressBar x:Name="barraEscudo" Grid.Row="0" Grid.Column="1" Height="30" MaxHeight="50" Margin="10" Foreground="White"/>
