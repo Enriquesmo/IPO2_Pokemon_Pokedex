@@ -40,7 +40,6 @@ namespace IPO2_Pokemon_Pokedex
         public CombatePage()
         {
             this.InitializeComponent();
-            ucRaichu.verFormaPokedex(false);
         }
 
         /************************************************************************************************/
