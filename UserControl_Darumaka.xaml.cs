@@ -32,6 +32,7 @@ namespace IPO2_Pokemon_Pokedex
         private bool verEnergia = true;
         private bool verVida = true;
         private bool verAtaquesYNombre = true;
+        private bool verFormaPokedex = true;
 
         /************************************************************************************************/
 
@@ -91,6 +92,18 @@ namespace IPO2_Pokemon_Pokedex
                 GridUnitType.Star);
             }
         }
+        public bool VerFormaPokedex
+        {
+            get { return verFormaPokedex; }
+            set
+            {
+                VerVida = false;
+                VerEnergia = false;
+                VerFondo(false);
+                VerAtaquesYNombre = false;
+            }
+
+        }
         public void VerFondo(bool verfondo)
         {
             if (!verfondo) { this.imFondo.Source = null; }
@@ -103,6 +116,7 @@ namespace IPO2_Pokemon_Pokedex
         {
             this.imFondo.Source = new BitmapImage(new Uri(@URI));
         }
+
 
         /************************************************************************************************/
 
@@ -144,7 +158,7 @@ namespace IPO2_Pokemon_Pokedex
                 btProteccion.IsEnabled = true;
             }
         }
-        private void btProteccion_Click(object sender, RoutedEventArgs e)
+        public void RealizarAtaque1()
         {
             if (ReducirEnergía())
             {
@@ -152,9 +166,13 @@ namespace IPO2_Pokemon_Pokedex
                 if (_sbDescanso != null) { _sbDescanso.Stop(); }
                 sbProteger.Begin();
             }
+        }
+        private void btProteccion_Click(object sender, RoutedEventArgs e)
+        {
+            RealizarAtaque1();
 
         }
-        private void btDescanso_Click(object sender, RoutedEventArgs e)
+        public void RealizarAtaque2()
         {
             _sbDescanso = (Storyboard)this.Resources["Descanso"];
             _sbDescanso.RepeatBehavior = RepeatBehavior.Forever;
@@ -163,7 +181,11 @@ namespace IPO2_Pokemon_Pokedex
             Regenerate();
             EnergyRegeneration();
         }
-        private void btTumbarocas_Click(object sender, RoutedEventArgs e)
+        private void btDescanso_Click(object sender, RoutedEventArgs e)
+        {
+            RealizarAtaque2();
+        }
+        public void RealizarAtaque3()
         {
             if (ReducirEnergía())
             {
@@ -172,7 +194,11 @@ namespace IPO2_Pokemon_Pokedex
                 sbTumbarocas.Begin();
             }
         }
-        private void btLlamarada_Click(object sender, RoutedEventArgs e)
+        private void btTumbarocas_Click(object sender, RoutedEventArgs e)
+        {
+            RealizarAtaque3();
+        }
+        public void RealizarAtaque4()
         {
             if (ReducirEnergía())
             {
@@ -180,6 +206,10 @@ namespace IPO2_Pokemon_Pokedex
                 if (_sbDescanso != null) { _sbDescanso.Stop(); }
                 sbLlamarada.Begin();
             }
+        }
+        private void btLlamarada_Click(object sender, RoutedEventArgs e)
+        {
+            RealizarAtaque4();
         }
         private Boolean ReducirEnergía()
         {
@@ -218,6 +248,10 @@ namespace IPO2_Pokemon_Pokedex
         }
         private void InfligirDano(object sender, PointerRoutedEventArgs e)
         {
+            HerirPokemon(10.00);
+        }
+        private void HerirPokemon(double Dano)
+        {
             if (this.pbHealth.Value > 0.0)
             {
                 if (this.pbHealth.Value <= 10.0)
@@ -230,7 +264,7 @@ namespace IPO2_Pokemon_Pokedex
                 }
                 else
                 {
-                    this.pbHealth.Value -= 10.0;
+                    this.pbHealth.Value -= Dano;
                 }
 
                 if (this.pbHealth.Value <= 10.0)
