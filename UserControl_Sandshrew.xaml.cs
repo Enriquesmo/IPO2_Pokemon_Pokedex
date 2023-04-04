@@ -125,6 +125,12 @@ namespace IPO2_Pokemon_Pokedex
                 VerEnergia = true;
                 VerFondo = true;
                 VerNombreyBotones = true;
+                btn_PrimerAtaque.Visibility = Visibility.Visible;
+                btn_SegundoAtaque.Visibility = Visibility.Visible;
+                btn_TercerAtaque.Visibility = Visibility.Visible;
+                btn_CuartoAtaque.Visibility = Visibility.Visible;
+                TextBlock_NombrePokemon.Visibility = Visibility.Visible;
+                btn_Herir.Visibility = Visibility.Visible;
             }
             else
             {
@@ -132,6 +138,12 @@ namespace IPO2_Pokemon_Pokedex
                 VerEnergia = false;
                 VerFondo = false;
                 VerNombreyBotones = false;
+                btn_PrimerAtaque.Visibility = Visibility.Collapsed;
+                btn_SegundoAtaque.Visibility = Visibility.Collapsed;
+                btn_TercerAtaque.Visibility = Visibility.Collapsed;
+                btn_CuartoAtaque.Visibility = Visibility.Collapsed;
+                TextBlock_NombrePokemon.Visibility = Visibility.Collapsed;
+                btn_Herir.Visibility = Visibility.Collapsed;
             }
         }
         public void realizarAtaque1() // Terminado

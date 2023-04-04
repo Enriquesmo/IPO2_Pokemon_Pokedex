@@ -136,7 +136,18 @@ namespace IPO2_Pokemon_Pokedex
                 VerEnergia = true;
                 VerFondo = true;
                 VerNombreyBotones = true;
-
+                barHP.Visibility = Visibility.Visible;
+                barSpell.Visibility = Visibility.Visible;
+                btnBodySlam.Visibility = Visibility.Visible;
+                btnDormir.Visibility = Visibility.Visible;
+                btnEnfado.Visibility = Visibility.Visible;
+                btnHipnotizar.Visibility = Visibility.Visible;
+                imgHealthIcon.Visibility = Visibility.Visible;
+                imgMana.Visibility = Visibility.Visible;
+                imgManaPotion.Visibility = Visibility.Visible;
+                imgHealthIcon.Visibility = Visibility.Visible;
+                imgHealthIRestore.Visibility = Visibility.Visible;
+                txtName.Visibility = Visibility.Visible;
             }
             else
             {
@@ -144,6 +155,18 @@ namespace IPO2_Pokemon_Pokedex
                 VerEnergia = false;
                 VerFondo = false;
                 VerNombreyBotones = false;
+                barHP.Visibility = Visibility.Collapsed;
+                barSpell.Visibility = Visibility.Collapsed;
+                btnBodySlam.Visibility = Visibility.Collapsed;
+                btnDormir.Visibility = Visibility.Collapsed;
+                btnEnfado.Visibility = Visibility.Collapsed;
+                btnHipnotizar.Visibility = Visibility.Collapsed;
+                imgHealthIcon.Visibility = Visibility.Collapsed;
+                imgMana.Visibility = Visibility.Collapsed;
+                imgManaPotion.Visibility = Visibility.Collapsed;
+                imgHealthIcon.Visibility = Visibility.Collapsed;
+                imgHealthIRestore.Visibility = Visibility.Collapsed;
+                txtName.Visibility = Visibility.Collapsed;
             }
         }
         public void realizarAtaque1()
