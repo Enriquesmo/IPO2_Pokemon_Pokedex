@@ -134,7 +134,7 @@ namespace IPO2_Pokemon_Pokedex
                 VerNombreyBotones = false;
             }
         }
-        public void herirPokemon(int damage) // Terminado
+        public void herirPokemon(double damage) // Terminado
         {
             restarBarraVida(damage);
             if (this.ProgressBar_Vida.Value <= 50 && this.ProgressBar_Vida.Value > 25)
@@ -411,7 +411,7 @@ namespace IPO2_Pokemon_Pokedex
             }
             return sePuede;
         }
-        private void restarBarraVida(int valorARestar) // Terminado
+        private void restarBarraVida(double valorARestar) // Terminado
         {
             this.ProgressBar_Vida.Value -= valorARestar;
             dtTimeVida.Stop();

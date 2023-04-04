@@ -250,7 +250,7 @@ namespace IPO2_Pokemon_Pokedex
         {
             HerirPokemon(10.00);
         }
-        private void HerirPokemon(double Dano)
+        public void herirPokemon(double Dano)
         {
             if (this.pbHealth.Value > 0.0)
             {
