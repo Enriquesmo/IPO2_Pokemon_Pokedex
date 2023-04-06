@@ -308,7 +308,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </UserControl.Resources>
-    <Viewbox>
+    <Viewbox Stretch="Fill">
         <Grid x:Name="GridPadre" Height="1000" Width="1500">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="99*"/>

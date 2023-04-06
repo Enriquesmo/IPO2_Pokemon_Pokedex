@@ -38,6 +38,8 @@ namespace IPO2_Pokemon_Pokedex
         public Seleccion_CombatePage()
         {
             this.InitializeComponent();
+            UC_Pokemon_Iz.verFormaPokedex(false);
+            UC_Pokemon_De.verFormaPokedex(false);
         }
 
         /************************************************************************************************/
@@ -47,6 +49,12 @@ namespace IPO2_Pokemon_Pokedex
         {
 
         }
+
+        private void Btn_Sandshrew_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
 
         /************************************************************************************************/
 

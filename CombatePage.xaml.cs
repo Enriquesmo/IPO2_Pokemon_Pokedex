@@ -38,6 +38,7 @@ namespace IPO2_Pokemon_Pokedex
         public CombatePage()
         {
             this.InitializeComponent();
+
         }
 
         /************************************************************************************************/
@@ -45,7 +46,8 @@ namespace IPO2_Pokemon_Pokedex
         /*Botones de la propia pagina*/
         private void Ir_A_La_Siguiente_Pagina1_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame CombateFrame = (Frame)this.Parent;
+            CombateFrame.Navigate(typeof(Seleccion_CombatePage), this);
         }
 
         private void Ir_A_La_Siguiente_Pagina2_Click(object sender, RoutedEventArgs e)
