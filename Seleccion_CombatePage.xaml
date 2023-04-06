@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="IPO2_Pokemon_Pokedex.CombatePage"
+    x:Class="IPO2_Pokemon_Pokedex.Seleccion_CombatePage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:IPO2_Pokemon_Pokedex"
@@ -8,11 +8,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Viewbox>
+    <Grid>
 
-        <Grid Height="1000" Width="1500">
-            <Button Content="Button" Margin="268,500,0,0" VerticalAlignment="Top"/>
-            <Button Content="Button" Margin="968,472,0,0" VerticalAlignment="Top"/>
-        </Grid>
-    </Viewbox>
+    </Grid>
 </Page>

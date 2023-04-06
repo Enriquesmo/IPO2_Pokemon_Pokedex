@@ -30,12 +30,12 @@ namespace IPO2_Pokemon_Pokedex
 
 
     /************************************************************************************************/
-    public sealed partial class CombatePage : Page
+    public sealed partial class Seleccion_CombatePage : Page
     {
         /************************************************************************************************/
 
         /*Inicializacion de la pagina CombatePage*/
-        public CombatePage()
+        public Seleccion_CombatePage()
         {
             this.InitializeComponent();
         }

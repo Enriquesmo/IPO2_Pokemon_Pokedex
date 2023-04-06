@@ -125,6 +125,12 @@
     <Compile Include="CombatePage.xaml.cs">
       <DependentUpon>CombatePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Combate_CombatePage.xaml.cs">
+      <DependentUpon>Combate_CombatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Escenario_CombatePage.xaml.cs">
+      <DependentUpon>Escenario_CombatePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -132,6 +138,9 @@
       <DependentUpon>PokedexPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seleccion_CombatePage.xaml.cs">
+      <DependentUpon>Seleccion_CombatePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControl_Darumaka.xaml.cs">
       <DependentUpon>UserControl_Darumaka.xaml</DependentUpon>
     </Compile>
@@ -223,11 +232,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Combate_CombatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Escenario_CombatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="PokedexPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Seleccion_CombatePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
