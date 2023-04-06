@@ -35,7 +35,7 @@ namespace IPO2_Pokemon_Pokedex
         /************************************************************************************************/
 
         /*Inicializacion de la pagina CombatePage*/
-        public Combate_CombatePage()
+        public Combate_CombatePage(UserControl Pokemon1, UserControl Pokemon2)
         {
             this.InitializeComponent();
         }

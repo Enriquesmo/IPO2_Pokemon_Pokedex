@@ -11,8 +11,8 @@
     <Viewbox>
 
         <Grid Height="1000" Width="1500">
-            <Button Content="Button" Margin="268,500,0,0" VerticalAlignment="Top"/>
-            <Button Content="Button" Margin="968,472,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="Ir_A_La_Siguiente_Pagina1" Content="Button" Margin="348,467,0,0" VerticalAlignment="Top" Click="Ir_A_La_Siguiente_Pagina1_Click"/>
+            <Button x:Name="Ir_A_La_Siguiente_Pagina2" Content="Button" Margin="1028,467,0,0" VerticalAlignment="Top" Click="Ir_A_La_Siguiente_Pagina2_Click"/>
         </Grid>
     </Viewbox>
 </Page>

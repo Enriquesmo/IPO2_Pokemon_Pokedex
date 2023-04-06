@@ -9,6 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Button x:Name="Ir_A_La_Siguiente_Pagina" Content="Button" Margin="1355,897,0,0" VerticalAlignment="Top" Click="Ir_A_La_Siguiente_Pagina_Click"/>
 
     </Grid>
 </Page>

@@ -43,8 +43,10 @@ namespace IPO2_Pokemon_Pokedex
         /************************************************************************************************/
 
         /*Botones de la propia pagina*/
+        private void Ir_A_La_Siguiente_Pagina_Click(object sender, RoutedEventArgs e)
+        {
 
-
+        }
 
         /************************************************************************************************/
 
