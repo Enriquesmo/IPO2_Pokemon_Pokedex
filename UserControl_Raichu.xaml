@@ -329,11 +329,11 @@
                 <CompositeTransform TranslateY="0"/>
             </Viewbox.RenderTransform>
             <Canvas Height="1600" Width="800">
-                <Image Source="/Assets/rayo.png" Width="320" Height="950"/>
-                <Image Source="/Assets/rayo.png" Width="320" Height="950" Canvas.Left="272" Canvas.Top="260"/>
-                <Image Source="/Assets/rayo.png" Width="320" Height="950" Canvas.Left="473" Canvas.Top="605"/>
-                <Image Source="/Assets/rayo.png" Width="320" Height="950" Canvas.Left="112" Canvas.Top="475"/>
-                <Image Source="/Assets/rayo.png" Width="320" Height="950" Canvas.Left="473" Canvas.Top="130"/>
+                <Image Source="/Assets/rayo.png" Width="320" Height="950" Visibility="Collapsed"/>
+                <Image Source="/Assets/rayo.png" Width="320" Height="950" Canvas.Left="272" Canvas.Top="260" Visibility="Collapsed"/>
+                <Image Source="/Assets/rayo.png" Width="320" Height="950" Canvas.Left="473" Canvas.Top="605" Visibility="Collapsed"/>
+                <Image Source="/Assets/rayo.png" Width="320" Height="950" Canvas.Left="112" Canvas.Top="475" Visibility="Collapsed"/>
+                <Image Source="/Assets/rayo.png" Width="320" Height="950" Canvas.Left="473" Canvas.Top="130" Visibility="Collapsed"/>
             </Canvas>
         </Viewbox>
         <Viewbox Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Stretch="Fill">
