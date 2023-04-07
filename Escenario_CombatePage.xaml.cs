@@ -45,7 +45,16 @@ namespace IPO2_Pokemon_Pokedex
         /*Botones de la propia pagina*/
         private void Ir_A_La_Siguiente_Pagina_Click(object sender, RoutedEventArgs e)
         {
+            Frame CombateFrame = (Frame)this.Parent;
+            CombateFrame.Navigate(typeof(Combate_CombatePage), this);
+        }
 
+        private void Click_CambiarEscenario(object sender, RoutedEventArgs e)
+        {
+            Button BotonConFondo = sender as Button;
+            Image FondoSelecionado = BotonConFondo.Content as Image;
+            Img_Ejemplo.Source = FondoSelecionado.Source;
+            Ir_A_La_Siguiente_Pagina.IsEnabled = true;
         }
 
         /************************************************************************************************/

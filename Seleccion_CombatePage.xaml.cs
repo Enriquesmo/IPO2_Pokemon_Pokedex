@@ -47,7 +47,8 @@ namespace IPO2_Pokemon_Pokedex
         /*Botones de la propia pagina*/
         private void Ir_A_La_Siguiente_Pagina_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame EscenarioFrame = (Frame)this.Parent;
+            EscenarioFrame.Navigate(typeof(Escenario_CombatePage), this);
         }
 
         private void Btn_Sandshrew_Click(object sender, RoutedEventArgs e)
