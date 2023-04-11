@@ -29,7 +29,10 @@ namespace IPO2_Pokemon_Pokedex
 
         /*Inicializacion de las variables globales*/
 
-
+        public UserControl PokemonJugador1;
+        public UserControl PokemonJugador2;
+        Seleccion_CombatePage Padre;
+        public Image Fondo;
 
         /************************************************************************************************/
 
@@ -54,13 +57,20 @@ namespace IPO2_Pokemon_Pokedex
             Image FondoSelecionado = BotonConFondo.Content as Image;
             Img_Ejemplo.Source = FondoSelecionado.Source;
             Ir_A_La_Siguiente_Pagina.IsEnabled = true;
+            Fondo = FondoSelecionado;
         }
 
         /************************************************************************************************/
 
         /*Metodos funcionales en la pagina*/
 
-
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            Padre = (Seleccion_CombatePage)e.Parameter;
+            PokemonJugador1 = Padre.PokemonJugador1;
+            PokemonJugador2 = Padre.PokemonJugador2;
+        }
 
         /************************************************************************************************/
 

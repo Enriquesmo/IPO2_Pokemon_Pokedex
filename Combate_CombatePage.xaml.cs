@@ -29,21 +29,21 @@ namespace IPO2_Pokemon_Pokedex
 
         /*Inicializacion de las variables globales*/
 
-
+        public UserControl PokemonJugador1;
+        public UserControl PokemonJugador2;
+        Escenario_CombatePage Padre;
+        public Image Fondo;
 
         /************************************************************************************************/
 
         /*Inicializacion de la pagina CombatePage*/
-        Escenario_CombatePage Padre;
+
         public Combate_CombatePage()
         {
             this.InitializeComponent();
-            
-        }
-        
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            Padre = (Escenario_CombatePage)e.Parameter;
+            ImgFondo_Pokemons = Fondo;
+            UserControl_Derecha = PokemonJugador1;
+            UserControl_Izquierda = PokemonJugador2;
         }
 
         /************************************************************************************************/
@@ -71,7 +71,14 @@ namespace IPO2_Pokemon_Pokedex
 
         /*Metodos funcionales en la pagina*/
 
-
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            Padre = (Escenario_CombatePage)e.Parameter;
+            PokemonJugador1 = Padre.PokemonJugador1;
+            PokemonJugador2 = Padre.PokemonJugador2;
+            Fondo = Padre.Fondo;
+    }
 
         /************************************************************************************************/
 
