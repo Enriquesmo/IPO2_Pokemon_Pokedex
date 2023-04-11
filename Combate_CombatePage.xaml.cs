@@ -23,15 +23,14 @@ namespace IPO2_Pokemon_Pokedex
     /// Javier Santos Sanz
     /// </summary>
 
-    /************************************************************************************************/
-
-    /*Inicializacion de las variables globales*/
-
-
-
-    /************************************************************************************************/
     public sealed partial class Combate_CombatePage : Page
     {
+        /************************************************************************************************/
+
+        /*Inicializacion de las variables globales*/
+
+
+
         /************************************************************************************************/
 
         /*Inicializacion de la pagina CombatePage*/
@@ -51,7 +50,22 @@ namespace IPO2_Pokemon_Pokedex
 
         /*Botones de la propia pagina*/
 
+        private void Btn_Ataque1_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
+        private void Btn_Ataque2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Btn_Ataque3_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Btn_Ataque4_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
 
         /************************************************************************************************/
 

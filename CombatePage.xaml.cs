@@ -23,15 +23,14 @@ namespace IPO2_Pokemon_Pokedex
     /// Javier Santos Sanz
     /// </summary>
 
-    /************************************************************************************************/
-
-    /*Inicializacion de las variables globales*/
-
-
-
-    /************************************************************************************************/
     public sealed partial class CombatePage : Page
     {
+        /************************************************************************************************/
+
+        /*Inicializacion de las variables globales*/
+
+
+
         /************************************************************************************************/
 
         /*Inicializacion de la pagina CombatePage*/

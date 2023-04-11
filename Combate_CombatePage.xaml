@@ -8,8 +8,28 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <Image x:Name="ImgFondo" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch"/>
+    <Grid x:Name="Grid_Principal">
+        <Image x:Name="ImgFondo_Pokemons" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch"/>
+        <UserControl x:Name="UserControl_Derecha" HorizontalAlignment="Left" Margin="750,0,0,0" VerticalAlignment="Top" Height="500" Width="745"/>
+        <UserControl x:Name="UserControl_Izquierda" HorizontalAlignment="Left" Margin="0,308,0,0" VerticalAlignment="Top" Height="500" Width="745"/>
+        <Grid x:Name="Grid_Botones" Margin="750,500,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="179*"/>
+                <RowDefinition Height="50*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="626*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="ImgFondo_Botones" Grid.ColumnSpan="3" Grid.RowSpan="3"/>
+            <Button x:Name="Btn_Ataque1" Content="Ataque1" Height="125" Width="300" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" Click="Btn_Ataque1_Click"/>
+            <Button x:Name="Btn_Ataque2" Content="Ataque3" Margin="347,0,0,0" VerticalAlignment="Top" Height="125" Width="300" Grid.Column="1" Grid.Row="1" Click="Btn_Ataque2_Click"/>
+            <Button x:Name="Btn_Ataque3" Content="Ataque3" Margin="0,195,0,0" VerticalAlignment="Top" Height="125" Width="300" Grid.Column="1" Grid.Row="1" Click="Btn_Ataque3_Click"/>
+            <Button x:Name="Btn_Ataque4" Content="Ataque4" Margin="347,196,0,0" VerticalAlignment="Top" Height="125" Width="300" Click="Btn_Ataque4_Click" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="187,26,0,0" TextWrapping="Wrap" Text="Turno del Jugador" VerticalAlignment="Top" Height="47" Width="258"/>
+        </Grid>
 
     </Grid>
 </Page>

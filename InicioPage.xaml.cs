@@ -25,15 +25,14 @@ namespace IPO2_Pokemon_Pokedex
     /// Felipe Alcázar Gómez
     /// </summary>
 
-    /************************************************************************************************/
-
-    /*Inicializacion de las variables globales*/
-
-
-
-    /************************************************************************************************/
     public sealed partial class InicioPage : Page
     {
+        /************************************************************************************************/
+
+        /*Inicializacion de las variables globales*/
+
+
+
         /************************************************************************************************/
 
         /*Inicializacion de la pagina InicioPage*/

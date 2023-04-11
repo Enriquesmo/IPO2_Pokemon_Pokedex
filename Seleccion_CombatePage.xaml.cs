@@ -23,15 +23,14 @@ namespace IPO2_Pokemon_Pokedex
     /// Javier Santos Sanz
     /// </summary>
 
-    /************************************************************************************************/
-
-    /*Inicializacion de las variables globales*/
-
-
-
-    /************************************************************************************************/
     public sealed partial class Seleccion_CombatePage : Page
     {
+        /************************************************************************************************/
+
+        /*Inicializacion de las variables globales*/
+
+
+
         /************************************************************************************************/
 
         /*Inicializacion de la pagina CombatePage*/
@@ -49,6 +48,7 @@ namespace IPO2_Pokemon_Pokedex
         {
             Frame EscenarioFrame = (Frame)this.Parent;
             EscenarioFrame.Navigate(typeof(Escenario_CombatePage), this);
+            
         }
 
         private void Btn_Sandshrew_Click(object sender, RoutedEventArgs e)

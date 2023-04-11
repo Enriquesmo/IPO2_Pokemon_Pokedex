@@ -25,17 +25,15 @@ namespace IPO2_Pokemon_Pokedex
     /// Alonso Crespo Fernández
     /// Felipe Alcázar Gómez
     /// </summary>
-    
-    /************************************************************************************************/
 
-    /*Inicializacion de las variables globales*/
-
-
-
-    /************************************************************************************************/
     public sealed partial class PokedexPage : Page
     {
+        /************************************************************************************************/
+
+        /*Inicializacion de las variables globales*/
+
         public ArrayList pokemonList;
+
         /************************************************************************************************/
 
         /*Inicializacion de la pagina PokedexPage*/
