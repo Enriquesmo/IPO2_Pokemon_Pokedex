@@ -955,7 +955,7 @@
                     </Canvas>
                 </Canvas>
             </Viewbox>
-            <Viewbox x:Name="ViewBox_ParteInferior" Margin="94,0,0,-1" Grid.Row="3" Grid.ColumnSpan="2" Stretch="Fill">
+            <Viewbox x:Name="ViewBox_ParteInferior" Margin="94,0,0,-1" Grid.Row="3" Stretch="Fill" Grid.Column="1">
                 <Grid x:Name="Grid_Botones" Height="100" Width="1300">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="100*"/>

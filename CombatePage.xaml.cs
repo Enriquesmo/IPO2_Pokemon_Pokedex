@@ -13,18 +13,57 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
-
 namespace IPO2_Pokemon_Pokedex
 {
     /// <summary>
-    /// Una página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
+    /// Página dedicada a la funcionalidad del combate pokemon
+    /// 
+    /// Hecho por:
+    /// Enrique Sánchez-Migallón Ochoa
+    /// Javier Santos Sanz
     /// </summary>
+
     public sealed partial class CombatePage : Page
     {
+        /************************************************************************************************/
+
+        /*Inicializacion de las variables globales*/
+
+
+
+        /************************************************************************************************/
+
+        /*Inicializacion de la pagina CombatePage*/
         public CombatePage()
         {
             this.InitializeComponent();
+
         }
+
+        /************************************************************************************************/
+
+        /*Botones de la propia pagina*/
+        private void Ir_A_La_Siguiente_Pagina1_Click(object sender, RoutedEventArgs e)
+        {
+            Frame CombateFrame = (Frame)this.Parent;
+            CombateFrame.Navigate(typeof(Seleccion_CombatePage), this);
+        }
+
+        private void Ir_A_La_Siguiente_Pagina2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        /************************************************************************************************/
+
+        /*Metodos funcionales en la pagina*/
+
+
+
+        /************************************************************************************************/
+
+        /*Metodos Auxiliares*/
+
+
     }
 }

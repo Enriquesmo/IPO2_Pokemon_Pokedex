@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Xml.Linq;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -14,7 +15,10 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
-// La plantilla de elemento Control de usuario está documentada en https://go.microsoft.com/fwlink/?LinkId=234236
+/// <summary>
+/// User control dedicado al pokemon Sandshrew
+/// Enrique Sánchez-Migallón Ochoa
+/// </summary>
 
 namespace IPO2_Pokemon_Pokedex
 {
@@ -29,7 +33,7 @@ namespace IPO2_Pokemon_Pokedex
 
         /************************************************************************************************/
 
-        /*Inicializacion de la pagina MainPage*/
+        /*Inicializacion de la pagina UserControl_Sandshrew*/
 
         public UserControl_Sandshrew() // Terminado
         {
@@ -38,6 +42,7 @@ namespace IPO2_Pokemon_Pokedex
             dtTimeEnergia = new DispatcherTimer();
             ocultarElementosExtras();
         }
+        
         /************************************************************************************************/
 
         /*Variables y Metodos para el UserControl*/
@@ -45,7 +50,17 @@ namespace IPO2_Pokemon_Pokedex
         private bool verVida = true;
         private bool verEnergia = true;
         private bool verFondo = true;
-        private bool verNombre = true;
+        private bool verNombreyBotones = true;
+        public double Vida
+        {
+            get { return this.ProgressBar_Vida.Value; }
+            set { this.ProgressBar_Vida.Value = value; }
+        }
+        public double Energia
+        {
+            get { return this.ProgressBar_Energia.Value; }
+            set { this.ProgressBar_Energia.Value = value; }
+        }
         public bool VerVida
         {
             get { return verVida; }
@@ -78,27 +93,132 @@ namespace IPO2_Pokemon_Pokedex
                 else this.imagenFondo.Opacity = 100;
             }
         }
-        public bool VerNombre
+        public bool VerNombreyBotones
         {
-            get { return verNombre; }
+            get { return verNombreyBotones; }
             set
             {
-                this.verNombre = value;
-                if (!verNombre) this.TextBlock_NombrePokemon.Opacity = 0;
-                else this.TextBlock_NombrePokemon.Opacity = 100;
+                this.verNombreyBotones = value;
+                if (!verNombreyBotones)
+                {
+                    this.Grid_HUD.RowDefinitions[3].Height = new GridLength(0);
+                    btn_CuartoAtaque.Visibility = Visibility.Collapsed;
+                    btn_SegundoAtaque.Visibility = Visibility.Collapsed;
+                    btn_PrimerAtaque.Visibility = Visibility.Collapsed;
+                    btn_TercerAtaque.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    this.Grid_HUD.RowDefinitions[3].Height = new GridLength(10,GridUnitType.Star);
+                    btn_CuartoAtaque.Visibility = Visibility.Visible;
+                    btn_SegundoAtaque.Visibility = Visibility.Visible;
+                    btn_PrimerAtaque.Visibility = Visibility.Visible;
+                    btn_TercerAtaque.Visibility = Visibility.Visible;
+                }
             }
         }
-        public double Vida
+        public void verFormaPokedex(bool ver)
         {
-            get { return this.ProgressBar_Vida.Value; }
-            set { this.ProgressBar_Vida.Value = value; }
+            if (ver)
+            {
+                VerVida = true;
+                VerEnergia = true;
+                VerFondo = true;
+                VerNombreyBotones = true;
+                btn_PrimerAtaque.Visibility = Visibility.Visible;
+                btn_SegundoAtaque.Visibility = Visibility.Visible;
+                btn_TercerAtaque.Visibility = Visibility.Visible;
+                btn_CuartoAtaque.Visibility = Visibility.Visible;
+                TextBlock_NombrePokemon.Visibility = Visibility.Visible;
+                btn_Herir.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                VerVida = false;
+                VerEnergia = false;
+                VerFondo = false;
+                VerNombreyBotones = false;
+                btn_PrimerAtaque.Visibility = Visibility.Collapsed;
+                btn_SegundoAtaque.Visibility = Visibility.Collapsed;
+                btn_TercerAtaque.Visibility = Visibility.Collapsed;
+                btn_CuartoAtaque.Visibility = Visibility.Collapsed;
+                TextBlock_NombrePokemon.Visibility = Visibility.Collapsed;
+                btn_Herir.Visibility = Visibility.Collapsed;
+            }
         }
-        public double Energia
+        public void realizarAtaque1() // Terminado
         {
-            get { return this.ProgressBar_Energia.Value; }
-            set { this.ProgressBar_Energia.Value = value; }
+            Boolean sePuede = restarBarraEnergia(20);
+            if (sePuede == true)
+            {
+                Storyboard sb = (Storyboard)this.Resources["Ataque1_Arañazo"];
+                sb.Begin();
+                Ataque1_ImagenArañazo.Visibility = Visibility.Visible;
+                opacityElementosExtras();
+            }
+            else
+            {
+                animacionNoEnergia();
+            }
         }
-        public void herirPokemon(int damage) // Terminado
+        public void realizarAtaque2() // Terminado
+        {
+            Boolean sePuede = restarBarraEnergia(10);
+            if (sePuede == true)
+            {
+                Storyboard sb = (Storyboard)this.Resources["Ataque2_AtaqueArena"];
+                Ataque2_Arena1.Visibility = Visibility.Visible;
+                Ataque2_Arena2.Visibility = Visibility.Visible;
+                Ataque2_Arena3.Visibility = Visibility.Visible;
+                Ataque2_Arena4.Visibility = Visibility.Visible;
+                sb.Begin();
+                opacityElementosExtras();
+            }
+            else
+            {
+                animacionNoEnergia();
+            }
+        }
+        public void realizarAtaque3() // Terminado
+        {
+            Boolean sePuede = restarBarraEnergia(25);
+            if (sePuede == true)
+            {
+                Ataque3_FlechaVenenosa.Visibility = Visibility.Visible;
+                Ataque3_BurbujasVeneno.Visibility = Visibility.Visible;
+                Storyboard sb = (Storyboard)this.Resources["Ataque3_PicotazoVen"];
+                sb.Begin();
+                Storyboard sbIzquierdo = (Storyboard)this.Ellipse_Ojo_Izquierdo_Blanco.Resources["ojoIzquierdoMoradoKey"];
+                sbIzquierdo.Begin();
+                Storyboard sbDerecho = (Storyboard)this.Ellipse_Ojo_Derecho_Blanco.Resources["ojoDerechoMoradoKey"];
+                sbDerecho.Begin();
+                opacityElementosExtras();
+            }
+            else
+            {
+                animacionNoEnergia();
+            }
+        }
+        public void realizarAtaque4() // Terminado
+        {
+            Boolean sePuede = restarBarraEnergia(40);
+            if (sePuede == true)
+            {
+                Storyboard sb = (Storyboard)this.Resources["Ataque4_Terremoto"];
+                sb.Begin();
+                Ataque4_Grieta1.Visibility = Visibility.Visible;
+                Ataque4_Grieta2.Visibility = Visibility.Visible;
+                Ataque4_Grieta3.Visibility = Visibility.Visible;
+                Ataque4_Grieta4.Visibility = Visibility.Visible;
+                Ataque4_Grieta5.Visibility = Visibility.Visible;
+                opacityElementosExtras();
+            }
+            else
+            {
+                animacionNoEnergia();
+            }
+        }
+        public void herirPokemon(double damage) // Terminado
         {
             restarBarraVida(damage);
             if (this.ProgressBar_Vida.Value <= 50 && this.ProgressBar_Vida.Value > 25)
@@ -125,78 +245,6 @@ namespace IPO2_Pokemon_Pokedex
             {
                 animacionVida0();
                 opacityElementosExtras();
-            }
-        }
-        public void ataque1_Aranazo() // Terminado
-        {
-            Boolean sePuede = restarBarraEnergia(20);
-            if (sePuede == true)
-            {
-                Storyboard sb = (Storyboard)this.Resources["Ataque1_Arañazo"];
-                sb.Begin();
-                Ataque1_ImagenArañazo.Visibility = Visibility.Visible;
-                opacityElementosExtras();
-            }
-            else
-            {
-                animacionNoEnergia();
-            }
-        }
-        public void ataque2_AtaqueArena() // Terminado
-        {
-            Boolean sePuede = restarBarraEnergia(10);
-            if (sePuede == true)
-            {
-                Storyboard sb = (Storyboard)this.Resources["Ataque2_AtaqueArena"];
-                Ataque2_Arena1.Visibility = Visibility.Visible;
-                Ataque2_Arena2.Visibility = Visibility.Visible;
-                Ataque2_Arena3.Visibility = Visibility.Visible;
-                Ataque2_Arena4.Visibility = Visibility.Visible;
-                sb.Begin();
-                opacityElementosExtras();
-            }
-            else
-            {
-                animacionNoEnergia();
-            }
-        }
-        public void ataque3_PicotazoVenenoso() // Terminado
-        {
-            Boolean sePuede = restarBarraEnergia(25);
-            if (sePuede == true)
-            {
-                Ataque3_FlechaVenenosa.Visibility = Visibility.Visible;
-                Ataque3_BurbujasVeneno.Visibility = Visibility.Visible;
-                Storyboard sb = (Storyboard)this.Resources["Ataque3_PicotazoVen"];
-                sb.Begin();
-                Storyboard sbIzquierdo = (Storyboard)this.Ellipse_Ojo_Izquierdo_Blanco.Resources["ojoIzquierdoMoradoKey"];
-                sbIzquierdo.Begin();
-                Storyboard sbDerecho = (Storyboard)this.Ellipse_Ojo_Derecho_Blanco.Resources["ojoDerechoMoradoKey"];
-                sbDerecho.Begin();
-                opacityElementosExtras();
-            }
-            else
-            {
-                animacionNoEnergia();
-            }
-        }
-        public void ataque4_Terremoto() // Terminado
-        {
-            Boolean sePuede = restarBarraEnergia(40);
-            if (sePuede == true)
-            {
-                Storyboard sb = (Storyboard)this.Resources["Ataque4_Terremoto"];
-                sb.Begin();
-                Ataque4_Grieta1.Visibility = Visibility.Visible;
-                Ataque4_Grieta2.Visibility = Visibility.Visible;
-                Ataque4_Grieta3.Visibility = Visibility.Visible;
-                Ataque4_Grieta4.Visibility = Visibility.Visible;
-                Ataque4_Grieta5.Visibility = Visibility.Visible;
-                opacityElementosExtras();
-            }
-            else
-            {
-                animacionNoEnergia();
             }
         }
 
@@ -375,7 +423,7 @@ namespace IPO2_Pokemon_Pokedex
             }
             return sePuede;
         }
-        private void restarBarraVida(int valorARestar) // Terminado
+        private void restarBarraVida(double valorARestar) // Terminado
         {
             this.ProgressBar_Vida.Value -= valorARestar;
             dtTimeVida.Stop();

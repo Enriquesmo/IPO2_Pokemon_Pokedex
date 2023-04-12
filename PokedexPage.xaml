@@ -8,8 +8,40 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <TextBox HorizontalAlignment="Left" Margin="379,237,0,0" TextWrapping="Wrap" Text="Pokedex" VerticalAlignment="Top"/>
+    <Viewbox Margin="0,0,10,-1">
 
-    </Grid>
+        <Grid Height="3006" Width="4556">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="85*"/>
+                <RowDefinition Height="249*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1388*"/>
+                <ColumnDefinition Width="106*"/>
+                <ColumnDefinition Width="1513*"/>
+                <ColumnDefinition Width="1549*"/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="imgBackground" Source="/Assets/PokedexBackground.jpg" Stretch="UniformToFill" Grid.ColumnSpan="4" Grid.RowSpan="2"/>
+            <ListView x:Name="Control4" MinWidth="550" BorderThickness="50" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FF7DCD28" Foreground="{x:Null}" FocusVisualPrimaryBrush="{x:Null}" FocusVisualSecondaryBrush="#66FFFFFF" Height="3006" Width="1515" BorderBrush="Black" Grid.Column="2" Grid.RowSpan="2">
+                <local:UserControl_Snorlax x:Name="Snorlax" PointerReleased="Snorlax_PointerReleased" Height="1500" DoubleTapped="Snorlax_DoubleTapped"/>
+                <local:UserControl_Raichu x:Name="Raichu" PointerReleased="Raichu_PointerReleased" Width="1391.33" Height="1500" DoubleTapped="Raichu_DoubleTapped"/>
+                <local:UserControl_Darumaka x:Name="Darumaka" PointerReleased="Darumaka_PointerReleased" Height="1500" DoubleTapped="Darumaka_DoubleTapped"/>
+                <local:UserControl_Sandshrew x:Name="Sandshrew" PointerReleased="Sandshrew_PointerReleased" Height="1500" DoubleTapped="Sandshrew_DoubleTapped"/>
+            </ListView>
+            <Rectangle Grid.Column="3" HorizontalAlignment="Center" Stroke="Black" Margin="0,587,0,1293" Width="1547" Fill="White" Grid.Row="1"/>
+            <Border BorderBrush="Black" BorderThickness="20" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Top" Height="381" Width="1595" Margin="0,586,0,0" Grid.Row="1"/>
+
+            <TextBlock x:Name="txtPropt" TextWrapping="Wrap" Text="Selecciona un Pokemon" FontSize="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="50,100,0,0" FocusVisualPrimaryBrush="White" Foreground="Black" Height="133" Width="1047"/>
+            <TextBlock x:Name="txtSelectedName" TextWrapping="Wrap" Text="..." FontSize="110" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="3" Foreground="Black" HorizontalTextAlignment="Justify" Margin="0,723,0,0" Grid.Row="1"/>
+            <Rectangle x:Name="Upline" HorizontalAlignment="Left" Height="2" Margin="-46,275,0,0" Stroke="Black" VerticalAlignment="Top" Width="1174" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <CompositeTransform ScaleY="-1"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <TextBlock x:Name="txtSelectionIndicator" HorizontalAlignment="Left" Height="592" Text="&gt;&gt;" VerticalAlignment="Top" Width="578" Grid.Column="3" FontSize="400" TextLineBounds="Full" TextReadingOrder="UseFlowDirection" FontStyle="Normal" TextDecorations="None" TextAlignment="Start" LineStackingStrategy="MaxHeight" OpticalMarginAlignment="None" TextWrapping="Wrap" FontStretch="Undefined" CharacterSpacing="-450" Foreground="Black" Margin="0,500,0,0" Grid.Row="1"/>
+            <TextBlock x:Name="txtlvl" HorizontalAlignment="Center" TextWrapping="Wrap" Text="LVL. ???" VerticalAlignment="Bottom" FocusVisualPrimaryBrush="White" Foreground="Black" FontSize="150"/>
+
+
+        </Grid>
+    </Viewbox>
 </Page>

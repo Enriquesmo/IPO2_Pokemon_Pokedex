@@ -11,7 +11,7 @@
     <AssemblyName>IPO2_Pokemon_Pokedex</AssemblyName>
     <DefaultLanguage>es-ES</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.22000.0</TargetPlatformVersion>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.19041.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -116,11 +116,23 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Acerca De.xaml.cs">
+      <DependentUpon>Acerca De.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="CombatePage.xaml.cs">
       <DependentUpon>CombatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Combate_CombatePage.xaml.cs">
+      <DependentUpon>Combate_CombatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Escenario_CombatePage.xaml.cs">
+      <DependentUpon>Escenario_CombatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InicioPage.xaml.cs">
+      <DependentUpon>InicioPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -128,9 +140,22 @@
     <Compile Include="PokedexPage.xaml.cs">
       <DependentUpon>PokedexPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pokemon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seleccion_CombatePage.xaml.cs">
+      <DependentUpon>Seleccion_CombatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_Darumaka.xaml.cs">
+      <DependentUpon>UserControl_Darumaka.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_Raichu.xaml.cs">
+      <DependentUpon>UserControl_Raichu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControl_Sandshrew.xaml.cs">
       <DependentUpon>UserControl_Sandshrew.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_Snorlax.xaml.cs">
+      <DependentUpon>UserControl_Snorlax.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -144,20 +169,74 @@
     <Content Include="Assets\arañazo3.png" />
     <Content Include="Assets\arañazo_ataque.png" />
     <Content Include="Assets\arena.png" />
+    <Content Include="Assets\back.jpg" />
+    <Content Include="Assets\BackgroundPockemon.jpg" />
+    <Content Include="Assets\blood.png" />
     <Content Include="Assets\Bocadillo Habla.png" />
     <Content Include="Assets\BurbujasVeneno.png" />
+    <Content Include="Assets\corazon.png" />
+    <Content Include="Assets\Daru.png" />
+    <Content Include="Assets\Darumaka_NB.gif" />
+    <Content Include="Assets\EP946_Bosque_de_Melemele.png" />
     <Content Include="Assets\espiral.png" />
+    <Content Include="Assets\fire.png" />
     <Content Include="Assets\FlechaVeneno.png" />
     <Content Include="Assets\fondo-desierto.png" />
+    <Content Include="Assets\fondo1.jpg" />
+    <Content Include="Assets\fondo10.png" />
+    <Content Include="Assets\fondo2.png" />
+    <Content Include="Assets\fondo3.png" />
+    <Content Include="Assets\fondo4.png" />
+    <Content Include="Assets\fondo5.png" />
+    <Content Include="Assets\fondo6.png" />
+    <Content Include="Assets\fondo7.png" />
+    <Content Include="Assets\fondo8.png" />
+    <Content Include="Assets\fondo9.png" />
+    <Content Include="Assets\fondoElegirPokemon.png" />
+    <Content Include="Assets\FondoPockedex.jpg" />
+    <Content Include="Assets\fondo_Seleccion_Escenarios.jpg" />
     <Content Include="Assets\Grieta 1.png" />
     <Content Include="Assets\Grieta 2.png" />
+    <Content Include="Assets\HealthPotion.png" />
+    <Content Include="Assets\Heart.png" />
+    <Content Include="Assets\Hipnotizar.png" />
+    <Content Include="Assets\iconoenergia.png" />
+    <Content Include="Assets\iconovida.png" />
     <Content Include="Assets\Icono_Energía_Tierra.png" />
     <Content Include="Assets\ImagenEscudo.png" />
     <Content Include="Assets\ImagenVida.png" />
+    <Content Include="Assets\inte.jpg" />
+    <Content Include="Assets\llamarada-removebg-preview.png" />
+    <Content Include="Assets\Manalightning.png" />
+    <Content Include="Assets\manaPotion.png" />
+    <Content Include="Assets\NicePng_spiral-png_160347.png" />
+    <Content Include="Assets\Original Pokemon Intro %28Sprite Edition!%29.mp4" />
+    <Content Include="Assets\PngItem_1374629.png" />
     <Content Include="Assets\Pocion de Escudo.png" />
     <Content Include="Assets\Pocion de Vida.png" />
+    <Content Include="Assets\pocionenergia.png" />
+    <Content Include="Assets\pocionvida.png" />
+    <Content Include="Assets\pocion_amarilla.png" />
+    <Content Include="Assets\pocion_roja.png" />
+    <Content Include="Assets\PokedexBackground.jpg" />
+    <Content Include="Assets\protect.png" />
+    <Content Include="Assets\Raichu.png" />
+    <Content Include="Assets\Raichu_NB.gif" />
+    <Content Include="Assets\rayo %282%29.png" />
+    <Content Include="Assets\rayo.png" />
+    <Content Include="Assets\Red-Cross-Mark-PNG-180x180-215232080.png" />
+    <Content Include="Assets\Rock Pile.png" />
+    <Content Include="Assets\rock-576669_960_720-1801202442.png" />
+    <Content Include="Assets\Sandshrew.png" />
+    <Content Include="Assets\Snorlax.png" />
+    <Content Include="Assets\Sandshrew_NB.gif" />
+    <Content Include="Assets\Snorlax_NB.gif" />
+    <Content Include="Assets\sudor.png" />
+    <Content Include="Assets\tirita.png" />
     <Content Include="Assets\tirita1.png" />
     <Content Include="Assets\tirita2.png" />
+    <Content Include="Assets\VS.png" />
+    <Content Include="Assets\zzz.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -172,7 +251,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Acerca De.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CombatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Combate_CombatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Escenario_CombatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InicioPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -184,7 +279,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Seleccion_CombatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl_Darumaka.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl_Raichu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControl_Sandshrew.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl_Snorlax.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -192,6 +303,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.14</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.UI.Xaml">
+      <Version>2.8.2</Version>
     </PackageReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
