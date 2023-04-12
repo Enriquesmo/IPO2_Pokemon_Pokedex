@@ -5,6 +5,7 @@
     xmlns:local="using:IPO2_Pokemon_Pokedex"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -22,26 +23,33 @@
                 <ColumnDefinition Width="1549*"/>
             </Grid.ColumnDefinitions>
             <Image x:Name="imgBackground" Source="/Assets/PokedexBackground.jpg" Stretch="UniformToFill" Grid.ColumnSpan="4" Grid.RowSpan="2"/>
-            <ListView x:Name="Control4" MinWidth="550" BorderThickness="50" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FF7DCD28" Foreground="{x:Null}" FocusVisualPrimaryBrush="{x:Null}" FocusVisualSecondaryBrush="#66FFFFFF" Height="3006" Width="1515" BorderBrush="Black" Grid.Column="2" Grid.RowSpan="2">
-                <local:UserControl_Snorlax x:Name="Snorlax" PointerReleased="Snorlax_PointerReleased" Height="1500" DoubleTapped="Snorlax_DoubleTapped"/>
-                <local:UserControl_Raichu x:Name="Raichu" PointerReleased="Raichu_PointerReleased" Width="1391.33" Height="1500" DoubleTapped="Raichu_DoubleTapped"/>
-                <local:UserControl_Darumaka x:Name="Darumaka" PointerReleased="Darumaka_PointerReleased" Height="1500" DoubleTapped="Darumaka_DoubleTapped"/>
-                <local:UserControl_Sandshrew x:Name="Sandshrew" PointerReleased="Sandshrew_PointerReleased" Height="1500" DoubleTapped="Sandshrew_DoubleTapped"/>
+            <ScrollViewer x:Name="lvPokemon" Grid.Column="2" Grid.RowSpan="2" BorderThickness="50" Background="#FF7DCD28" FocusVisualSecondaryBrush="#66FFFFFF" 
+                      BorderBrush="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <StackPanel x:Name="stackAux" HorizontalAlignment="Stretch" Margin="0,750,0,750">
+                    <local:UserControl_Snorlax x:Name="Snorlax" Height="1500" DoubleTapped="Snorlax_DoubleTapped"/>
+                    <local:UserControl_Raichu x:Name="Raichu" Height="1500" DoubleTapped="Raichu_DoubleTapped"/>
+                    <local:UserControl_Darumaka x:Name="Darumaka" Height="1500" DoubleTapped="Darumaka_DoubleTapped"/>
+                    <local:UserControl_Sandshrew x:Name="Sandshrew" Height="1500" DoubleTapped="Sandshrew_DoubleTapped"/>
+                </StackPanel>
+            </ScrollViewer>
+            <ListView x:Name="lvAux" Grid.Column="3" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" 
+                      HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="MostrarPokemon" SelectedIndex="0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Assets/Square150x150Logo.scale-200.png" Width="160"/>
+                            <TextBlock Text="{Binding name}" FontSize="160"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
-            <Rectangle Grid.Column="3" HorizontalAlignment="Center" Stroke="Black" Margin="0,587,0,1293" Width="1547" Fill="White" Grid.Row="1"/>
-            <Border BorderBrush="Black" BorderThickness="20" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Top" Height="381" Width="1595" Margin="0,586,0,0" Grid.Row="1"/>
-
             <TextBlock x:Name="txtPropt" TextWrapping="Wrap" Text="Selecciona un Pokemon" FontSize="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="50,100,0,0" FocusVisualPrimaryBrush="White" Foreground="Black" Height="133" Width="1047"/>
-            <TextBlock x:Name="txtSelectedName" TextWrapping="Wrap" Text="..." FontSize="110" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="3" Foreground="Black" HorizontalTextAlignment="Justify" Margin="0,723,0,0" Grid.Row="1"/>
             <Rectangle x:Name="Upline" HorizontalAlignment="Left" Height="2" Margin="-46,275,0,0" Stroke="Black" VerticalAlignment="Top" Width="1174" RenderTransformOrigin="0.5,0.5">
                 <Rectangle.RenderTransform>
                     <CompositeTransform ScaleY="-1"/>
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <TextBlock x:Name="txtSelectionIndicator" HorizontalAlignment="Left" Height="592" Text="&gt;&gt;" VerticalAlignment="Top" Width="578" Grid.Column="3" FontSize="400" TextLineBounds="Full" TextReadingOrder="UseFlowDirection" FontStyle="Normal" TextDecorations="None" TextAlignment="Start" LineStackingStrategy="MaxHeight" OpticalMarginAlignment="None" TextWrapping="Wrap" FontStretch="Undefined" CharacterSpacing="-450" Foreground="Black" Margin="0,500,0,0" Grid.Row="1"/>
             <TextBlock x:Name="txtlvl" HorizontalAlignment="Center" TextWrapping="Wrap" Text="LVL. ???" VerticalAlignment="Bottom" FocusVisualPrimaryBrush="White" Foreground="Black" FontSize="150"/>
-
-
         </Grid>
     </Viewbox>
 </Page>

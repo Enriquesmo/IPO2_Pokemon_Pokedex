@@ -40,11 +40,12 @@ namespace IPO2_Pokemon_Pokedex
         public PokedexPage()
         {
             this.InitializeComponent();
+            createPokemonList();
+            lvAux.ItemsSource = pokemonList;
             Raichu.verFormaPokedex(false);
             Sandshrew.verFormaPokedex(false);
             Darumaka.verFormaPokedex(false);
             Snorlax.verFormaPokedex(false);
-            createPokemonList();
         }
 
         /************************************************************************************************/
@@ -76,34 +77,6 @@ namespace IPO2_Pokemon_Pokedex
             return pokemonList;
         }
 
-        private void Snorlax_PointerReleased(object sender, PointerRoutedEventArgs e)
-        {
-            Pokemon pk = (Pokemon) pokemonList[0];
-            txtSelectedName.Text = "No" + pk.id + ". " + pk.name;
-            txtlvl.Text = "LVL. "+Convert.ToString(pk.level);
-        }
-
-        private void Raichu_PointerReleased(object sender, PointerRoutedEventArgs e)
-        {
-            Pokemon pk = (Pokemon)pokemonList[1];
-            txtSelectedName.Text = "No" + pk.id + ". " + pk.name;
-            txtlvl.Text = "LVL. " + Convert.ToString(pk.level);
-        }
-
-        private void Darumaka_PointerReleased(object sender, PointerRoutedEventArgs e)
-        {
-            Pokemon pk = (Pokemon)pokemonList[2];
-            txtSelectedName.Text = "No" + pk.id + ". " + pk.name;
-            txtlvl.Text = "LVL. " + Convert.ToString(pk.level);
-        }
-
-        private void Sandshrew_PointerReleased(object sender, PointerRoutedEventArgs e)
-        {
-            Pokemon pk = (Pokemon)pokemonList[3];
-            txtSelectedName.Text = "No"+pk.id+". " + pk.name;
-            txtlvl.Text = "LVL. " + Convert.ToString(pk.level);
-        }
-
         private void Snorlax_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
             //TODO: abrir pagina de información especifica del pokemon tras hacer doble click
@@ -122,6 +95,14 @@ namespace IPO2_Pokemon_Pokedex
         private void Sandshrew_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
             //TODO: abrir pagina de información especifica del pokemon tras hacer doble click
+        }
+
+        private void MostrarPokemon(object sender, SelectionChangedEventArgs e)
+        {
+            Pokemon pk = (Pokemon)pokemonList[lvAux.SelectedIndex];
+            txtlvl.Text = "LVL. " + Convert.ToString(pk.level);
+            //lvPokemon.SelectedIndex = lvAux.SelectedIndex;
+            //lvPokemon.ScrollIntoView(lvPokemon.SelectedItem);
         }
     }
 }
