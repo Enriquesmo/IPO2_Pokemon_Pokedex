@@ -45,6 +45,7 @@ namespace IPO2_Pokemon_Pokedex
             Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(320, 320));
             Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().VisibleBoundsChanged += MainPage_VisibleBoundsChanged;
 
+            // Este codigo de ahora sirve para generar la aplicacion y que se puea ejecutar desde la barra del buscador sin tener visual studio abierto
             TileContent content = new TileContent()
             {
                 Visual = new TileVisual()
@@ -54,18 +55,16 @@ namespace IPO2_Pokemon_Pokedex
                         Content = new TileBindingContentAdaptive()
                         {
                             Children =
-{
- new AdaptiveText()
- {
- Text = "IPOkemon",
-HintStyle = AdaptiveTextStyle.Subtitle
- },
- new AdaptiveText()
- {
-     Text = "Un proyecto de IPO2",
-HintStyle = AdaptiveTextStyle.CaptionSubtle
- },
- }
+                            {
+                                new AdaptiveText()
+                                {
+                                    Text = "IPOkemon",HintStyle = AdaptiveTextStyle.Subtitle
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "Un proyecto de IPO2",HintStyle = AdaptiveTextStyle.CaptionSubtle
+                                },
+                            }
                         }
                     },
                     TileWide = new TileBinding()
@@ -75,22 +74,21 @@ HintStyle = AdaptiveTextStyle.CaptionSubtle
                         Content = new TileBindingContentAdaptive()
                         {
                             Children = {
- new AdaptiveText()
-{
- Text = "IPOkemon",
- HintStyle = AdaptiveTextStyle.Subtitle
- },
- new AdaptiveText()
- {
- Text = "Un Proyecto de IPO2",
- HintStyle = AdaptiveTextStyle.CaptionSubtle
- },
- new AdaptiveText()
- {
- Text = "Una aplicación sobre Pokemon hecha con tecnología UWP",
-HintWrap = true,
- }
- }
+                                new AdaptiveText()
+                                {
+                                    Text = "IPOkemon",
+                                    HintStyle = AdaptiveTextStyle.Subtitle
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "Un Proyecto de IPO2",HintStyle = AdaptiveTextStyle.CaptionSubtle
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "Una aplicación sobre Pokemon hecha con tecnología UWP",
+                                    HintWrap = true,
+                                }
+                            }
                         }
                     },
                     TileLarge = new TileBinding()
