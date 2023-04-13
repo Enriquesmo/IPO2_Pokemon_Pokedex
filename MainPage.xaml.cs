@@ -1,6 +1,9 @@
-﻿using System.Linq;
+﻿using Microsoft.Toolkit.Uwp.Notifications;
+using System;
+using System.Linq;
 using Windows.Foundation;
 using Windows.UI.Core;
+using Windows.UI.Notifications;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -41,6 +44,85 @@ namespace IPO2_Pokemon_Pokedex
             // Estas lineas sirven para que cuando se redimensione la ventana se adapte, además de hacer un tamaño minimo
             Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(320, 320));
             Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().VisibleBoundsChanged += MainPage_VisibleBoundsChanged;
+
+            TileContent content = new TileContent()
+            {
+                Visual = new TileVisual()
+                {
+                    TileMedium = new TileBinding()
+                    {
+                        Content = new TileBindingContentAdaptive()
+                        {
+                            Children =
+{
+ new AdaptiveText()
+ {
+ Text = "IPOkemon",
+HintStyle = AdaptiveTextStyle.Subtitle
+ },
+ new AdaptiveText()
+ {
+     Text = "Un proyecto de IPO2",
+HintStyle = AdaptiveTextStyle.CaptionSubtle
+ },
+ }
+                        }
+                    },
+                    TileWide = new TileBinding()
+                    {
+                        Branding = TileBranding.NameAndLogo,
+                        DisplayName = "Version 1.0",
+                        Content = new TileBindingContentAdaptive()
+                        {
+                            Children = {
+ new AdaptiveText()
+{
+ Text = "IPOkemon",
+ HintStyle = AdaptiveTextStyle.Subtitle
+ },
+ new AdaptiveText()
+ {
+ Text = "Un Proyecto de IPO2",
+ HintStyle = AdaptiveTextStyle.CaptionSubtle
+ },
+ new AdaptiveText()
+ {
+ Text = "Una aplicación sobre Pokemon hecha con tecnología UWP",
+HintWrap = true,
+ }
+ }
+                        }
+                    },
+                    TileLarge = new TileBinding()
+                    {
+                        Content = new TileBindingContentAdaptive()
+                        {
+                            Children = {
+                                 new AdaptiveText()
+                                {
+                                 Text = "IPOkemon",
+                                HintStyle = AdaptiveTextStyle.Subtitle
+                                 },
+                                 new AdaptiveText()
+                                 {
+                                 Text = "Un Proyecto de IPO2",
+                                HintStyle = AdaptiveTextStyle.CaptionSubtle
+                                 },
+                                 new AdaptiveText()
+                                {
+                            Text = "Una aplicación sobre Pokemon hecha con tecnología UWP",
+                            HintStyle = AdaptiveTextStyle.CaptionSubtle
+                                 }
+                            }
+                        }
+                    },
+                }
+            };
+
+            var notification = new TileNotification(content.GetXml());
+            notification.ExpirationTime = DateTimeOffset.UtcNow.AddSeconds(30);
+            var updater = TileUpdateManager.CreateTileUpdaterForApplication();
+            updater.Update(notification);
 
         }
 
