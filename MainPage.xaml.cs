@@ -122,6 +122,24 @@ namespace IPO2_Pokemon_Pokedex
             var updater = TileUpdateManager.CreateTileUpdaterForApplication();
             updater.Update(notification);
 
+
+            NotificaciónSubida(this, null);
+        }
+
+        private void NotificaciónSubida(object sender, PointerRoutedEventArgs e)
+        {
+            new ToastContentBuilder()
+            .AddArgument("action", "Favoritos")
+            .AddArgument("conversationId", 9813)
+            .AddText("Raichu ha evolucionado")
+            .AddText("Puedes ver más información en IPOkemon")
+            .AddInlineImage(new Uri("ms-appx:///Assets/Raichu.png"))
+            .AddAppLogoOverride(new Uri("ms-appx:///Assets/IconoAplicación.png"), ToastGenericAppLogoCrop.Circle)
+            .AddButton(new ToastButton()
+            .SetContent("Enviar")
+            .AddArgument("action","reply")
+            )
+            .Show();
         }
 
         /************************************************************************************************/
