@@ -122,7 +122,7 @@ namespace IPO2_Pokemon_Pokedex
             var updater = TileUpdateManager.CreateTileUpdaterForApplication();
             updater.Update(notification);
 
-
+            // Este codigo sirve para que se cree una notificación nada mas se inicie la aplicación
             NotificaciónSubida(this, null);
         }
 
