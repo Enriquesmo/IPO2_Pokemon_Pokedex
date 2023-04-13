@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -101,8 +102,10 @@ namespace IPO2_Pokemon_Pokedex
         {
             Pokemon pk = (Pokemon)pokemonList[lvAux.SelectedIndex];
             txtlvl.Text = "LVL. " + Convert.ToString(pk.level);
-            //lvPokemon.SelectedIndex = lvAux.SelectedIndex;
-            //lvPokemon.ScrollIntoView(lvPokemon.SelectedItem);
+
+            var selectedIndex = lvAux.SelectedIndex;
+            double position = selectedIndex * stackAux.Children.ElementAt(selectedIndex).ActualSize.Y;
+            lvPokemon.ChangeView(null, position, null);
         }
     }
 }

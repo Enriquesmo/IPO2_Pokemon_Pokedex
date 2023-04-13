@@ -32,12 +32,18 @@
                     <local:UserControl_Sandshrew x:Name="Sandshrew" Height="1500" DoubleTapped="Sandshrew_DoubleTapped"/>
                 </StackPanel>
             </ScrollViewer>
-            <ListView x:Name="lvAux" Grid.Column="3" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" 
+            <Rectangle Grid.Column="2" Grid.RowSpan="2" Height="1500" HorizontalAlignment="Stretch" StrokeThickness="40" Stroke="Black"/>
+            <ListView x:Name="lvAux" Grid.Column="3" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" 
                       HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="MostrarPokemon" SelectedIndex="0">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Assets/Square150x150Logo.scale-200.png" Width="160"/>
+                            <TextBlock Text="No" FontSize="160"/>
+                            <TextBlock Text="{Binding id}" FontSize="160"/>
+                            <TextBlock>
+                                <Run xml:space="preserve">&#x9;</Run>
+                            </TextBlock>
                             <TextBlock Text="{Binding name}" FontSize="160"/>
                         </StackPanel>
                     </DataTemplate>
