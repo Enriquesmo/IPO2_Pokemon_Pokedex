@@ -32,7 +32,7 @@ namespace IPO2_Pokemon_Pokedex
         public UserControl PokemonJugador1;
         public UserControl PokemonJugador2;
         Seleccion_CombatePage Padre;
-        public Image Fondo;
+        public Image Fondo = null;
 
         /************************************************************************************************/
 
@@ -71,7 +71,6 @@ namespace IPO2_Pokemon_Pokedex
             PokemonJugador1 = Padre.PokemonJugador1;
             PokemonJugador2 = Padre.PokemonJugador2;
         }
-
         /************************************************************************************************/
 
         /*Metodos Auxiliares*/

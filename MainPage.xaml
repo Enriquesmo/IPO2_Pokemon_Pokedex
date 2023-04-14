@@ -38,8 +38,8 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <SymbolIcon x:Name="SymbolIcon_Inicio" Grid.Row="0" Margin="4" Symbol="Home" PointerReleased="SymbolIcon_Inicio_PointerReleased"></SymbolIcon>
-                    <SymbolIcon x:Name="SymbolIcon_Pokedex" Grid.Row="1" Margin="4" Symbol="Pictures" PointerReleased="SymbolIcon_Pokedex_PointerReleased"></SymbolIcon>
-                    <SymbolIcon x:Name="SymbolIcon_Combate" Grid.Row="2" Margin="4" Symbol="People" PointerReleased="SymbolIcon_Combate_PointerReleased"></SymbolIcon>
+                    <SymbolIcon x:Name="SymbolIcon_Pokedex" Grid.Row="1" Margin="4" Symbol="SlideShow" PointerReleased="SymbolIcon_Pokedex_PointerReleased"/>
+                    <SymbolIcon x:Name="SymbolIcon_Combate" Grid.Row="2" Margin="4" Symbol="Contact" PointerReleased="SymbolIcon_Combate_PointerReleased"/>
                     <SymbolIcon x:Name="SymbolIcon_AcercaDe" Grid.Row="3" Margin="4" Symbol="Help" PointerReleased="SymbolIcon_AcercaDe_PointerReleased"></SymbolIcon>
                     <Button x:Name="btn_Inicio" Content="Inicio" Width="252" Margin="8,8,0,0" Click="btn_Inicio_Click" Grid.Column="1" Grid.Row="0" VerticalAlignment="Top"/>
                     <Button x:Name="btn_Pokedex" Content="Pokedex" Width="252" Margin="8,8,0,0" Click="btn_Pokedex_Click" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top"/>

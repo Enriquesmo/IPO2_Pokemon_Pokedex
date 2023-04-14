@@ -32,7 +32,6 @@ namespace IPO2_Pokemon_Pokedex
         public UserControl PokemonJugador1;
         public UserControl PokemonJugador2;
         Escenario_CombatePage Padre;
-        public Image Fondo;
 
         /************************************************************************************************/
 
@@ -41,9 +40,6 @@ namespace IPO2_Pokemon_Pokedex
         public Combate_CombatePage()
         {
             this.InitializeComponent();
-            ImgFondo_Pokemons = Fondo;
-            UserControl_Derecha = PokemonJugador1;
-            UserControl_Izquierda = PokemonJugador2;
         }
 
         /************************************************************************************************/
@@ -52,7 +48,7 @@ namespace IPO2_Pokemon_Pokedex
 
         private void Btn_Ataque1_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
         private void Btn_Ataque2_Click(object sender, RoutedEventArgs e)
         {
@@ -75,10 +71,10 @@ namespace IPO2_Pokemon_Pokedex
         {
             base.OnNavigatedTo(e);
             Padre = (Escenario_CombatePage)e.Parameter;
-            PokemonJugador1 = Padre.PokemonJugador1;
-            PokemonJugador2 = Padre.PokemonJugador2;
-            Fondo = Padre.Fondo;
-    }
+            ImgFondo_Pokemons.Source = Padre.Fondo.Source;
+            UCPokemon_Izquierda = Padre.PokemonJugador1;
+            UCPokemon_Derecha = Padre.PokemonJugador2;
+        }
 
         /************************************************************************************************/
 

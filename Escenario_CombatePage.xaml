@@ -8,50 +8,53 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="599*"/>
-            <RowDefinition Height="200*"/>
-            <RowDefinition Height="200*"/>
-        </Grid.RowDefinitions>
-        <Image x:Name="Img_Fondo" Source="/Assets/fondo_Seleccion_Escenarios.jpg" Grid.RowSpan="3"/>
+    <Viewbox Stretch="Fill">
 
-        <Image x:Name="Img_Ejemplo" Margin="50,40,50,40" NineGrid="50,50,50,50" Stretch="Fill"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <Button Width="150" Height="150" Margin="170,25,50,25" Click="Click_CambiarEscenario">
-                <Image x:Name="Img_Fondo2" Source="/Assets/fondo2.png" Stretch="Fill" d:IsLocked="True"/>
-            </Button>
-            <Button Width="150" Height="150" Margin="50,0,50,0" Click="Click_CambiarEscenario">
-                <Image x:Name="Img_Fondo4" Source="/Assets/fondo4.png" Stretch="Fill" d:IsLocked="True"/>
-            </Button>
-            <Button Width="150" Height="150" Margin="50,25,50,25" Click="Click_CambiarEscenario">
-                <Image x:Name="Img_Fondo6" Source="/Assets/fondo6.png" Stretch="Fill" d:IsLocked="True"/>
-            </Button>
-            <Button Width="150" Height="150" Margin="50,25,50,25" Click="Click_CambiarEscenario">
-                <Image x:Name="Img_Fondo8" Source="/Assets/fondo8.png" Stretch="Fill" d:IsLocked="True"/>
-            </Button>
-            <Button Width="150" Height="150" Margin="50,25,50,25" Click="Click_CambiarEscenario">
-                <Image x:Name="Img_Fondo10" Source="/Assets/fondo10.png" Stretch="Fill" d:IsLocked="True"/>
-            </Button>
-        </StackPanel>
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <Button Width="150" Height="150" Margin="50,0,50,0" Click="Click_CambiarEscenario">
-                <Image x:Name="Img_Fondo1" Source="/Assets/fondo1.jpg" Stretch="Fill" d:IsLocked="True"/>
-            </Button>
-            <Button Margin="50,0,50,0" Width="150" Height="150" Click="Click_CambiarEscenario">
-                <Image x:Name="Img_Fondo3" Source="/Assets/fondo3.png" Stretch="Fill" d:IsLocked="True"/>
-            </Button>
-            <Button Width="150" Height="150" Margin="50,25,50,25" Click="Click_CambiarEscenario">
-                <Image x:Name="Img_Fondo5" Source="/Assets/fondo5.png" Stretch="Fill" d:IsLocked="True"/>
-            </Button>
-            <Button Margin="50,25,50,25" Width="150" Height="150" Click="Click_CambiarEscenario">
-                <Image x:Name="Img_Fondo7" Source="/Assets/fondo7.png" Stretch="Fill" d:IsLocked="True"/>
-            </Button>
-            <Button Width="150" Height="150" Margin="50,25,50,25" Click="Click_CambiarEscenario">
-                <Image x:Name="Img_Fondo9" Source="/Assets/fondo9.png" Stretch="Fill" d:IsLocked="True"/>
-            </Button>
-            <Button x:Name="Ir_A_La_Siguiente_Pagina" Content="COMBATIR" Click="Ir_A_La_Siguiente_Pagina_Click" Height="100" Width="150" Margin="50,0,50,0" FontSize="25" FontWeight="Bold" IsEnabled="False"/>
-        </StackPanel>
+        <Grid Height="1000" Width="1500">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="599*"/>
+                <RowDefinition Height="200*"/>
+                <RowDefinition Height="200*"/>
+            </Grid.RowDefinitions>
+            <Image x:Name="Img_Fondo" Source="/Assets/fondo_Seleccion_Escenarios.jpg" Grid.RowSpan="3" Stretch="Fill"/>
 
-    </Grid>
+            <Image x:Name="Img_Ejemplo" Margin="50,40,50,40" NineGrid="50,50,50,50" Stretch="Fill"/>
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <Button Width="150" Height="150" Margin="170,25,50,25" Click="Click_CambiarEscenario">
+                    <Image x:Name="Img_Fondo2" Source="/Assets/fondo2.png" Stretch="Fill" d:IsLocked="True"/>
+                </Button>
+                <Button Width="150" Height="150" Margin="50,0,50,0" Click="Click_CambiarEscenario">
+                    <Image x:Name="Img_Fondo4" Source="/Assets/fondo4.png" Stretch="Fill" d:IsLocked="True"/>
+                </Button>
+                <Button Width="150" Height="150" Margin="50,25,50,25" Click="Click_CambiarEscenario">
+                    <Image x:Name="Img_Fondo6" Source="/Assets/fondo6.png" Stretch="Fill" d:IsLocked="True"/>
+                </Button>
+                <Button Width="150" Height="150" Margin="50,25,50,25" Click="Click_CambiarEscenario">
+                    <Image x:Name="Img_Fondo8" Source="/Assets/fondo8.png" Stretch="Fill" d:IsLocked="True"/>
+                </Button>
+                <Button Width="150" Height="150" Margin="50,25,50,25" Click="Click_CambiarEscenario">
+                    <Image x:Name="Img_Fondo10" Source="/Assets/fondo10.png" Stretch="Fill" d:IsLocked="True"/>
+                </Button>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Orientation="Horizontal">
+                <Button Width="150" Height="150" Margin="50,0,50,0" Click="Click_CambiarEscenario">
+                    <Image x:Name="Img_Fondo1" Source="/Assets/fondo1.jpg" Stretch="Fill" d:IsLocked="True"/>
+                </Button>
+                <Button Margin="50,0,50,0" Width="150" Height="150" Click="Click_CambiarEscenario">
+                    <Image x:Name="Img_Fondo3" Source="/Assets/fondo3.png" Stretch="Fill" d:IsLocked="True"/>
+                </Button>
+                <Button Width="150" Height="150" Margin="50,25,50,25" Click="Click_CambiarEscenario">
+                    <Image x:Name="Img_Fondo5" Source="/Assets/fondo5.png" Stretch="Fill" d:IsLocked="True"/>
+                </Button>
+                <Button Margin="50,25,50,25" Width="150" Height="150" Click="Click_CambiarEscenario">
+                    <Image x:Name="Img_Fondo7" Source="/Assets/fondo7.png" Stretch="Fill" d:IsLocked="True"/>
+                </Button>
+                <Button Width="150" Height="150" Margin="50,25,50,25" Click="Click_CambiarEscenario">
+                    <Image x:Name="Img_Fondo9" Source="/Assets/fondo9.png" Stretch="Fill" d:IsLocked="True"/>
+                </Button>
+                <Button x:Name="Ir_A_La_Siguiente_Pagina" Content="COMBATIR" Click="Ir_A_La_Siguiente_Pagina_Click" Height="100" Width="150" Margin="50,0,50,0" FontSize="25" FontWeight="Bold" IsEnabled="False"/>
+            </StackPanel>
+
+        </Grid>
+    </Viewbox>
 </Page>

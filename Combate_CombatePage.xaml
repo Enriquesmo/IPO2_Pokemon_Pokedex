@@ -11,9 +11,9 @@
     <Viewbox>
 
         <Grid x:Name="Grid_Principal" Height="1000" Width="1500">
-            <Image x:Name="ImgFondo_Pokemons" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch"/>
-            <UserControl x:Name="UserControl_Derecha" HorizontalAlignment="Left" Margin="750,0,0,0" VerticalAlignment="Top" Height="500" Width="745"/>
-            <UserControl x:Name="UserControl_Izquierda" HorizontalAlignment="Left" Margin="0,308,0,0" VerticalAlignment="Top" Height="500" Width="745"/>
+            <Image x:Name="ImgFondo_Pokemons" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Stretch="Fill"/>
+            <UserControl x:Name="UCPokemon_Derecha" HorizontalAlignment="Left" Margin="750,0,0,0" VerticalAlignment="Top" Height="500" Width="745"/>
+            <UserControl x:Name="UCPokemon_Izquierda" HorizontalAlignment="Left" Margin="0,308,0,0" VerticalAlignment="Top" Height="500" Width="745"/>
             <Grid x:Name="Grid_Botones" Margin="750,500,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="20*"/>
@@ -31,7 +31,7 @@
                 <Button x:Name="Btn_Ataque2" Content="Ataque3" VerticalAlignment="Top" Height="125" Width="300" Grid.Column="1" Grid.Row="2" Click="Btn_Ataque2_Click" Margin="399,10,0,0"/>
                 <Button x:Name="Btn_Ataque3" Content="Ataque3" Margin="10,275,0,0" VerticalAlignment="Top" Height="125" Width="300" Grid.Row="2" Click="Btn_Ataque3_Click" Grid.Column="1"/>
                 <Button x:Name="Btn_Ataque4" Content="Ataque4" Margin="399,275,0,0" VerticalAlignment="Top" Height="125" Width="300" Click="Btn_Ataque4_Click" Grid.Column="1" Grid.Row="2"/>
-                <TextBlock x:Name="TextBlock_TurnoDelJugador" Grid.Column="1" HorizontalAlignment="Left" Margin="204,0,0,0" TextWrapping="Wrap" Text="Turno del Jugador" VerticalAlignment="Center" Height="29" Width="307" Grid.Row="1"/>
+                <TextBlock x:Name="TextBlock_TurnoDelJugador" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Turno del Jugador" VerticalAlignment="Center" Height="29" Width="131" Grid.Row="1"/>
             </Grid>
 
         </Grid>
