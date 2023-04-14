@@ -94,7 +94,7 @@ namespace IPO2_Pokemon_Pokedex
             Padre = (Escenario_CombatePage)e.Parameter;
             PokemonJugador1 = Padre.PokemonJugador1;
             PokemonJugador2 = Padre.PokemonJugador2;
-            Fondo = Padre.Fondo;
+            ImgFondo_Pokemons.Source = Padre.Fondo.Source;
         }
 
         /************************************************************************************************/

@@ -11,7 +11,7 @@
     <Viewbox>
 
         <Grid x:Name="Grid_Principal" Height="1000" Width="1500">
-            <Image x:Name="ImgFondo_Pokemons" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch"/>
+            <Image x:Name="ImgFondo_Pokemons" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Stretch="Fill"/>
             <Grid x:Name="Pokemons_Derecha" Margin="750,10,11,505">
                 <Image x:Name="BaseCombate_PokemonDerecha" Margin="240,375,235,35" Source="/Assets/BaseCombate.png"/>
                 <local:UserControl_Raichu x:Name="UserControl_Raichu_Derecha_P1"/>
@@ -79,7 +79,7 @@
                 <Button x:Name="Btn_Ataque2" Content="Ataque3" VerticalAlignment="Top" Height="125" Width="300" Grid.Column="1" Grid.Row="2" Click="Btn_Ataque2_Click" Margin="399,10,0,0"/>
                 <Button x:Name="Btn_Ataque3" Content="Ataque3" Margin="10,275,0,0" VerticalAlignment="Top" Height="125" Width="300" Grid.Row="2" Click="Btn_Ataque3_Click" Grid.Column="1"/>
                 <Button x:Name="Btn_Ataque4" Content="Ataque4" Margin="399,275,0,0" VerticalAlignment="Top" Height="125" Width="300" Click="Btn_Ataque4_Click" Grid.Column="1" Grid.Row="2"/>
-                <TextBlock x:Name="TextBlock_TurnoDelJugador" Grid.Column="1" HorizontalAlignment="Left" Margin="204,0,0,0" TextWrapping="Wrap" Text="Turno del Jugador" VerticalAlignment="Center" Height="29" Width="307" Grid.Row="1"/>
+                <TextBlock x:Name="TextBlock_TurnoDelJugador" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Turno del Jugador" VerticalAlignment="Center" Height="29" Width="184" Grid.Row="1"/>
             </Grid>
             <Button x:Name="btn_EmpezarCombate" Content="¡Empezar Combate!" Height="115" Width="258" HorizontalAlignment="Center" Click="btn_EmpezarCombate_Click"/>
 
