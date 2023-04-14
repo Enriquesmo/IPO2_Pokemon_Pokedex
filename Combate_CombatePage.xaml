@@ -12,8 +12,56 @@
 
         <Grid x:Name="Grid_Principal" Height="1000" Width="1500">
             <Image x:Name="ImgFondo_Pokemons" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch"/>
-            <UserControl x:Name="UserControl_Derecha" HorizontalAlignment="Left" Margin="750,0,0,0" VerticalAlignment="Top" Height="500" Width="745"/>
-            <UserControl x:Name="UserControl_Izquierda" HorizontalAlignment="Left" Margin="0,308,0,0" VerticalAlignment="Top" Height="500" Width="745"/>
+            <Grid x:Name="Pokemons_Derecha" Margin="750,10,11,505">
+                <Image x:Name="BaseCombate_PokemonDerecha" Margin="240,375,235,35" Source="/Assets/BaseCombate.png"/>
+                <local:UserControl_Raichu x:Name="UserControl_Raichu_Derecha_P1"/>
+                <local:UserControl_Snorlax x:Name="UserControl_Snorlax_Derecha_P1"/>
+                <local:UserControl_Darumaka x:Name="UserControl_Darumaka_Derecha_P1"/>
+                <local:UserControl_Sandshrew x:Name="UserControl_Sandshrew_Derecha_P1" HorizontalAlignment="Center" Height="485" VerticalAlignment="Center" Width="739"/>
+            </Grid>
+            <Grid x:Name="Pokemons_Izquierda" Margin="10,308,761,192">
+                <Image x:Name="BaseCombate_PokemonIzquierda" Margin="240,375,235,35" Source="/Assets/BaseCombate.png"/>
+                <local:UserControl_Raichu x:Name="UserControl_Raichu_Izquierda_P2_IA" RenderTransformOrigin="0.5,0.5">
+                    <local:UserControl_Raichu.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </local:UserControl_Raichu.RenderTransform>
+                </local:UserControl_Raichu>
+                <local:UserControl_Snorlax x:Name="UserControl_Snorlax_Izquierda_P2_IA" RenderTransformOrigin="0.5,0.5">
+                    <local:UserControl_Snorlax.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </local:UserControl_Snorlax.RenderTransform>
+                </local:UserControl_Snorlax>
+                <local:UserControl_Darumaka x:Name="UserControl_Darumaka_Izquierda_P2_IA" HorizontalAlignment="Center" Height="500" VerticalAlignment="Center" Width="729" RenderTransformOrigin="0.5,0.5">
+                    <local:UserControl_Darumaka.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </local:UserControl_Darumaka.RenderTransform>
+                </local:UserControl_Darumaka>
+                <local:UserControl_Sandshrew x:Name="UserControl_Sandshrew_Izquierda_P2_IA" RenderTransformOrigin="0.5,0.5">
+                    <local:UserControl_Sandshrew.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </local:UserControl_Sandshrew.RenderTransform>
+                </local:UserControl_Sandshrew>
+            </Grid>
             <Grid x:Name="Grid_Botones" Margin="750,500,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="20*"/>
@@ -33,6 +81,7 @@
                 <Button x:Name="Btn_Ataque4" Content="Ataque4" Margin="399,275,0,0" VerticalAlignment="Top" Height="125" Width="300" Click="Btn_Ataque4_Click" Grid.Column="1" Grid.Row="2"/>
                 <TextBlock x:Name="TextBlock_TurnoDelJugador" Grid.Column="1" HorizontalAlignment="Left" Margin="204,0,0,0" TextWrapping="Wrap" Text="Turno del Jugador" VerticalAlignment="Center" Height="29" Width="307" Grid.Row="1"/>
             </Grid>
+            <Button x:Name="btn_EmpezarCombate" Content="¡Empezar Combate!" Height="115" Width="258" HorizontalAlignment="Center" Click="btn_EmpezarCombate_Click"/>
 
         </Grid>
     </Viewbox>

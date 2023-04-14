@@ -171,6 +171,7 @@
     <Content Include="Assets\arena.png" />
     <Content Include="Assets\back.jpg" />
     <Content Include="Assets\BackgroundPockemon.jpg" />
+    <Content Include="Assets\BaseCombate.png" />
     <Content Include="Assets\blood.png" />
     <Content Include="Assets\Bocadillo Habla.png" />
     <Content Include="Assets\BurbujasVeneno.png" />

@@ -29,8 +29,9 @@ namespace IPO2_Pokemon_Pokedex
 
         /*Inicializacion de las variables globales*/
 
-        public UserControl PokemonJugador1;
-        public UserControl PokemonJugador2;
+        public String PokemonJugador1;
+        public String PokemonJugador2;
+        public string modo_de_juego;
         Seleccion_CombatePage Padre;
         public Image Fondo;
 
@@ -47,12 +48,14 @@ namespace IPO2_Pokemon_Pokedex
         /*Botones de la propia pagina*/
         private void Ir_A_La_Siguiente_Pagina_Click(object sender, RoutedEventArgs e)
         {
+            // Boton que sirve para poder pasar al combate pokemon en si
             Frame CombateFrame = (Frame)this.Parent;
             CombateFrame.Navigate(typeof(Combate_CombatePage), this);
         }
 
         private void Click_CambiarEscenario(object sender, RoutedEventArgs e)
         {
+            // Boton que sirve para que, cuando se pulse un boton de los de abajo, poder cambiar el escenario y mostrarlo arriba
             Button BotonConFondo = sender as Button;
             Image FondoSelecionado = BotonConFondo.Content as Image;
             Img_Ejemplo.Source = FondoSelecionado.Source;
@@ -66,10 +69,12 @@ namespace IPO2_Pokemon_Pokedex
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            // Metodo que sirve para heredar atributos de la page anterior
             base.OnNavigatedTo(e);
             Padre = (Seleccion_CombatePage)e.Parameter;
             PokemonJugador1 = Padre.PokemonJugador1;
             PokemonJugador2 = Padre.PokemonJugador2;
+            modo_de_juego = Padre.modo_de_juego;
         }
 
         /************************************************************************************************/
