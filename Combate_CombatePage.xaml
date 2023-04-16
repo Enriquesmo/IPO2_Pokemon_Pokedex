@@ -13,15 +13,42 @@
         <Grid x:Name="Grid_Principal" Height="1000" Width="1500">
             <Image x:Name="ImgFondo_Pokemons" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Stretch="Fill"/>
             <Grid x:Name="Pokemons_Derecha" Margin="750,10,11,505">
-                <Image x:Name="BaseCombate_PokemonDerecha" Margin="240,375,235,35" Source="/Assets/BaseCombate.png"/>
-                <local:UserControl_Raichu x:Name="UserControl_Raichu_Derecha_P1"/>
-                <local:UserControl_Snorlax x:Name="UserControl_Snorlax_Derecha_P1"/>
-                <local:UserControl_Darumaka x:Name="UserControl_Darumaka_Derecha_P1"/>
-                <local:UserControl_Sandshrew x:Name="UserControl_Sandshrew_Derecha_P1" HorizontalAlignment="Center" Height="485" VerticalAlignment="Center" Width="739"/>
+                <Image x:Name="BaseCombate_PokemonDerecha" Margin="119,373,120,0" Source="/Assets/BaseCombate.png" Width="500" Height="112"/>
+                <local:UserControl_Raichu x:Name="UserControl_Raichu_Derecha_P1" Margin="0,40,0,-40" d:IsHidden="True"/>
+                <local:UserControl_Snorlax x:Name="UserControl_Snorlax_Derecha_P1" Margin="0,40,0,-40" d:IsHidden="True"/>
+                <local:UserControl_Darumaka x:Name="UserControl_Darumaka_Derecha_P1" Margin="0,140,0,-140" d:IsHidden="True"/>
+                <local:UserControl_Sandshrew x:Name="UserControl_Sandshrew_Derecha_P1" HorizontalAlignment="Center" Height="485" VerticalAlignment="Top" Width="739" Margin="0,88,0,0" d:IsHidden="True"/>
+                <Grid x:Name="Grid_Estadisticas_Pokemon_Derecha" Margin="0,0,0,405">
+                    <ProgressBar x:Name="ProgressBar_Vida_Derecha" Margin="40,15,39,45" VerticalAlignment="Stretch" Background="#4CF40000" Value="100" Height="20"/>
+                    <ProgressBar x:Name="ProgressBar_Energia_Derecha" Margin="40,52,39,8" VerticalAlignment="Stretch" Foreground="#FFFCFF00" Background="#4CFCFF00" Value="100" Height="20"/>
+                    <Image x:Name="Image_Vida_Derecha" Source="/Assets/ImagenVida.png" Margin="0,3,705,37">
+                        <Image.FocusVisualPrimaryBrush>
+                            <ImageBrush Stretch="Uniform" ImageSource="/Assets/ImagenVida.png"/>
+                        </Image.FocusVisualPrimaryBrush>
+                    </Image>
+                    <Image x:Name="Image_Energia_Derecha" Source="/Assets/rayo (2).png" Margin="0,39,705,1" Height="40">
+                        <Image.FocusVisualPrimaryBrush>
+                            <ImageBrush Stretch="Uniform" ImageSource="/Assets/ImagenEscudo.png"/>
+                        </Image.FocusVisualPrimaryBrush>
+                    </Image>
+                    <Image x:Name="Image_Pocion_De_Vida_Derecha" PointerReleased="Image_Pocion_De_Vida_Derecha_PointerReleased" Source="/Assets/Pocion de Vida.png" Margin="704,0,-2,38">
+                        <Image.FocusVisualPrimaryBrush>
+                            <ImageBrush Stretch="Uniform" ImageSource="/Assets/Pocion de Vida.png"/>
+                        </Image.FocusVisualPrimaryBrush>
+                    </Image>
+                    <Image x:Name="Image_Pocion_De_Energia_Derecha" Source="/Assets/Pocion de Escudo.png" PointerReleased="Image_Pocion_De_Energia_Derecha_PointerReleased" Margin="702,41,0,0">
+                        <Image.FocusVisualPrimaryBrush>
+                            <ImageBrush Stretch="Uniform" ImageSource="/Assets/Pocion de Escudo.png"/>
+                        </Image.FocusVisualPrimaryBrush>
+                        <Image.FocusVisualSecondaryBrush>
+                            <ImageBrush/>
+                        </Image.FocusVisualSecondaryBrush>
+                    </Image>
+                </Grid>
             </Grid>
             <Grid x:Name="Pokemons_Izquierda" Margin="10,308,761,192">
-                <Image x:Name="BaseCombate_PokemonIzquierda" Margin="240,375,235,35" Source="/Assets/BaseCombate.png"/>
-                <local:UserControl_Raichu x:Name="UserControl_Raichu_Izquierda_P2_IA" RenderTransformOrigin="0.5,0.5">
+                <Image x:Name="BaseCombate_PokemonIzquierda" Margin="114,388,115,0" Source="/Assets/BaseCombate.png" Width="500"/>
+                <local:UserControl_Raichu x:Name="UserControl_Raichu_Izquierda_P2_IA" RenderTransformOrigin="0.5,0.5" Margin="0,38,0,-38" d:IsHidden="True">
                     <local:UserControl_Raichu.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform ScaleX="-1"/>
@@ -31,7 +58,7 @@
                         </TransformGroup>
                     </local:UserControl_Raichu.RenderTransform>
                 </local:UserControl_Raichu>
-                <local:UserControl_Snorlax x:Name="UserControl_Snorlax_Izquierda_P2_IA" RenderTransformOrigin="0.5,0.5">
+                <local:UserControl_Snorlax x:Name="UserControl_Snorlax_Izquierda_P2_IA" RenderTransformOrigin="0.5,0.5" Margin="0,38,0,-38" d:IsHidden="True">
                     <local:UserControl_Snorlax.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform ScaleX="-1"/>
@@ -41,7 +68,7 @@
                         </TransformGroup>
                     </local:UserControl_Snorlax.RenderTransform>
                 </local:UserControl_Snorlax>
-                <local:UserControl_Darumaka x:Name="UserControl_Darumaka_Izquierda_P2_IA" HorizontalAlignment="Center" Height="500" VerticalAlignment="Center" Width="729" RenderTransformOrigin="0.5,0.5">
+                <local:UserControl_Darumaka x:Name="UserControl_Darumaka_Izquierda_P2_IA" HorizontalAlignment="Center" Height="500" VerticalAlignment="Top" Width="729" RenderTransformOrigin="0.5,0.5" Margin="0,138,0,0" d:IsHidden="True">
                     <local:UserControl_Darumaka.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform ScaleX="-1"/>
@@ -51,7 +78,7 @@
                         </TransformGroup>
                     </local:UserControl_Darumaka.RenderTransform>
                 </local:UserControl_Darumaka>
-                <local:UserControl_Sandshrew x:Name="UserControl_Sandshrew_Izquierda_P2_IA" RenderTransformOrigin="0.5,0.5">
+                <local:UserControl_Sandshrew x:Name="UserControl_Sandshrew_Izquierda_P2_IA" RenderTransformOrigin="0.5,0.5" Margin="0,88,0,-88" d:IsHidden="True">
                     <local:UserControl_Sandshrew.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform ScaleX="-1"/>
@@ -61,6 +88,33 @@
                         </TransformGroup>
                     </local:UserControl_Sandshrew.RenderTransform>
                 </local:UserControl_Sandshrew>
+                <Grid x:Name="Grid_Estadisticas_Pokemon_Izquierda" Margin="0,0,-10,420">
+                    <ProgressBar x:Name="ProgressBar_Vida_Izquierda" Margin="40,15,39,45" VerticalAlignment="Stretch" Background="#4CF40000" Height="20" Value="100"/>
+                    <ProgressBar x:Name="ProgressBar_Energia_Izquierda" Margin="40,52,39,8" VerticalAlignment="Stretch" Foreground="#FFFCFF00" Background="#4CFCFF00" Value="100" Height="20"/>
+                    <Image x:Name="Image_Vida_Izquierda" Source="/Assets/ImagenVida.png" Margin="0,3,705,37">
+                        <Image.FocusVisualPrimaryBrush>
+                            <ImageBrush Stretch="Uniform" ImageSource="/Assets/ImagenVida.png"/>
+                        </Image.FocusVisualPrimaryBrush>
+                    </Image>
+                    <Image x:Name="Image_Energia_Izquierda" Source="/Assets/rayo (2).png" Margin="0,39,705,1" Height="40">
+                        <Image.FocusVisualPrimaryBrush>
+                            <ImageBrush Stretch="Uniform" ImageSource="/Assets/ImagenEscudo.png"/>
+                        </Image.FocusVisualPrimaryBrush>
+                    </Image>
+                    <Image x:Name="Image_Pocion_De_Vida_Izquierda" Source="/Assets/Pocion de Vida.png" Margin="704,0,-2,38" PointerReleased="Image_Pocion_De_Vida_Izquierda_PointerReleased">
+                        <Image.FocusVisualPrimaryBrush>
+                            <ImageBrush Stretch="Uniform" ImageSource="/Assets/Pocion de Vida.png"/>
+                        </Image.FocusVisualPrimaryBrush>
+                    </Image>
+                    <Image x:Name="Image_Pocion_De_Energia_Izquierda" Source="/Assets/Pocion de Escudo.png" PointerReleased="Image_Pocion_De_Energia_Izquierda_PointerReleased" Margin="702,41,0,0">
+                        <Image.FocusVisualPrimaryBrush>
+                            <ImageBrush Stretch="Uniform" ImageSource="/Assets/Pocion de Escudo.png"/>
+                        </Image.FocusVisualPrimaryBrush>
+                        <Image.FocusVisualSecondaryBrush>
+                            <ImageBrush/>
+                        </Image.FocusVisualSecondaryBrush>
+                    </Image>
+                </Grid>
             </Grid>
             <Grid x:Name="Grid_Botones" Margin="750,500,0,0">
                 <Grid.RowDefinitions>
@@ -79,7 +133,8 @@
                 <Button x:Name="Btn_Ataque2" Content="Ataque3" VerticalAlignment="Top" Height="125" Width="300" Grid.Column="1" Grid.Row="2" Click="Btn_Ataque2_Click" Margin="399,10,0,0"/>
                 <Button x:Name="Btn_Ataque3" Content="Ataque3" Margin="10,275,0,0" VerticalAlignment="Top" Height="125" Width="300" Grid.Row="2" Click="Btn_Ataque3_Click" Grid.Column="1"/>
                 <Button x:Name="Btn_Ataque4" Content="Ataque4" Margin="399,275,0,0" VerticalAlignment="Top" Height="125" Width="300" Click="Btn_Ataque4_Click" Grid.Column="1" Grid.Row="2"/>
-                <TextBlock x:Name="TextBlock_TurnoDelJugador" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Turno del Jugador" VerticalAlignment="Center" Height="29" Width="184" Grid.Row="1"/>
+                <TextBlock x:Name="TextBlock_TurnoDelJugador" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Height="29" Width="184" Grid.Row="1"/>
+                <TextBlock x:Name="TextBlock_MensajeCombate" TextWrapping="Wrap" Text="" Margin="222,186,155,183" Grid.Column="1" Grid.Row="2"/>
             </Grid>
             <Button x:Name="btn_EmpezarCombate" Content="¡Empezar Combate!" Height="115" Width="258" HorizontalAlignment="Center" Click="btn_EmpezarCombate_Click"/>
 

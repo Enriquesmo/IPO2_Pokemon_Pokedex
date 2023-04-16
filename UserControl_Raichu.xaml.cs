@@ -55,6 +55,10 @@ namespace IPO2_Pokemon_Pokedex
         private bool verEnergia = true;
         private bool verFondo = true;
         private bool verNombreyBotones = true;
+        public string nombreAtaque1 = "Cola Ferrea";
+        public string nombreAtaque2 = "Placaje";
+        public string nombreAtaque3 = "Proteccion";
+        public string nombreAtaque4 = "Rayo";
         public double Vida
         {
             get { return this.barraVida.Value; }

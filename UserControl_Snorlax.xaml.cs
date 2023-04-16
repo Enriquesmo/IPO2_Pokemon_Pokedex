@@ -63,6 +63,10 @@ namespace IPO2_Pokemon_Pokedex
         private bool verEnergia = true;
         private bool verFondo = true;
         private bool verNombreyBotones = true;
+        public string nombreAtaque1 = "Descanso";
+        public string nombreAtaque2 = "Golpe Cuerpo";
+        public string nombreAtaque3 = "Enfado";
+        public string nombreAtaque4 = "Hipnotizar";
         public double Vida
         {
             get { return this.barHP.Value; }

@@ -51,6 +51,10 @@ namespace IPO2_Pokemon_Pokedex
         private bool verEnergia = true;
         private bool verFondo = true;
         private bool verNombreyBotones = true;
+        public string nombreAtaque1 = "Arañazo";
+        public string nombreAtaque2 = "Ataque Arena";
+        public string nombreAtaque3 = "Picotazo Venenoso";
+        public string nombreAtaque4 = "Terremoto";
         public double Vida
         {
             get { return this.ProgressBar_Vida.Value; }
