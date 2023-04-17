@@ -195,6 +195,8 @@
     <Content Include="Assets\fondo9.png" />
     <Content Include="Assets\fondoElegirPokemon.png" />
     <Content Include="Assets\FondoPockedex.jpg" />
+    <Content Include="Assets\fondo_movimientos1.jpg" />
+    <Content Include="Assets\fondo_movimientos2.jpg" />
     <Content Include="Assets\fondo_Seleccion_Escenarios.jpg" />
     <Content Include="Assets\Grieta 1.png" />
     <Content Include="Assets\Grieta 2.png" />

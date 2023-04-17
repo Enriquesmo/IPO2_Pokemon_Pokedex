@@ -24,7 +24,7 @@
             </Grid.ColumnDefinitions>
             <Image x:Name="imgBackground" Source="/Assets/PokedexBackground.jpg" Stretch="UniformToFill" Grid.ColumnSpan="4" Grid.RowSpan="2"/>
             <ScrollViewer x:Name="lvPokemon" Grid.Column="2" Grid.RowSpan="2" BorderThickness="50" Background="#FF7DCD28" FocusVisualSecondaryBrush="#66FFFFFF" 
-                      BorderBrush="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                      BorderBrush="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" GotFocus="lvPokemon_GotFocus">
                 <StackPanel x:Name="stackAux" HorizontalAlignment="Stretch" Margin="0,750,0,750">
                     <local:UserControl_Snorlax x:Name="Snorlax" Height="1500" DoubleTapped="Snorlax_DoubleTapped"/>
                     <local:UserControl_Raichu x:Name="Raichu" Height="1500" DoubleTapped="Raichu_DoubleTapped"/>

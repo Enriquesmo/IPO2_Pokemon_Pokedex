@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 namespace IPO2_Pokemon_Pokedex
@@ -165,10 +166,12 @@ namespace IPO2_Pokemon_Pokedex
                 if (accionPokemon1 == true)
                 {
                     TextBlock_TurnoDelJugador.Text = "Turno del jugador 1: " + PokemonJugador1;
+                    ImgFondo_Botones.Source = new BitmapImage(new Uri("ms-appx:///Assets/fondo_movimientos1.jpg"));
                 }
                 else if (accionPokemon2 == true)
                 {
                     TextBlock_TurnoDelJugador.Text = "Turno del jugador 2: " + PokemonJugador2;
+                    ImgFondo_Botones.Source = new BitmapImage(new Uri("ms-appx:///Assets/fondo_movimientos2.jpg"));
                 }
 
                 // Espera a que se presione uno de los ataques disponibles

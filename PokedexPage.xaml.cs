@@ -107,5 +107,10 @@ namespace IPO2_Pokemon_Pokedex
             double position = selectedIndex * stackAux.Children.ElementAt(selectedIndex).ActualSize.Y;
             lvPokemon.ChangeView(null, position, null);
         }
+
+        private void lvPokemon_GotFocus(object sender, RoutedEventArgs e)
+        {
+            lvAux.Focus(FocusState.Programmatic);
+        }
     }
 }
