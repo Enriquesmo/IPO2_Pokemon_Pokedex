@@ -128,13 +128,13 @@
                     <ColumnDefinition Width="679*"/>
                     <ColumnDefinition Width="20*"/>
                 </Grid.ColumnDefinitions>
-                <Image x:Name="ImgFondo_Botones" Grid.ColumnSpan="3" Grid.RowSpan="4"/>
+                <Image x:Name="ImgFondo_Botones" Grid.ColumnSpan="3" Grid.RowSpan="4" Stretch="Fill"/>
                 <Button x:Name="Btn_Ataque1" Content="Ataque1" Height="125" Width="300" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" Click="Btn_Ataque1_Click" Margin="10,10,0,0"/>
                 <Button x:Name="Btn_Ataque2" Content="Ataque2" VerticalAlignment="Top" Height="125" Width="300" Grid.Column="1" Grid.Row="2" Click="Btn_Ataque2_Click" Margin="399,10,0,0"/>
                 <Button x:Name="Btn_Ataque3" Content="Ataque3" Margin="10,275,0,0" VerticalAlignment="Top" Height="125" Width="300" Grid.Row="2" Click="Btn_Ataque3_Click" Grid.Column="1"/>
                 <Button x:Name="Btn_Ataque4" Content="Ataque4" Margin="399,275,0,0" VerticalAlignment="Top" Height="125" Width="300" Click="Btn_Ataque4_Click" Grid.Column="1" Grid.Row="2"/>
-                <TextBlock x:Name="TextBlock_TurnoDelJugador" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Height="29" Width="184" Grid.Row="1"/>
-                <TextBlock x:Name="TextBlock_MensajeCombate" TextWrapping="Wrap" Text="" Margin="222,186,155,183" Grid.Column="1" Grid.Row="2"/>
+                <TextBlock x:Name="TextBlock_TurnoDelJugador" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Height="19" Width="279" Grid.Row="1"/>
+                <TextBlock x:Name="TextBlock_MensajeCombate" TextWrapping="Wrap" Text="" Margin="214,243,135,142" Grid.Column="1" Grid.Row="2" FocusVisualPrimaryBrush="White"/>
             </Grid>
             <Button x:Name="btn_EmpezarCombate" Content="¡Empezar Combate!" Height="115" Width="258" HorizontalAlignment="Center" Click="btn_EmpezarCombate_Click"/>
 
