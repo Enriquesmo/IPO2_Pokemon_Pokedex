@@ -34,6 +34,7 @@ namespace IPO2_Pokemon_Pokedex
         /*Inicializacion de las variables globales*/
 
         public ArrayList pokemonList;
+        Pokemon pk;
 
         /************************************************************************************************/
 
@@ -78,29 +79,9 @@ namespace IPO2_Pokemon_Pokedex
             return pokemonList;
         }
 
-        private void Snorlax_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
-        {
-            //TODO: abrir pagina de información especifica del pokemon tras hacer doble click
-        }
-
-        private void Raichu_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
-        {
-            //TODO: abrir pagina de información especifica del pokemon tras hacer doble click
-        }
-
-        private void Darumaka_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
-        {
-            //TODO: abrir pagina de información especifica del pokemon tras hacer doble click
-        }
-
-        private void Sandshrew_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
-        {
-            //TODO: abrir pagina de información especifica del pokemon tras hacer doble click
-        }
-
         private void MostrarPokemon(object sender, SelectionChangedEventArgs e)
         {
-            Pokemon pk = (Pokemon)pokemonList[lvAux.SelectedIndex];
+            pk = (Pokemon)pokemonList[lvAux.SelectedIndex];
             txtlvl.Text = "LVL. " + Convert.ToString(pk.level);
 
             var selectedIndex = lvAux.SelectedIndex;
@@ -111,6 +92,11 @@ namespace IPO2_Pokemon_Pokedex
         private void lvPokemon_GotFocus(object sender, RoutedEventArgs e)
         {
             lvAux.Focus(FocusState.Programmatic);
+        }
+
+        private void mostrarDetalles(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

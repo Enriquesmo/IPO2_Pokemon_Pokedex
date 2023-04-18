@@ -9,7 +9,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Viewbox Margin="0,0,10,-1">
+    <Viewbox>
 
         <Grid Height="3006" Width="4556">
             <Grid.RowDefinitions>
@@ -24,12 +24,12 @@
             </Grid.ColumnDefinitions>
             <Image x:Name="imgBackground" Source="/Assets/PokedexBackground.jpg" Stretch="UniformToFill" Grid.ColumnSpan="4" Grid.RowSpan="2"/>
             <ScrollViewer x:Name="lvPokemon" Grid.Column="2" Grid.RowSpan="2" BorderThickness="50" Background="#FF7DCD28" FocusVisualSecondaryBrush="#66FFFFFF" 
-                      BorderBrush="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" GotFocus="lvPokemon_GotFocus">
+                      BorderBrush="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" GotFocus="lvPokemon_GotFocus" IsEnabled="False" >
                 <StackPanel x:Name="stackAux" HorizontalAlignment="Stretch" Margin="0,750,0,750">
-                    <local:UserControl_Snorlax x:Name="Snorlax" Height="1500" DoubleTapped="Snorlax_DoubleTapped"/>
-                    <local:UserControl_Raichu x:Name="Raichu" Height="1500" DoubleTapped="Raichu_DoubleTapped"/>
-                    <local:UserControl_Darumaka x:Name="Darumaka" Height="1500" DoubleTapped="Darumaka_DoubleTapped"/>
-                    <local:UserControl_Sandshrew x:Name="Sandshrew" Height="1500" DoubleTapped="Sandshrew_DoubleTapped"/>
+                    <local:UserControl_Snorlax x:Name="Snorlax" Height="1500"/>
+                    <local:UserControl_Raichu x:Name="Raichu" Height="1500"/>
+                    <local:UserControl_Darumaka x:Name="Darumaka" Height="1500"/>
+                    <local:UserControl_Sandshrew x:Name="Sandshrew" Height="1500"/>
                 </StackPanel>
             </ScrollViewer>
             <Rectangle Grid.Column="2" Grid.RowSpan="2" Height="1500" HorizontalAlignment="Stretch" StrokeThickness="40" Stroke="Black"/>
@@ -55,7 +55,8 @@
                     <CompositeTransform ScaleY="-1"/>
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <TextBlock x:Name="txtlvl" HorizontalAlignment="Center" TextWrapping="Wrap" Text="LVL. ???" VerticalAlignment="Bottom" FocusVisualPrimaryBrush="White" Foreground="Black" FontSize="150"/>
+            <TextBlock x:Name="txtlvl" HorizontalAlignment="Center" TextWrapping="Wrap" Text="LVL. ???" VerticalAlignment="Bottom" FocusVisualPrimaryBrush="White" Foreground="Black" FontSize="150" FontFamily="Pokemon GB"/>
+            <Button x:Name="bttnDetalles" Content="Más detalles" Height="150" Margin="191,1885,0,0" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Width="750" Background="Black" FontSize="50" FontFamily="Pokemon GB" Click="mostrarDetalles"/>
         </Grid>
     </Viewbox>
 </Page>
