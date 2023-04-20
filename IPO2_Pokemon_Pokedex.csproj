@@ -128,6 +128,9 @@
     <Compile Include="Combate_CombatePage.xaml.cs">
       <DependentUpon>Combate_CombatePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DetallesPokemonPage.xaml.cs">
+      <DependentUpon>DetallesPokemonPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Escenario_CombatePage.xaml.cs">
       <DependentUpon>Escenario_CombatePage.xaml</DependentUpon>
     </Compile>
@@ -311,6 +314,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DetallesPokemonPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Escenario_CombatePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -359,9 +366,8 @@
       <Version>2.8.2</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Compile Include="Fuente\Pokemon_GB.ttf" />
+    <Folder Include="Fuente\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

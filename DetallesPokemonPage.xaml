@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="IPO2_Pokemon_Pokedex.DetallesPokemonPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IPO2_Pokemon_Pokedex"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="300"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <RichTextBlock Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+            <Paragraph>A Snorlax le encanta dormir y comer: este corpulento Pokémon se vuelve gruñón si no come sus casi 400 kg de comida diaria. 
+                Después de picotear un poco, siempre se echa una siesta. Su estómago es a prueba de bombas y puede comer alimentos mohosos o en mal estado 
+                sin sufrir ni un solo problema digestivo. Con sus más de 460 kg de peso, son los Pokémon más pesados de los que se tiene noticia hasta la fecha.</Paragraph>
+        </RichTextBlock>
+    </Grid>
+</Page>
