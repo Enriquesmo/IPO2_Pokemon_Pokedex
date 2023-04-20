@@ -9,6 +9,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Documents;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
@@ -22,9 +23,25 @@ namespace IPO2_Pokemon_Pokedex
     /// </summary>
     public sealed partial class DetallesPokemonPage : Page
     {
+        Pokemon pk;
+
         public DetallesPokemonPage()
         {
             this.InitializeComponent();
         }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            pk = e.Parameter as Pokemon;
+
+            Run myRun = new Run();
+            myRun.Text=pk.details.ToString();
+
+            txtDetallesPokemon.Inlines.Add(myRun);
+            imgPokemon.Source = pk.icon;
+        }
     }
+
+    
+
 }

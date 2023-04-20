@@ -55,8 +55,8 @@
                     <CompositeTransform ScaleY="-1"/>
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <TextBlock x:Name="txtlvl" HorizontalAlignment="Center" TextWrapping="Wrap" Text="LVL. ???" VerticalAlignment="Bottom" FocusVisualPrimaryBrush="White" Foreground="Black" FontSize="150" FontFamily="Pokemon GB"/>
-            <Button x:Name="bttnDetalles" Content="Más detalles" Height="150" Margin="191,1885,0,0" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Width="750" Background="Black" FontSize="50" FontFamily="Pokemon GB" Click="mostrarDetalles"/>
+            <TextBlock x:Name="txtlvl" HorizontalAlignment="Center" TextWrapping="Wrap" Text="LVL. ???" VerticalAlignment="Bottom" FocusVisualPrimaryBrush="White" Foreground="Black" FontSize="150"/>
+            <Button x:Name="bttnDetalles" Content="Más detalles" Height="150" Margin="191,1885,0,0" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Width="750" Background="Black" FontSize="50" Click="mostrarDetalles"/>
         </Grid>
     </Viewbox>
 </Page>

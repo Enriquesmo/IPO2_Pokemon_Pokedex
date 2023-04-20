@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace IPO2_Pokemon_Pokedex
 {
@@ -43,6 +44,8 @@ namespace IPO2_Pokemon_Pokedex
         public int speedAttack { get; set; }
         public int speedDefense { get; set; }
         public int speed { get; set; }
+        public String details { get; set; }
+        public BitmapImage icon { get; set; }
 
         public Pokemon()
         {
@@ -58,7 +61,7 @@ namespace IPO2_Pokemon_Pokedex
             this.type = type;
         }
 
-        public Pokemon(int id, string name, Pokemon_Type type, int level, int hp, int attack, int defense, int speedAttack, int speedDefense, int speed)
+        public Pokemon(int id, string name, Pokemon_Type type, int level, int hp, int attack, int defense, int speedAttack, int speedDefense, int speed, BitmapImage icon, string details)
         {
             this.id = id;
             this.name = name;
@@ -70,6 +73,8 @@ namespace IPO2_Pokemon_Pokedex
             this.speedAttack = speedAttack;
             this.speedDefense = speedDefense;
             this.speed = speed;
+            this.details = details;
+            this.icon = icon;
         }
     }
 }
