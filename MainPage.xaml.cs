@@ -124,6 +124,7 @@ namespace IPO2_Pokemon_Pokedex
 
             // Este codigo sirve para que se cree una notificación nada mas se inicie la aplicación
             NotificaciónSubida(this, null);
+            darBienvenida();
         }
 
         private void NotificaciónSubida(object sender, PointerRoutedEventArgs e)
@@ -140,6 +141,16 @@ namespace IPO2_Pokemon_Pokedex
             .AddArgument("action","reply")
             )
             .Show();
+        }
+
+        private async void darBienvenida()
+        {
+            MediaElement mediaElement = new MediaElement();
+            var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
+            Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await
+            synth.SynthesizeTextToStreamAsync("Bienvenido a IPOkemon, si necesitas ayuda a joderse");
+            mediaElement.SetSource(stream, stream.ContentType);
+            mediaElement.Play();
         }
 
         /************************************************************************************************/

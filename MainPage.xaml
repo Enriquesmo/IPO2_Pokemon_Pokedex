@@ -18,7 +18,7 @@
         </Grid.ColumnDefinitions>
 
         <Border x:Name="Border_Arriba_Blanco" Grid.ColumnSpan="2">
-            <Button x:Name="Btn_Menu" Margin="4" Click="Btn_Menu_Click">
+            <Button AutomationProperties.Name="Mostrar u ocultar menú" x:Name="Btn_Menu" Margin="4" Click="Btn_Menu_Click">
                 <FontIcon x:Name="FontIcon_Btn_Menu" Foreground="White" Glyph="&#xE700;" FontFamily="Segoe MDL2 Assets" />
             </Button>
         </Border>
@@ -41,7 +41,7 @@
                     <SymbolIcon x:Name="SymbolIcon_Pokedex" Grid.Row="1" Margin="4" Symbol="Pictures" PointerReleased="SymbolIcon_Pokedex_PointerReleased"></SymbolIcon>
                     <SymbolIcon x:Name="SymbolIcon_Combate" Grid.Row="2" Margin="4" Symbol="People" PointerReleased="SymbolIcon_Combate_PointerReleased"></SymbolIcon>
                     <SymbolIcon x:Name="SymbolIcon_AcercaDe" Grid.Row="3" Margin="4" Symbol="Help" PointerReleased="SymbolIcon_AcercaDe_PointerReleased"></SymbolIcon>
-                    <Button x:Name="btn_Inicio" Content="Inicio" Width="252" Margin="8,8,0,0" Click="btn_Inicio_Click" Grid.Column="1" Grid.Row="0" VerticalAlignment="Top"/>
+                    <Button x:Uid="DicBtnInicio" x:Name="btn_Inicio" Content="Inicio" Width="252" Margin="8,8,0,0" Click="btn_Inicio_Click" Grid.Column="1" Grid.Row="0" VerticalAlignment="Top"/>
                     <Button x:Name="btn_Pokedex" Content="Pokedex" Width="252" Margin="8,8,0,0" Click="btn_Pokedex_Click" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top"/>
                     <Button x:Name="btn_CombatePokemon" Content="Combate Pokemon" Width="252" Margin="8,8,0,0" Click="btn_CombatePokemon_Click" Grid.Column="1" Grid.Row="2" VerticalAlignment="Top"/>
                     <Button x:Name="btn_AcercaDe" Content="Acerca De" Width="252" Margin="8,8,0,0" Click="btn_AcercaDe_Click" Grid.Column="1" Grid.Row="3" VerticalAlignment="Top"/>
