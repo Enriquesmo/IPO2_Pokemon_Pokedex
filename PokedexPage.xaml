@@ -30,7 +30,7 @@
 
                     <local:UserControl_Snorlax x:Name="Snorlax" Height="1500"/>
                     <local:UserControl_Raichu x:Name="Raichu" Height="1500"/>
-                    <local:UserControl_Darumaka x:Name="Darumaka" Height="1500"/>
+                    <local:UserControl_Darumaka x:Name="Darumaka" Height="1500" Width="2122" HorizontalAlignment="Center"/>
                     <local:UserControl_Sandshrew x:Name="Sandshrew" Height="1500"/>
                 </StackPanel>
             </ScrollViewer>

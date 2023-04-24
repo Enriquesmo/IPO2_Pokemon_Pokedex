@@ -25,17 +25,17 @@
                 <Button x:Name="Btn_Sandshrew" Width="150" Height="150" Click="Btn_Sandshrew_Click" Margin="50,0,50,0" HorizontalAlignment="Center">
                     <Image x:Name="Img_Sandshrew" Source="/Assets/Sandshrew.png" Stretch="Fill" Margin="0,0,0,0" Height="145" VerticalAlignment="Stretch"/>
                 </Button>
-                <Button x:Name="Btn_Snorlarx" Width="150" Height="150" HorizontalAlignment="Stretch" Margin="50,0,20,0" VerticalAlignment="Stretch">
+                <Button x:Name="Btn_Snorlarx" Width="150" Height="150" HorizontalAlignment="Stretch" Margin="50,0,20,0" VerticalAlignment="Stretch" Click="Btn_Snorlarx_Click">
                     <Image x:Name="Img_Snorlax" Source="/Assets/Snorlax.png" Stretch="Fill" Margin="0,0,0,0" Height="145" VerticalAlignment="Stretch"/>
                 </Button>
                 <Button x:Name="Ir_A_La_Siguiente_Pagina" Content="Continuar" Click="Ir_A_La_Siguiente_Pagina_Click" Height="60" Width="128" VerticalAlignment="Bottom" Margin="0,0,10,10" FontSize="22" FontWeight="Bold" Foreground="#FF0C0C0C"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Padding="40,0,0,0" Margin="0,0,0,0" Grid.Row="1">
-                <Button x:Name="Btn_Darumaka" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="150" Margin="50,0,50,0">
+                <Button x:Name="Btn_Darumaka" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="150" Margin="50,0,50,0" Click="Btn_Darumaka_Click">
                     <Image x:Name="Img_Darumaka" Source="/Assets/Daru.png" Stretch="Fill" Margin="0,0,0,0" Height="145" VerticalAlignment="Stretch" d:IsLocked="True"/>
                 </Button>
 
-                <Button x:Name="Btn_Raichu" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="150" Margin="50,0,50,0">
+                <Button x:Name="Btn_Raichu" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="150" Margin="50,0,50,0" Click="Btn_Raichu_Click">
                     <Image x:Name="Img_Raichu" Source="/Assets/Raichu.png" Stretch="Fill" Margin="0,0,0,0" Height="145" VerticalAlignment="Stretch" d:IsLocked="True"/>
                 </Button>
             </StackPanel>

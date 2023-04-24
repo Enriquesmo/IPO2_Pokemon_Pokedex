@@ -51,17 +51,30 @@ namespace IPO2_Pokemon_Pokedex
         private void Ir_A_La_Siguiente_Pagina_Click(object sender, RoutedEventArgs e)
         {
             // Boton que sirve para poder pasar a la seleccion de escenario
-            PokemonJugador1 = "Sandshrew";
-            PokemonJugador2 = "Sandshrew";
             Frame EscenarioFrame = (Frame)this.Parent;
             EscenarioFrame.Navigate(typeof(Escenario_CombatePage), this);
         }
 
         private void Btn_Sandshrew_Click(object sender, RoutedEventArgs e)
         {
-
+            PokemonJugador1 = "Sandshrew";
+            PokemonJugador2 = "Sandshrew";
         }
-
+        private void Btn_Raichu_Click(object sender, RoutedEventArgs e)
+        {
+            PokemonJugador1 = "Raichu";
+            PokemonJugador2 = "Raichu";
+        }
+        private void Btn_Darumaka_Click(object sender, RoutedEventArgs e)
+        {
+            PokemonJugador1 = "Darumaka";
+            PokemonJugador2 = "Darumaka";
+        }
+        private void Btn_Snorlarx_Click(object sender, RoutedEventArgs e)
+        {
+            PokemonJugador1 = "Snorlax";
+            PokemonJugador2 = "Snorlax";
+        }
 
         /************************************************************************************************/
 
