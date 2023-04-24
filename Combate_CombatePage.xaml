@@ -19,7 +19,7 @@
                 <local:UserControl_Darumaka x:Name="UserControl_Darumaka_Derecha_P1" Margin="0,140,0,-140" d:IsHidden="True"/>
                 <local:UserControl_Sandshrew x:Name="UserControl_Sandshrew_Derecha_P1" HorizontalAlignment="Center" Height="485" VerticalAlignment="Top" Width="739" Margin="0,88,0,0" d:IsHidden="True"/>
                 <Grid x:Name="Grid_Estadisticas_Pokemon_Derecha" Margin="0,0,0,405">
-                    <ProgressBar x:Name="ProgressBar_Vida_Derecha" Margin="40,15,39,45" VerticalAlignment="Stretch" Background="#4CF40000" Value="100" Height="20"/>
+                    <ProgressBar x:Name="ProgressBar_Vida_Derecha" Margin="40,15,39,45" VerticalAlignment="Stretch" Background="#4CF40000" Value="100" Height="20" Foreground="#FFFF1700"/>
                     <ProgressBar x:Name="ProgressBar_Energia_Derecha" Margin="40,52,39,8" VerticalAlignment="Stretch" Foreground="#FFFCFF00" Background="#4CFCFF00" Value="100" Height="20"/>
                     <Image x:Name="Image_Vida_Derecha" Source="/Assets/ImagenVida.png" Margin="0,3,705,37">
                         <Image.FocusVisualPrimaryBrush>
@@ -89,7 +89,7 @@
                     </local:UserControl_Sandshrew.RenderTransform>
                 </local:UserControl_Sandshrew>
                 <Grid x:Name="Grid_Estadisticas_Pokemon_Izquierda" Margin="0,0,-10,420">
-                    <ProgressBar x:Name="ProgressBar_Vida_Izquierda" Margin="40,15,39,45" VerticalAlignment="Stretch" Background="#4CF40000" Height="20" Value="100"/>
+                    <ProgressBar x:Name="ProgressBar_Vida_Izquierda" Margin="40,15,39,45" VerticalAlignment="Stretch" Background="#4CF40000" Height="20" Value="100" RequestedTheme="Light" Foreground="#FFEC0000"/>
                     <ProgressBar x:Name="ProgressBar_Energia_Izquierda" Margin="40,52,39,8" VerticalAlignment="Stretch" Foreground="#FFFCFF00" Background="#4CFCFF00" Value="100" Height="20"/>
                     <Image x:Name="Image_Vida_Izquierda" Source="/Assets/ImagenVida.png" Margin="0,3,705,37">
                         <Image.FocusVisualPrimaryBrush>
@@ -129,14 +129,14 @@
                     <ColumnDefinition Width="20*"/>
                 </Grid.ColumnDefinitions>
                 <Image x:Name="ImgFondo_Botones" Grid.ColumnSpan="3" Grid.RowSpan="4" Stretch="Fill"/>
-                <Button x:Name="Btn_Ataque1" Content="Ataque1" Height="125" Width="300" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" Click="Btn_Ataque1_Click" Margin="10,10,0,0"/>
-                <Button x:Name="Btn_Ataque2" Content="Ataque2" VerticalAlignment="Top" Height="125" Width="300" Grid.Column="1" Grid.Row="2" Click="Btn_Ataque2_Click" Margin="399,10,0,0"/>
-                <Button x:Name="Btn_Ataque3" Content="Ataque3" Margin="10,275,0,0" VerticalAlignment="Top" Height="125" Width="300" Grid.Row="2" Click="Btn_Ataque3_Click" Grid.Column="1"/>
-                <Button x:Name="Btn_Ataque4" Content="Ataque4" Margin="399,275,0,0" VerticalAlignment="Top" Height="125" Width="300" Click="Btn_Ataque4_Click" Grid.Column="1" Grid.Row="2"/>
-                <TextBlock x:Name="TextBlock_TurnoDelJugador" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Height="19" Width="279" Grid.Row="1"/>
-                <TextBlock x:Name="TextBlock_MensajeCombate" TextWrapping="Wrap" Text="" Margin="214,243,135,142" Grid.Column="1" Grid.Row="2" FocusVisualPrimaryBrush="White"/>
+                <Button x:Name="Btn_Ataque1" Content="Ataque1" Height="125" Width="300" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" Click="Btn_Ataque1_Click" Margin="10,10,0,0" RequestedTheme="Light" Background="White" FontSize="24"/>
+                <Button x:Name="Btn_Ataque2" Content="Ataque2" VerticalAlignment="Top" Height="125" Width="300" Grid.Column="1" Grid.Row="2" Click="Btn_Ataque2_Click" Margin="399,10,0,0" RequestedTheme="Light" FontSize="24" Background="White"/>
+                <Button x:Name="Btn_Ataque3" Content="Ataque3" Margin="10,275,0,0" VerticalAlignment="Top" Height="125" Width="300" Grid.Row="2" Click="Btn_Ataque3_Click" Grid.Column="1" RequestedTheme="Light" Background="White" FontSize="24"/>
+                <Button x:Name="Btn_Ataque4" Content="Ataque4" Margin="399,275,0,0" VerticalAlignment="Top" Height="125" Width="300" Click="Btn_Ataque4_Click" Grid.Column="1" Grid.Row="2" RequestedTheme="Light" Background="White" FontSize="24"/>
+                <TextBlock x:Name="TextBlock_TurnoDelJugador" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Height="19" Width="411" Grid.Row="1" RequestedTheme="Light" FontSize="16"/>
+                <TextBlock x:Name="TextBlock_MensajeCombate" TextWrapping="Wrap" Text="" Margin="214,243,135,142" Grid.Column="1" Grid.Row="2" FocusVisualPrimaryBrush="White" RequestedTheme="Light"/>
             </Grid>
-            <Button x:Name="btn_EmpezarCombate" Content="¡Empezar Combate!" Height="115" Width="258" HorizontalAlignment="Center" Click="btn_EmpezarCombate_Click"/>
+            <Button x:Name="btn_EmpezarCombate" Content="¡Empezar Combate!" Height="115" Width="258" HorizontalAlignment="Center" Click="btn_EmpezarCombate_Click" RequestedTheme="Light"/>
 
         </Grid>
     </Viewbox>

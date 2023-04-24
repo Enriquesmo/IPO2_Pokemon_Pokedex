@@ -31,6 +31,8 @@ namespace IPO2_Pokemon_Pokedex
 
         public String PokemonJugador1;
         public String PokemonJugador2;
+        public Boolean eleccionPokemon1;
+        public Boolean eleccionPokemon2;
         public String modo_de_juego;
         CombatePage Padre;
 
@@ -43,6 +45,8 @@ namespace IPO2_Pokemon_Pokedex
             this.InitializeComponent();
             UC_Pokemon_Iz.verFormaPokedex(false);
             UC_Pokemon_De.verFormaPokedex(false);
+            eleccionPokemon1 = false;
+            eleccionPokemon2 = false;
         }
 
         /************************************************************************************************/
@@ -57,23 +61,23 @@ namespace IPO2_Pokemon_Pokedex
 
         private void Btn_Sandshrew_Click(object sender, RoutedEventArgs e)
         {
-            PokemonJugador1 = "Sandshrew";
-            PokemonJugador2 = "Sandshrew";
+            seleccionPokemon("Sandshrew");
+            // aqui hacer el cambio de combobox
         }
         private void Btn_Raichu_Click(object sender, RoutedEventArgs e)
         {
-            PokemonJugador1 = "Raichu";
-            PokemonJugador2 = "Raichu";
+            seleccionPokemon("Raichu");
+            // aqui hacer el cambio de combobox
         }
         private void Btn_Darumaka_Click(object sender, RoutedEventArgs e)
         {
-            PokemonJugador1 = "Darumaka";
-            PokemonJugador2 = "Darumaka";
+            seleccionPokemon("Darumaka");
+            // aqui hacer el cambio de combobox
         }
         private void Btn_Snorlarx_Click(object sender, RoutedEventArgs e)
         {
-            PokemonJugador1 = "Snorlax";
-            PokemonJugador2 = "Snorlax";
+            seleccionPokemon("Snorlax");
+            // aqui hacer el cambio de combobox
         }
 
         /************************************************************************************************/
@@ -92,6 +96,18 @@ namespace IPO2_Pokemon_Pokedex
 
         /*Metodos Auxiliares*/
 
-
+        public void seleccionPokemon(String nombre)
+        {
+            if (eleccionPokemon1 == false)
+            {
+                PokemonJugador1 = nombre;
+                eleccionPokemon1 = true;
+            }
+            else if (eleccionPokemon2 == false)
+            {
+                PokemonJugador2 = nombre;
+                eleccionPokemon2 = true;
+            }
+        }
     }
 }
