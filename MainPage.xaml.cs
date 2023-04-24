@@ -41,6 +41,7 @@ namespace IPO2_Pokemon_Pokedex
             sView_Abajo_Principal.DisplayMode = SplitViewDisplayMode.CompactInline;
             sView_Abajo_Principal.IsPaneOpen = true;
 
+
             // Estas lineas sirven para que cuando se redimensione la ventana se adapte, además de hacer un tamaño minimo
             Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(320, 320));
             Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().VisibleBoundsChanged += MainPage_VisibleBoundsChanged;
