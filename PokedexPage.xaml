@@ -23,15 +23,19 @@
                 <ColumnDefinition Width="1549*"/>
             </Grid.ColumnDefinitions>
             <Image x:Name="imgBackground" Source="/Assets/PokedexBackground.jpg" Stretch="UniformToFill" Grid.ColumnSpan="4" Grid.RowSpan="2"/>
-            <ScrollViewer x:Name="lvPokemon" Grid.Column="2" Grid.RowSpan="2" BorderThickness="50" Background="#FF7DCD28" FocusVisualSecondaryBrush="#66FFFFFF" 
+
+            <ScrollViewer x:Name="lvPokemon" Grid.Column="2" Grid.RowSpan="2" BorderThickness="50" Background="White" FocusVisualSecondaryBrush="#66FFFFFF" 
                       BorderBrush="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" GotFocus="lvPokemon_GotFocus" IsEnabled="False" >
                 <StackPanel x:Name="stackAux" HorizontalAlignment="Stretch" Margin="0,750,0,750">
+
                     <local:UserControl_Snorlax x:Name="Snorlax" Height="1500"/>
                     <local:UserControl_Raichu x:Name="Raichu" Height="1500"/>
                     <local:UserControl_Darumaka x:Name="Darumaka" Height="1500"/>
                     <local:UserControl_Sandshrew x:Name="Sandshrew" Height="1500"/>
                 </StackPanel>
             </ScrollViewer>
+            <Rectangle Stroke="Black" Fill="#99000000" Grid.Column="1" Margin="10,10,10,0" Grid.ColumnSpan="2"/>
+            <Rectangle Stroke="Black" Fill="#99000000" Grid.Column="1" Margin="53,1476,10,10" Grid.ColumnSpan="2" Grid.Row="1"/>
             <Rectangle Grid.Column="2" Grid.RowSpan="2" Height="1500" HorizontalAlignment="Stretch" StrokeThickness="40" Stroke="Black"/>
             <ListView x:Name="lvAux" Grid.Column="3" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" 
                       HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="MostrarPokemon" SelectedIndex="0">
@@ -55,8 +59,18 @@
                     <CompositeTransform ScaleY="-1"/>
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <TextBlock x:Name="txtlvl" HorizontalAlignment="Center" TextWrapping="Wrap" Text="LVL. ???" VerticalAlignment="Bottom" FocusVisualPrimaryBrush="White" Foreground="Black" FontSize="150"/>
+            <TextBlock x:Name="txtlvl" HorizontalAlignment="Center" TextWrapping="Wrap" Text="LVL. ???" VerticalAlignment="Bottom" FocusVisualPrimaryBrush="White" Foreground="Black" FontSize="150" FontWeight="Bold" Margin="0,0,0,-50"/>
+            <TextBlock x:Name="txtType" HorizontalAlignment="Center" TextWrapping="Wrap" Text="TIPO ???" VerticalAlignment="Center" FocusVisualPrimaryBrush="White" Foreground="Black" FontSize="120" Grid.Row="1" Margin="0,0,0,1400"/>
+            <Image x:Name="imgType" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" Source="/Assets/Pokemon_Type_Icon_Normal.png" RenderTransformOrigin="0.5,0.5" Width="166" Height="149" Margin="0,550,0,0">
+                <Image.RenderTransform>
+                    <CompositeTransform ScaleY="1"/>
+                </Image.RenderTransform>
+            </Image>
+            <TextBlock x:Name="txtHP" HorizontalAlignment="Center" TextWrapping="Wrap" Text="HP: ???" VerticalAlignment="Center" FocusVisualPrimaryBrush="White" Foreground="Black" FontSize="120" Grid.Row="1" Margin="0,0,0,550"/>
+            <TextBlock x:Name="txtAttack" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Ataque: ???" VerticalAlignment="Center" FocusVisualPrimaryBrush="White" Foreground="Black" FontSize="120" Grid.Row="1" Margin="0,0,0,200"/>
+            <TextBlock x:Name="txtDefense" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Defensa: ???" VerticalAlignment="Center" FocusVisualPrimaryBrush="White" Foreground="Black" FontSize="120" Grid.Row="1" Margin="0,150,0,0"/>
             <Button x:Name="bttnDetalles" Content="Más detalles" Height="150" Margin="191,1885,0,0" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Width="750" Background="Black" FontSize="50" Click="mostrarDetalles"/>
+
         </Grid>
     </Viewbox>
 </Page>
