@@ -40,7 +40,7 @@ namespace IPO2_Pokemon_Pokedex
         public InfoTipoDePokemon(string nombre, string iconoPath)
         {
             Nombre = nombre;
-            IconoUri = new Uri(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, iconoPath));
+            IconoUri = new Uri("ms-appx:///Assets/"+ iconoPath);
         }
         public override string ToString()
         {
@@ -50,24 +50,24 @@ namespace IPO2_Pokemon_Pokedex
 
     public static class DatosTipoDePokemon
     {
-        public static readonly InfoTipoDePokemon Normal = new InfoTipoDePokemon("Normal", "assets/images/Pokemon_Type_Icon_Normal.png");
-        public static readonly InfoTipoDePokemon Fuego = new InfoTipoDePokemon("Fuego", "assets/images/Pokemon_Type_Icon_Normal.png");
-        public static readonly InfoTipoDePokemon Agua = new InfoTipoDePokemon("Agua", "assets/images/Pokemon_Type_Icon_Normal.png");
-        public static readonly InfoTipoDePokemon Planta = new InfoTipoDePokemon("Planta", "assets/images/Pokemon_Type_Icon_Normal.png");
-        public static readonly InfoTipoDePokemon Eléctrico = new InfoTipoDePokemon("Eléctrico", "assets/images/Pokemon_Type_Icon_Normal.png");
-        public static readonly InfoTipoDePokemon Hielo = new InfoTipoDePokemon("Hielo", "assets/images/Pokemon_Type_Icon_Normal.png");
-        public static readonly InfoTipoDePokemon Lucha = new InfoTipoDePokemon("Lucha", "assets/images/Pokemon_Type_Icon_Normal.png");
-        public static readonly InfoTipoDePokemon Veneno = new InfoTipoDePokemon("Veneno", "assets/images/Pokemon_Type_Icon_Normal.png");
-        public static readonly InfoTipoDePokemon Tierra = new InfoTipoDePokemon("Tierra", "assets/images/Pokemon_Type_Icon_Normal.png");
-        public static readonly InfoTipoDePokemon Volador = new InfoTipoDePokemon("Volador", "assets/images/Pokemon_Type_Icon_Normal.png");
-        public static readonly InfoTipoDePokemon Psíquico = new InfoTipoDePokemon("Psíquico", "assets/images/Pokemon_Type_Icon_Normal.png");  
-        public static readonly InfoTipoDePokemon Insecto = new InfoTipoDePokemon("Insecto", "assets/images/Pokemon_Type_Icon_Normal.png");
-        public static readonly InfoTipoDePokemon Roca = new InfoTipoDePokemon("Roca", "assets/images/Pokemon_Type_Icon_Normal.png");
-        public static readonly InfoTipoDePokemon Fantasma = new InfoTipoDePokemon("Fantasma", "assets/images/Pokemon_Type_Icon_Normal.png");
-        public static readonly InfoTipoDePokemon Siniestro = new InfoTipoDePokemon("Siniestro", "assets/images/Pokemon_Type_Icon_Normal.png");
-        public static readonly InfoTipoDePokemon Dragón = new InfoTipoDePokemon("Dragón", "assets/images/Pokemon_Type_Icon_Normal.png");
-        public static readonly InfoTipoDePokemon Acero = new InfoTipoDePokemon("Acero", "assets/images/Pokemon_Type_Icon_Normal.png");
-        public static readonly InfoTipoDePokemon Hada = new InfoTipoDePokemon("Hada", "assets/images/Pokemon_Type_Icon_Normal.png");
+        public static readonly InfoTipoDePokemon Normal = new InfoTipoDePokemon("Normal", "Pokemon_Type_Icon_Normal.png");
+        public static readonly InfoTipoDePokemon Fuego = new InfoTipoDePokemon("Fuego", "Pokemon_Type_Icon_Fire.png");
+        public static readonly InfoTipoDePokemon Agua = new InfoTipoDePokemon("Agua", "Pokemon_Type_Icon_Water.png");
+        public static readonly InfoTipoDePokemon Planta = new InfoTipoDePokemon("Planta", "Pokemon_Type_Icon_Grass.png");
+        public static readonly InfoTipoDePokemon Eléctrico = new InfoTipoDePokemon("Eléctrico", "Pokemon_Type_Icon_Electric.png");
+        public static readonly InfoTipoDePokemon Hielo = new InfoTipoDePokemon("Hielo", "Pokemon_Type_Icon_Ice.png");
+        public static readonly InfoTipoDePokemon Lucha = new InfoTipoDePokemon("Lucha", "Pokemon_Type_Icon_Fighting.png");
+        public static readonly InfoTipoDePokemon Veneno = new InfoTipoDePokemon("Veneno", "Pokemon_Type_Icon_Poison.png");
+        public static readonly InfoTipoDePokemon Tierra = new InfoTipoDePokemon("Tierra", "Pokemon_Type_Icon_Ground.png");
+        public static readonly InfoTipoDePokemon Volador = new InfoTipoDePokemon("Volador", "Pokemon_Type_Icon_Flying.png");
+        public static readonly InfoTipoDePokemon Psíquico = new InfoTipoDePokemon("Psíquico", "Pokemon_Type_Icon_Psychic.png");
+        public static readonly InfoTipoDePokemon Insecto = new InfoTipoDePokemon("Insecto", "Pokemon_Type_Icon_Bug.png");
+        public static readonly InfoTipoDePokemon Roca = new InfoTipoDePokemon("Roca", "Pokemon_Type_Icon_Rock.png");
+        public static readonly InfoTipoDePokemon Fantasma = new InfoTipoDePokemon("Fantasma", "Pokemon_Type_Icon_Ghost.png");
+        public static readonly InfoTipoDePokemon Siniestro = new InfoTipoDePokemon("Siniestro", "Pokemon_Type_Icon_Dark.png");
+        public static readonly InfoTipoDePokemon Dragón = new InfoTipoDePokemon("Dragón", "Pokemon_Type_Icon_Dragon.png");
+        public static readonly InfoTipoDePokemon Acero = new InfoTipoDePokemon("Acero", "Pokemon_Type_Icon_Steel.png");
+        public static readonly InfoTipoDePokemon Hada = new InfoTipoDePokemon("Hada", "Pokemon_Type_Icon_Fairy.png");
     }
 
 

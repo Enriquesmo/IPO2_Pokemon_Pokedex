@@ -16,10 +16,14 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="300"/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
+        <Rectangle Stroke="Black" Grid.ColumnSpan="2" Grid.RowSpan="3" Fill="#FFFF3939"/>
 
-        <Image x:Name="imgPokemon" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-        <RichTextBlock Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+        <Image x:Name="imgPokemon"/>
+        <Border x:Name="borderDetalles2" Background="Black" BorderBrush="Red" BorderThickness="2" CornerRadius="40" Margin="33,10,33,10" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <Border x:Name="borderDetalles" Background="White" BorderBrush="Red" BorderThickness="2" CornerRadius="40" Margin="33,10,33,35" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <RichTextBlock Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="78,33,83,60" FocusVisualPrimaryBrush="Black" Foreground="Black">
             <Paragraph x:Name="txtDetallesPokemon"/>
         </RichTextBlock>
     </Grid>
