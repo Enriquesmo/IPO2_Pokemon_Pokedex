@@ -21,6 +21,54 @@
                 <RowDefinition Height="57*"/>
             </Grid.RowDefinitions>
             <Image Grid.RowSpan="2" Grid.ColumnSpan="3" Source="/Assets/fondoElegirPokemon.png" Stretch="Fill"/>
+            <Grid x:Name="Pokemons_Izquierda" Margin="0,0,0,0">
+                <local:UserControl_Raichu x:Name="UserControl_Raichu_Izquierda_P2_IA" RenderTransformOrigin="0.5,0.5" Margin="0,0,0,0" d:IsHidden="True">
+                    <local:UserControl_Raichu.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </local:UserControl_Raichu.RenderTransform>
+                </local:UserControl_Raichu>
+                <local:UserControl_Snorlax x:Name="UserControl_Snorlax_Izquierda_P2_IA" RenderTransformOrigin="0.5,0.5" Margin="0,0,0,0" d:IsHidden="True">
+                    <local:UserControl_Snorlax.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </local:UserControl_Snorlax.RenderTransform>
+                </local:UserControl_Snorlax>
+                <local:UserControl_Darumaka x:Name="UserControl_Darumaka_Izquierda_P2_IA" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5" Margin="0,0,0,0" d:IsHidden="True">
+                    <local:UserControl_Darumaka.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </local:UserControl_Darumaka.RenderTransform>
+                </local:UserControl_Darumaka>
+                <local:UserControl_Sandshrew x:Name="UserControl_Sandshrew_Izquierda_P2_IA" RenderTransformOrigin="0.5,0.5" Margin="0,0,0,0" d:IsHidden="True">
+                    <local:UserControl_Sandshrew.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </local:UserControl_Sandshrew.RenderTransform>
+                </local:UserControl_Sandshrew>
+            </Grid>
+            <Grid x:Name="Pokemons_Derecha" Margin="0,0,0,0" Grid.Column="2">
+                <local:UserControl_Raichu x:Name="UserControl_Raichu_Derecha_P1" Margin="0,0,0,0" d:IsHidden="True"/>
+                <local:UserControl_Snorlax x:Name="UserControl_Snorlax_Derecha_P1" Margin="0,0,0,0" d:IsHidden="True"/>
+                <local:UserControl_Darumaka x:Name="UserControl_Darumaka_Derecha_P1" Margin="0,0,0,0" d:IsHidden="True"/>
+                <local:UserControl_Sandshrew x:Name="UserControl_Sandshrew_Derecha_P1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0" d:IsHidden="True"/>
+            </Grid>
             <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal">
                 <Button x:Name="Btn_Sandshrew" Width="150" Height="150" Click="Btn_Sandshrew_Click" Margin="50,0,50,0" HorizontalAlignment="Center">
                     <Image x:Name="Img_Sandshrew" Source="/Assets/Sandshrew.png" Stretch="Fill" Margin="0,0,0,0" Height="145" VerticalAlignment="Stretch"/>
@@ -39,19 +87,8 @@
                     <Image x:Name="Img_Raichu" Source="/Assets/Raichu.png" Stretch="Fill" Margin="0,0,0,0" Height="145" VerticalAlignment="Stretch" d:IsLocked="True"/>
                 </Button>
             </StackPanel>
-            <local:UserControl_Sandshrew x:Name="UC_Pokemon_Iz" Margin="0,0,0,2" RenderTransformOrigin="0.5,0.5" >
-                <local:UserControl_Sandshrew.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform ScaleX="-1"/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </local:UserControl_Sandshrew.RenderTransform>
-            </local:UserControl_Sandshrew>
-            <local:UserControl_Darumaka x:Name="UC_Pokemon_De" Grid.Column="2" Margin="0,0,0,2"/>
             <Image x:Name="Img_VS" Grid.Column="1" HorizontalAlignment="Center" Height="300" VerticalAlignment="Center" Width="300" Source="/Assets/VS.png"/>
-            <Button x:Name="Btn_Aleatorio" VerticalAlignment="Center" Width="150" Height="150" Margin="0,0,0,0" FontWeight="Bold" FontFamily="Arial Black" FontSize="150" Content="?" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center"/>
+            <Button x:Name="Btn_Aleatorio" VerticalAlignment="Center" Width="150" Height="150" Margin="0,0,0,0" FontWeight="Bold" FontFamily="Arial Black" FontSize="150" Content="?" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" RequestedTheme="Dark"/>
 
         </Grid>
     </Viewbox>
