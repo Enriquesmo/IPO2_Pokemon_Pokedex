@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Documents;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
@@ -33,11 +34,10 @@ namespace IPO2_Pokemon_Pokedex
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             pk = e.Parameter as Pokemon;
-
-            Run myRun = new Run();
-            myRun.Text=pk.details.ToString();
-
-            txtDetallesPokemon.Inlines.Add(myRun);
+            txtDescripcion.Text = pk.details;
+            txtName.Text = pk.name;
+            txtType.Text=pk.type.Nombre;
+            imgType.Source = new BitmapImage(pk.type.IconoUri);
             imgPokemon.Source = pk.icon;
         }
     }
