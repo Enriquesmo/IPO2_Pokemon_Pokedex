@@ -8,31 +8,33 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="80.26"/>
-            <ColumnDefinition Width="443"/>
-            <ColumnDefinition Width="527"/>
-            <ColumnDefinition Width="371*"/>
-            <ColumnDefinition Width="79*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="56.399"/>
-            <RowDefinition Height="119.705"/>
-            <RowDefinition Height="223.295"/>
-            <RowDefinition Height="139"/>
-            <RowDefinition Height="112*"/>
-            <RowDefinition Height="283*"/>
-            <RowDefinition Height="67*"/>
-        </Grid.RowDefinitions>
-        <Rectangle Stroke="Black" Grid.ColumnSpan="5" Grid.RowSpan="7" Fill="#FFFF3939"/>
+    <Viewbox>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="407"/>
+                <ColumnDefinition Width="526"/>
+                <ColumnDefinition Width="407"/>
+                <ColumnDefinition Width="80"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="56"/>
+                <RowDefinition Height="119"/>
+                <RowDefinition Height="223"/>
+                <RowDefinition Height="139"/>
+                <RowDefinition Height="112"/>
+                <RowDefinition Height="283"/>
+                <RowDefinition Height="67"/>
+            </Grid.RowDefinitions>
+            <Rectangle Stroke="Black" Grid.ColumnSpan="5" Grid.RowSpan="7" Fill="#FFFF3939"/>
 
-        <Image x:Name="imgPokemon" Source="/Assets/Snorlax.png" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2"/>
-        <TextBlock x:Name="txtName" TextWrapping="Wrap" Text="Nombre" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" FontWeight="Bold" Grid.Column="2"/>
-        <TextBlock x:Name="txtType" TextWrapping="Wrap" Text="Tipo" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1"/>
-        <Image x:Name="imgType" HorizontalAlignment="Left" Source="/Assets/Pokemon_Type_Icon_Normal.png" Grid.Row="3" VerticalAlignment="Center" Grid.Column="1" Height="91" Width="94" Margin="20,0,0,0"/>
-        <Border x:Name="borderDetalles2" Background="Black" BorderBrush="Red" BorderThickness="2" CornerRadius="40" Grid.Row="5" Grid.ColumnSpan="5" Grid.RowSpan="2"/>
-        <Border x:Name="borderDetalles" Background="White" BorderBrush="Red" BorderThickness="2" CornerRadius="40" Grid.Row="5" Grid.ColumnSpan="5" Grid.RowSpan="2" Margin="0,0,0,33"/>
-        <TextBlock x:Name="txtDescripcion" TextWrapping="Wrap" Text="" Grid.Row="5" FontSize="24" Foreground="Black" Grid.ColumnSpan="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-    </Grid>
+            <Image x:Name="imgPokemon" Source="/Assets/Snorlax.png" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2"/>
+            <TextBlock x:Name="txtName" TextWrapping="Wrap" Text="Nombre" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" FontWeight="Bold" Grid.Column="2"/>
+            <TextBlock x:Name="txtType" TextWrapping="Wrap" Text="Tipo" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1"/>
+            <Image x:Name="imgType" HorizontalAlignment="Left" Source="/Assets/Pokemon_Type_Icon_Normal.png" Grid.Row="3" VerticalAlignment="Center" Grid.Column="1" Height="91" Width="94" Margin="20,0,0,0"/>
+            <Border x:Name="borderDetalles2" Background="Black" BorderBrush="Red" BorderThickness="2" CornerRadius="40" Grid.Row="5" Grid.ColumnSpan="5" Grid.RowSpan="2"/>
+            <Border x:Name="borderDetalles" Background="White" BorderBrush="Red" BorderThickness="2" CornerRadius="40" Grid.Row="5" Grid.ColumnSpan="5" Grid.RowSpan="2" Margin="0,0,0,33"/>
+            <TextBlock x:Name="txtDescripcion" TextWrapping="Wrap" Text="" Grid.Row="5" FontSize="24" Foreground="Black" Grid.ColumnSpan="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+    </Viewbox>
 </Page>
