@@ -58,11 +58,7 @@ namespace IPO2_Pokemon_Pokedex
 
         private void Btn_Sandshrew_Click(object sender, RoutedEventArgs e)
         {
-            SeleccionarSandshrew();
-
-        }
-        private void SeleccionarSandshrew()
-        {
+            
             if (eleccionPokemon1 == false)
             {
                 comprobarSandshrew("I");
@@ -75,10 +71,7 @@ namespace IPO2_Pokemon_Pokedex
         }
         private void Btn_Raichu_Click(object sender, RoutedEventArgs e)
         {
-            SeleccionarRaichu();
-        }
-        private void SeleccionarRaichu()
-        {
+            
             if (eleccionPokemon1 == false)
             {
                 comprobarRaichu("I");
@@ -91,10 +84,7 @@ namespace IPO2_Pokemon_Pokedex
         }
         private void Btn_Darumaka_Click(object sender, RoutedEventArgs e)
         {
-            SeleccionarDarumaka();
-        }
-        private void SeleccionarDarumaka()
-        {
+            
             if (eleccionPokemon1 == false)
             {
                 comprobarDarumaka("I");
@@ -107,10 +97,7 @@ namespace IPO2_Pokemon_Pokedex
         }
         private void Btn_Snorlarx_Click(object sender, RoutedEventArgs e)
         {
-            SeleccionarSnorlax();
-        }
-        private void SeleccionarSnorlax()
-        {
+            
             if (eleccionPokemon1 == false)
             {
                 comprobarSnorlax("I");
@@ -235,30 +222,6 @@ namespace IPO2_Pokemon_Pokedex
             {
                 UserControl_Raichu_Izquierda_P2_IA.IsEnabled = true;
                 UserControl_Raichu_Izquierda_P2_IA.Visibility = Visibility.Visible;
-            }
-        }
-
-        private void Btn_Aleatorio_Click(object sender, RoutedEventArgs e)
-        {
-            Random Ran = new Random();
-            int NumPokemon = Ran.Next(1,5);
-            switch (NumPokemon)
-            {
-                case 1:
-                    SeleccionarDarumaka();
-                    break;
-
-                case 2:
-                    SeleccionarRaichu();
-                    break;
-
-                case 3:
-                    SeleccionarSandshrew();
-                    break;
-
-                case 4:
-                    SeleccionarSnorlax();
-                    break;
             }
         }
     }
