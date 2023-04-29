@@ -76,6 +76,9 @@
                 <Button x:Name="Btn_Snorlarx" Width="150" Height="150" HorizontalAlignment="Stretch" Margin="50,0,20,0" VerticalAlignment="Stretch" Click="Btn_Snorlarx_Click">
                     <Image x:Name="Img_Snorlax" Source="/Assets/Snorlax.png" Stretch="Fill" Margin="0,0,0,0" Height="145" VerticalAlignment="Stretch"/>
                 </Button>
+                <Button x:Name="Btn_Reverse" Height="43" Width="66" VerticalAlignment="Bottom" Margin="-65,0,0,20" Click="Btn_Reverse_Click">
+                    <Image x:Name="Img_Reverse" Source="/Assets/reverse.png" Margin="-10,-6,-10,-7" Stretch="Fill"/>
+                </Button>
                 <Button x:Name="Ir_A_La_Siguiente_Pagina" Content="Continuar" Click="Ir_A_La_Siguiente_Pagina_Click" Height="60" Width="128" VerticalAlignment="Bottom" Margin="0,0,10,10" FontSize="22" FontWeight="Bold" Foreground="#FF0C0C0C"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Padding="40,0,0,0" Margin="0,0,0,0" Grid.Row="1">

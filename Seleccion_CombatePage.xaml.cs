@@ -261,5 +261,56 @@ namespace IPO2_Pokemon_Pokedex
                     break;
             }
         }
+
+        private void Btn_Reverse_Click(object sender, RoutedEventArgs e)
+        {
+            if (eleccionPokemon2)
+            {
+                eleccionPokemon2 = false;
+                switch (PokemonJugador2)
+                {
+                    case "Snorlax":
+                        UserControl_Snorlax_Derecha_P1.IsEnabled = false;
+                        UserControl_Snorlax_Derecha_P1.Visibility = Visibility.Collapsed;
+                        break;
+                    case "Darumaka":
+                        UserControl_Darumaka_Derecha_P1.IsEnabled = false;
+                        UserControl_Darumaka_Derecha_P1.Visibility = Visibility.Collapsed;
+                        break;
+                    case "Raichu":
+                        UserControl_Raichu_Derecha_P1.IsEnabled = false;
+                        UserControl_Raichu_Derecha_P1.Visibility = Visibility.Collapsed;
+                        break;
+                    case "Sandshrew":
+                        UserControl_Sandshrew_Derecha_P1.IsEnabled = false;
+                        UserControl_Sandshrew_Derecha_P1.Visibility = Visibility.Collapsed;
+                        break;
+                }
+            }
+            else if (eleccionPokemon1)
+            {
+                eleccionPokemon1 = false;
+                eleccionPokemon2 = false;
+                switch (PokemonJugador1)
+                {
+                    case "Snorlax":
+                        UserControl_Snorlax_Izquierda_P2_IA.IsEnabled = false;
+                        UserControl_Snorlax_Izquierda_P2_IA.Visibility = Visibility.Collapsed;
+                        break;
+                    case "Darumaka":
+                        UserControl_Darumaka_Izquierda_P2_IA.IsEnabled = false;
+                        UserControl_Darumaka_Izquierda_P2_IA.Visibility = Visibility.Collapsed;
+                        break;
+                    case "Raichu":
+                        UserControl_Raichu_Izquierda_P2_IA.IsEnabled = false;
+                        UserControl_Raichu_Izquierda_P2_IA.Visibility = Visibility.Collapsed;
+                        break;
+                    case "Sandshrew":
+                        UserControl_Sandshrew_Izquierda_P2_IA.IsEnabled = false;
+                        UserControl_Sandshrew_Izquierda_P2_IA.Visibility = Visibility.Collapsed;
+                        break;
+                }
+            }
+        }
     }
 }
