@@ -55,10 +55,8 @@ namespace IPO2_Pokemon_Pokedex
             Frame EscenarioFrame = (Frame)this.Parent;
             EscenarioFrame.Navigate(typeof(Escenario_CombatePage), this);
         }
-
-        private void Btn_Sandshrew_Click(object sender, RoutedEventArgs e)
+        private void SeleccionarSandshrew()
         {
-            
             if (eleccionPokemon1 == false)
             {
                 comprobarSandshrew("I");
@@ -69,9 +67,17 @@ namespace IPO2_Pokemon_Pokedex
             }
             seleccionPokemon("Sandshrew");
         }
+        private void Btn_Sandshrew_Click(object sender, RoutedEventArgs e)
+        {
+            SeleccionarSandshrew();
+        }
+
         private void Btn_Raichu_Click(object sender, RoutedEventArgs e)
         {
-            
+            SeleccionarRaichu();
+        }
+        private void SeleccionarRaichu()
+        {
             if (eleccionPokemon1 == false)
             {
                 comprobarRaichu("I");
@@ -84,7 +90,10 @@ namespace IPO2_Pokemon_Pokedex
         }
         private void Btn_Darumaka_Click(object sender, RoutedEventArgs e)
         {
-            
+            SeleccionarDarumaka();
+        }
+        private void SeleccionarDarumaka()
+        {
             if (eleccionPokemon1 == false)
             {
                 comprobarDarumaka("I");
@@ -97,7 +106,11 @@ namespace IPO2_Pokemon_Pokedex
         }
         private void Btn_Snorlarx_Click(object sender, RoutedEventArgs e)
         {
-            
+
+            SeleccionarSnorlarx();
+        }
+        private void SeleccionarSnorlarx()
+        {
             if (eleccionPokemon1 == false)
             {
                 comprobarSnorlax("I");
@@ -244,7 +257,7 @@ namespace IPO2_Pokemon_Pokedex
                     break;
 
                 case 4:
-                    SeleccionarSnorlax();
+                    SeleccionarSnorlarx();
                     break;
             }
         }
