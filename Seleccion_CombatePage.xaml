@@ -91,7 +91,7 @@
                 </Button>
             </StackPanel>
             <Image x:Name="Img_VS" Grid.Column="1" HorizontalAlignment="Center" Height="300" VerticalAlignment="Center" Width="300" Source="/Assets/VS.png"/>
-            <Button x:Name="Btn_Aleatorio" VerticalAlignment="Center" Width="150" Height="150" Margin="0,0,0,0" FontWeight="Bold" FontFamily="Arial Black" FontSize="150" Content="?" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" RequestedTheme="Dark" Click="Btn_Aleatorio_Click"/>
+            <Button x:Name="Btn_Aleatorio" VerticalAlignment="Center" Width="150" Height="150" Margin="0,0,0,0" FontWeight="Bold" FontFamily="Arial Black" FontSize="150" Content="?" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" RequestedTheme="Dark"/>
 
         </Grid>
     </Viewbox>
