@@ -7,17 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <NavigationView x:Name="nvSample" IsPaneOpen="True" IsSettingsVisible="True" IsBackButtonVisible="Auto" IsBackEnabled="True" PaneDisplayMode="Left" ExpandedModeThresholdWidth="30" 
-                        SelectionChanged="nvSample_SelectionChanged" BackRequested="nvSample_BackRequested">
-        <NavigationView.MenuItems>
-            <NavigationViewItem Icon="Home" Content="Inicio" Tag="Inicio"/>
-            <NavigationViewItem Icon="Pictures" Content="Pokedex" Tag="Pokedex"/>
-            <NavigationViewItem Icon="People" Content="Combate Pokemon" Tag="Combate"/>
-            <NavigationViewItem Icon="Help" Content="Acerca De" Tag="AcercaDe"/>
-        </NavigationView.MenuItems>
-        <Frame x:Name="contentFrame"/>
-    </NavigationView>
-    <!--<Grid x:Name="Grid_Principal">
+    <Grid x:Name="Grid_Principal">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
@@ -62,5 +52,5 @@
                 <Grid x:Name="Grid_FrameMain"/>
             </Frame>
         </SplitView>
-    </Grid>-->
+    </Grid>
 </Page>
