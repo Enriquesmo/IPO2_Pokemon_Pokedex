@@ -34,7 +34,12 @@ namespace IPO2_Pokemon_Pokedex
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             pk = e.Parameter as Pokemon;
-            txtDescripcion.Text = pk.details;
+            Paragraph myParagraph = new Paragraph();
+            Run myRun = new Run();
+            myRun.Text = pk.details;
+
+            myParagraph.Inlines.Add(myRun);
+            txtDescripcion.Blocks.Add(myParagraph);
             txtName.Text = pk.name;
             txtType.Text=pk.type.Nombre;
             imgType.Source = new BitmapImage(pk.type.IconoUri);
