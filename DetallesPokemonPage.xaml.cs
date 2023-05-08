@@ -42,6 +42,13 @@ namespace IPO2_Pokemon_Pokedex
             txtDescripcion.Blocks.Add(myParagraph);
             txtName.Text = pk.name;
             txtType.Text=pk.type.Nombre;
+            txtVida.Text = "Vida: "+Convert.ToString(pk.hp);
+            txtAtaque.Text = "Ataque: " + Convert.ToString(pk.attack);
+            txtDefensa.Text = "Defensa: " + Convert.ToString(pk.defense);
+            txtVelAtaque.Text = "Velocidad de Ataque: " + Convert.ToString(pk.speedAttack);
+            txtVelDefensa.Text = "Velelocidad de Defensa: " + Convert.ToString(pk.speedDefense);
+            txtRapidez.Text = "Rapidez: " + Convert.ToString(pk.speed);
+
             imgType.Source = new BitmapImage(pk.type.IconoUri);
             imgPokemon.Source = pk.icon;
         }

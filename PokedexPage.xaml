@@ -33,7 +33,7 @@
                 </StackPanel>
             </ScrollViewer>
             <Rectangle Stroke="Black" Fill="#99000000" Grid.Column="1" Margin="10,10,10,0"/>
-            <Rectangle Stroke="Black" Fill="#99000000" Grid.Column="1" Margin="53,1476,10,10" Grid.Row="1"/>
+            <Rectangle Stroke="Black" Fill="#99000000" Grid.Column="1" Margin="37,1476,10,10" Grid.Row="1"/>
             <Rectangle Grid.Column="1" Grid.RowSpan="2" Height="1500" HorizontalAlignment="Stretch" StrokeThickness="40" Stroke="Black"/>
             <ListView x:Name="lvAux" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" 
                       HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="MostrarPokemon" SelectedIndex="0">
