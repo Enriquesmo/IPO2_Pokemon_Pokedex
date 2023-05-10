@@ -150,6 +150,7 @@ namespace IPO2_Pokemon_Pokedex
             PokemonJugador1 = Padre.PokemonJugador1;
             PokemonJugador2 = Padre.PokemonJugador2;
             ImgFondo_Pokemons.Source = Padre.Fondo.Source;
+            modo_de_juego = Padre.modo_de_juego;
         }
         private async Task EsperarBotonPresionado() // Terminado
         {
@@ -174,6 +175,27 @@ namespace IPO2_Pokemon_Pokedex
                     ImgFondo_Botones.Source = new BitmapImage(new Uri("ms-appx:///Assets/fondo_movimientos2.jpg"));
                 }
 
+                // Si se está en modo P1 vs IA, se elige un ataque aleatorio para el Jugador 2, es decir, la IA
+                if (modo_de_juego == "IA" && accionPokemon2 == true)
+                {
+                    //await Task.Delay(TimeSpan.FromSeconds(1));
+                    Random ataqueAleatorio = new Random();
+                    int numeroAleatorio = ataqueAleatorio.Next(1, 5);
+                    switch (numeroAleatorio) {
+                        case 1:
+                            Btn_Ataque1_Click(null, null);
+                            break;
+                        case 2:
+                            Btn_Ataque2_Click(null, null);
+                            break;
+                        case 3:
+                            Btn_Ataque3_Click(null, null);
+                            break;
+                        case 4:
+                            Btn_Ataque4_Click(null, null);
+                            break;
+                    }
+                }
                 // Espera a que se presione uno de los ataques disponibles
                 await EsperarBotonPresionado();
                 Boton_presionado = false;
