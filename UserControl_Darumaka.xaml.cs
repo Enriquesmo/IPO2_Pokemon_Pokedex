@@ -54,6 +54,14 @@ namespace IPO2_Pokemon_Pokedex
         public string nombreAtaque2 = "Descanso";
         public string nombreAtaque3 = "Tumba Rocas";
         public string nombreAtaque4 = "Llamarada";
+        public double energiaAtaque1 = 10;
+        public double energiaAtaque2 = 10;
+        public double energiaAtaque3 = 10;
+        public double energiaAtaque4 = 10;
+        public double danoAtaque1 = 0;
+        public double danoAtaque2 = 0;
+        public double danoAtaque3 = 30;
+        public double danoAtaque4 = 40;
         public double Vida
         {
             get { return health; }
@@ -129,7 +137,7 @@ namespace IPO2_Pokemon_Pokedex
             if (ReducirEnergía())
             {
                 Storyboard sbProteger = (Storyboard)this.Resources["Proteger"];
-                if (_sbDescanso != null) { _sbDescanso.Stop(); }
+                //if (_sbDescanso != null) { _sbDescanso.Stop(); }
                 sbProteger.Begin();
             }
         }
@@ -139,15 +147,15 @@ namespace IPO2_Pokemon_Pokedex
             _sbDescanso.RepeatBehavior = RepeatBehavior.Forever;
             _sbDescanso.AutoReverse = true;
             _sbDescanso.Begin();
-            Regenerate();
-            EnergyRegeneration();
+            //Regenerate();
+            //EnergyRegeneration();
         }
         public void realizarAtaque3()
         {
             if (ReducirEnergía())
             {
                 Storyboard sbTumbarocas = (Storyboard)this.Resources["Tumbarocas"];
-                if (_sbDescanso != null) { _sbDescanso.Stop(); }
+                //if (_sbDescanso != null) { _sbDescanso.Stop(); }
                 sbTumbarocas.Begin();
             }
         }
@@ -156,7 +164,7 @@ namespace IPO2_Pokemon_Pokedex
             if (ReducirEnergía())
             {
                 Storyboard sbLlamarada = (Storyboard)this.Resources["Llamarada"];
-                if (_sbDescanso != null) { _sbDescanso.Stop(); }
+                //if (_sbDescanso != null) { _sbDescanso.Stop(); }
                 sbLlamarada.Begin();
             }
         }

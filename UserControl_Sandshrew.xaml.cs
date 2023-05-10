@@ -55,6 +55,14 @@ namespace IPO2_Pokemon_Pokedex
         public string nombreAtaque2 = "Ataque Arena";
         public string nombreAtaque3 = "Picotazo Venenoso";
         public string nombreAtaque4 = "Terremoto";
+        public double energiaAtaque1 = 20;
+        public double energiaAtaque2 = 10;
+        public double energiaAtaque3 = 25;
+        public double energiaAtaque4 = 40;
+        public double danoAtaque1 = 15;
+        public double danoAtaque2 = 0;
+        public double danoAtaque3 = 25;
+        public double danoAtaque4 = 40;
         public double Vida
         {
             get { return this.ProgressBar_Vida.Value; }

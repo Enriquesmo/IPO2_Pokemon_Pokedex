@@ -59,6 +59,14 @@ namespace IPO2_Pokemon_Pokedex
         public string nombreAtaque2 = "Placaje";
         public string nombreAtaque3 = "Proteccion";
         public string nombreAtaque4 = "Rayo";
+        public double energiaAtaque1 = 20;
+        public double energiaAtaque2 = 15;
+        public double energiaAtaque3 = 0;
+        public double energiaAtaque4 = 40;
+        public double danoAtaque1 = 20;
+        public double danoAtaque2 = 15;
+        public double danoAtaque3 = 0;
+        public double danoAtaque4 = 40;
         public double Vida
         {
             get { return this.barraVida.Value; }
@@ -136,59 +144,59 @@ namespace IPO2_Pokemon_Pokedex
         }
         public void realizarAtaque1() // Terminado
         {
-            if (barraEnergia.Value - valorAtaque1 >= 0)
-            {
-                barraEnergia.Value -= valorAtaque1;
-                DesactivarAtaques();
+            //if (barraEnergia.Value - valorAtaque1 >= 0)
+            //{
+            //    barraEnergia.Value -= valorAtaque1;
+                //DesactivarAtaques();
                 Storyboard sb = (Storyboard)this.Resources["ColaFerreaKey"];
                 sb.Begin();
-            }
-            else
-            {
-                AnimacionEnergiaInsuficiente();
-            }
+            //}
+            //else
+            //{
+            //    AnimacionEnergiaInsuficiente();
+            //}
         }
         public void realizarAtaque2() // Terminado
         {
-            if (barraEnergia.Value - valorAtaque2 >= 0)
-            {
-                barraEnergia.Value -= valorAtaque2;
-                DesactivarAtaques();
+            //if (barraEnergia.Value - valorAtaque2 >= 0)
+            //{
+            //    barraEnergia.Value -= valorAtaque2;
+                //DesactivarAtaques();
                 Storyboard sb = (Storyboard)this.Resources["PlacajeKey"];
                 sb.Begin();
-            }
-            else
-            {
-                AnimacionEnergiaInsuficiente();
-            }
+            //}
+            //else
+            //{
+            //    AnimacionEnergiaInsuficiente();
+            //}
         }
         public void realizarAtaque3() // Terminado
         {
-            if (barraEnergia.Value - valorAtaque3 >= 0)
-            {
-                barraEnergia.Value -= valorAtaque3;
-                DesactivarAtaques();
+            //if (barraEnergia.Value - valorAtaque3 >= 0)
+            //{
+             //   barraEnergia.Value -= valorAtaque3;
+                //DesactivarAtaques();
                 Storyboard sb = (Storyboard)this.Resources["ProteccionKey"];
                 sb.Begin();
-            }
-            else
-            {
-                AnimacionEnergiaInsuficiente();
-            }
+            //}
+            //else
+            //{
+            //    AnimacionEnergiaInsuficiente();
+            //}
         }
         public void realizarAtaque4() // Terminado
         {
-            if (barraEnergia.Value - valorAtaque4 >= 0)
-            {
-                barraEnergia.Value -= valorAtaque4;
-                DesactivarAtaques();
+            //if (barraEnergia.Value - valorAtaque4 >= 0)
+            //{
+                //barraEnergia.Value -= valorAtaque4;
+                //DesactivarAtaques();
                 Storyboard sb = (Storyboard)this.Resources["RayoKey"];
                 sb.Begin();
-            }
-            else
-            {
-                AnimacionEnergiaInsuficiente();
-            }
+            //}
+            //else
+            //{
+                //AnimacionEnergiaInsuficiente();
+            //}
         }
         public void herirPokemon(double damage) // Terminado
         {

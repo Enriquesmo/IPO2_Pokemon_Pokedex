@@ -67,6 +67,14 @@ namespace IPO2_Pokemon_Pokedex
         public string nombreAtaque2 = "Golpe Cuerpo";
         public string nombreAtaque3 = "Enfado";
         public string nombreAtaque4 = "Hipnotizar";
+        public double energiaAtaque1 = 20;
+        public double energiaAtaque2 = 20;
+        public double energiaAtaque3 = 20;
+        public double energiaAtaque4 = 20;
+        public double danoAtaque1 = 0;
+        public double danoAtaque2 = 20;
+        public double danoAtaque3 = 40;
+        public double danoAtaque4 = 0;
         public double Vida
         {
             get { return this.barHP.Value; }
@@ -176,38 +184,38 @@ namespace IPO2_Pokemon_Pokedex
         public void realizarAtaque1()
         {
             Boolean sePuede = restarBarraEnergia(20);
-            if (sePuede == true)
-            {
+            //if (sePuede == true)
+            //{
                 Storyboard sbDormir = (Storyboard)this.Resources["sbDormir"];
                 sbDormir.Begin();
-            }
+            //}
         }
         public void realizarAtaque2()
         {
             Boolean sePuede = restarBarraEnergia(20);
-            if (sePuede == true)
-            {
+            //if (sePuede == true)
+            //{
                 Storyboard sbBodySlam = (Storyboard)this.Resources["sbBodySlam"];
                 sbBodySlam.Begin();
-            }
+            //}
         }
         public void realizarAtaque3()
         {
-            Boolean sePuede = incrementarBarraVida(20);
-            if (sePuede == true)
-            {
+            Boolean sePuede = restarBarraEnergia(20);
+            //if (sePuede == true)
+            //{
                 Storyboard enfado = (Storyboard)this.Resources["sbEnfado"];
                 enfado.Begin();
-            }
+            //}
         }
         public void realizarAtaque4()
         {
             Boolean sePuede = restarBarraEnergia(20);
-            if (sePuede == true)
-            {
+            //if (sePuede == true)
+            //{
                 Storyboard sbHipnotizar = (Storyboard)this.Resources["sbHipnotizar"];
                 sbHipnotizar.Begin();
-            }
+            //}
         }
         public void herirPokemon(double damage)
         {
@@ -349,7 +357,7 @@ namespace IPO2_Pokemon_Pokedex
         }
         private void btnEnfado_Click(object sender, RoutedEventArgs e)
         {
-            Boolean sePuede = incrementarBarraVida(20);
+            Boolean sePuede = restarBarraEnergia(20);
             if (sePuede == true)
             {
                 Storyboard enfado = (Storyboard)this.Resources["sbEnfado"];
