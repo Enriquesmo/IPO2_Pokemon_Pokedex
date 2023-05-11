@@ -45,6 +45,8 @@
                         </Image.FocusVisualSecondaryBrush>
                     </Image>
                 </Grid>
+                <Image x:Name="Image_LooserDerecha" Height="100" Margin="219,192,219,193" Source="/Assets/Losser.png"/>
+                <Image x:Name="Image_WinnerDerecha" Height="100" Margin="219,192,219,193" Source="/Assets/Winner.png"/>
             </Grid>
             <Grid x:Name="Pokemons_Izquierda" Margin="10,308,761,192">
                 <Image x:Name="BaseCombate_PokemonIzquierda" Margin="114,388,115,0" Source="/Assets/BaseCombate.png" Width="500"/>
@@ -115,6 +117,8 @@
                         </Image.FocusVisualSecondaryBrush>
                     </Image>
                 </Grid>
+                <Image x:Name="Image_WinnerIzquierda" Height="100" Margin="219,192,209,208" Source="/Assets/Winner.png"/>
+                <Image x:Name="Image_LooserIzquierda" Height="100" Margin="219,192,209,208" Source="/Assets/Losser.png"/>
             </Grid>
             <Grid x:Name="Grid_Botones" Margin="750,500,0,0">
                 <Grid.RowDefinitions>

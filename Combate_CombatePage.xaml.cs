@@ -47,6 +47,8 @@ namespace IPO2_Pokemon_Pokedex
         public Boolean accionPokemon2;
         public Boolean Boton_presionado;
 
+        public double vidaNueva;
+        public double energiaNueva;
         /************************************************************************************************/
 
         /*Inicializacion de la pagina CombatePage*/
@@ -65,22 +67,22 @@ namespace IPO2_Pokemon_Pokedex
 
         /*Botones de la propia pagina*/
 
-        private void Btn_Ataque1_Click(object sender, RoutedEventArgs e)
+        private void Btn_Ataque1_Click(object sender, RoutedEventArgs e) // Terminado
         {
             notificarAtaqueTrasPulsarBoton(Btn_Ataque1);
             realizarAtaque(1);
         }
-        private void Btn_Ataque2_Click(object sender, RoutedEventArgs e)
+        private void Btn_Ataque2_Click(object sender, RoutedEventArgs e) // Terminado
         {
             notificarAtaqueTrasPulsarBoton(Btn_Ataque2);
             realizarAtaque(2);
         }
-        private void Btn_Ataque3_Click(object sender, RoutedEventArgs e)
+        private void Btn_Ataque3_Click(object sender, RoutedEventArgs e) // Terminado
         {
             notificarAtaqueTrasPulsarBoton(Btn_Ataque3);
             realizarAtaque(3);
         }
-        private void Btn_Ataque4_Click(object sender, RoutedEventArgs e)
+        private void Btn_Ataque4_Click(object sender, RoutedEventArgs e) // Terminado
         {
             notificarAtaqueTrasPulsarBoton(Btn_Ataque4);
             realizarAtaque(4);
@@ -164,6 +166,7 @@ namespace IPO2_Pokemon_Pokedex
             // Ciclo del combate
             while (ProgressBar_Vida_Derecha.Value > 0 && ProgressBar_Vida_Izquierda.Value > 0)
             {
+
                 if (accionPokemon1 == true)
                 {
                     TextBlock_TurnoDelJugador.Text = "Turno del jugador 1: " + PokemonJugador1;
@@ -178,7 +181,8 @@ namespace IPO2_Pokemon_Pokedex
                 // Si se está en modo P1 vs IA, se elige un ataque aleatorio para el Jugador 2, es decir, la IA
                 if (modo_de_juego == "IA" && accionPokemon2 == true)
                 {
-                    //await Task.Delay(TimeSpan.FromSeconds(1));
+                    estadoBotones(false);
+                    await Task.Delay(1000);
                     Random ataqueAleatorio = new Random();
                     int numeroAleatorio = ataqueAleatorio.Next(1, 5);
                     switch (numeroAleatorio) {
@@ -201,8 +205,8 @@ namespace IPO2_Pokemon_Pokedex
                 Boton_presionado = false;
                 estadoBotones(false);
 
-                // Espera de 5 segundos a que se realicen correctamente todos los ataques
-                await Task.Delay(5000);
+                // Espera de 8 segundos a que se realicen correctamente todos los ataques
+                await Task.Delay(8000);
                 TextBlock_MensajeCombate.Text = "";
                 estadoBotones(true);
 
@@ -220,14 +224,19 @@ namespace IPO2_Pokemon_Pokedex
                     accionPokemon1 = true;
                     accionPokemon2 = false;
                 }
+                // Tras realizar el ataque, actualizamos los valores de vida y energia de los pokemon
+                actualizarVidaYEnergia();
             }
+            // Aqui el combate ha terminado
+            estadoBotones(false);
+            PonerResultado();
         }
 
         /************************************************************************************************/
 
         /*Metodos Auxiliares*/
 
-        public void realizarAtaque(int numeroDeAtaque) // Sin Terminar
+        public void realizarAtaque(int numeroDeAtaque) // Terminado
         {
             if (accionPokemon1 == true)// Pokemons de la Derecha
             {
@@ -237,54 +246,78 @@ namespace IPO2_Pokemon_Pokedex
                         if(numeroDeAtaque == 1)
                         {
                             UserControl_Sandshrew_Derecha_P1.realizarAtaque1();
+                            restarEnergia(UserControl_Sandshrew_Derecha_P1.energiaAtaque1);
+                            restarVida(UserControl_Sandshrew_Derecha_P1.danoAtaque1);
                         }
                         else if (numeroDeAtaque == 2)
                         {
                             UserControl_Sandshrew_Derecha_P1.realizarAtaque2();
+                            restarEnergia(UserControl_Sandshrew_Derecha_P1.energiaAtaque2);
+                            restarVida(UserControl_Sandshrew_Derecha_P1.danoAtaque2);
                         }
                         else if (numeroDeAtaque == 3)
                         {
                             UserControl_Sandshrew_Derecha_P1.realizarAtaque3();
+                            restarEnergia(UserControl_Sandshrew_Derecha_P1.energiaAtaque3);
+                            restarVida(UserControl_Sandshrew_Derecha_P1.danoAtaque3);
                         }
                         else if (numeroDeAtaque == 4)
                         {
                             UserControl_Sandshrew_Derecha_P1.realizarAtaque4();
+                            restarEnergia(UserControl_Sandshrew_Derecha_P1.energiaAtaque4);
+                            restarVida(UserControl_Sandshrew_Derecha_P1.danoAtaque4);
                         }
                         break;
                     case "Snorlax":
                         if (numeroDeAtaque == 1)
                         {
                             UserControl_Snorlax_Derecha_P1.realizarAtaque1();
+                            restarEnergia(UserControl_Snorlax_Derecha_P1.energiaAtaque1);
+                            restarVida(UserControl_Snorlax_Derecha_P1.danoAtaque1);
                         }
                         else if (numeroDeAtaque == 2)
                         {
                             UserControl_Snorlax_Derecha_P1.realizarAtaque2();
+                            restarEnergia(UserControl_Snorlax_Derecha_P1.energiaAtaque2);
+                            restarVida(UserControl_Snorlax_Derecha_P1.danoAtaque2);
                         }
                         else if (numeroDeAtaque == 3)
                         {
                             UserControl_Snorlax_Derecha_P1.realizarAtaque3();
+                            restarEnergia(UserControl_Snorlax_Derecha_P1.energiaAtaque3);
+                            restarVida(UserControl_Snorlax_Derecha_P1.danoAtaque3);
                         }
                         else if (numeroDeAtaque == 4)
                         {
                             UserControl_Snorlax_Derecha_P1.realizarAtaque4();
+                            restarEnergia(UserControl_Snorlax_Derecha_P1.energiaAtaque4);
+                            restarVida(UserControl_Snorlax_Derecha_P1.danoAtaque4);
                         }
                         break;
                     case "Darumaka":
                         if (numeroDeAtaque == 1)
                         {
                             UserControl_Darumaka_Derecha_P1.realizarAtaque1();
+                            restarEnergia(UserControl_Darumaka_Derecha_P1.energiaAtaque1);
+                            restarVida(UserControl_Darumaka_Derecha_P1.danoAtaque1);
                         }
                         else if (numeroDeAtaque == 2)
                         {
                             UserControl_Darumaka_Derecha_P1.realizarAtaque2();
+                            restarEnergia(UserControl_Darumaka_Derecha_P1.energiaAtaque2);
+                            restarVida(UserControl_Darumaka_Derecha_P1.danoAtaque2);
                         }
                         else if (numeroDeAtaque == 3)
                         {
                             UserControl_Darumaka_Derecha_P1.realizarAtaque3();
+                            restarEnergia(UserControl_Darumaka_Derecha_P1.energiaAtaque3);
+                            restarVida(UserControl_Darumaka_Derecha_P1.danoAtaque3);
                         }
                         else if (numeroDeAtaque == 4)
                         {
                             UserControl_Darumaka_Derecha_P1.realizarAtaque4();
+                            restarEnergia(UserControl_Darumaka_Derecha_P1.energiaAtaque4);
+                            restarVida(UserControl_Darumaka_Derecha_P1.danoAtaque4);
                         }
                         break;
 
@@ -292,18 +325,26 @@ namespace IPO2_Pokemon_Pokedex
                         if (numeroDeAtaque == 1)
                         {
                             UserControl_Raichu_Derecha_P1.realizarAtaque1();
+                            restarEnergia(UserControl_Raichu_Derecha_P1.energiaAtaque1);
+                            restarVida(UserControl_Raichu_Derecha_P1.danoAtaque1);
                         }
                         else if (numeroDeAtaque == 2)
                         {
                             UserControl_Raichu_Derecha_P1.realizarAtaque2();
+                            restarEnergia(UserControl_Raichu_Derecha_P1.energiaAtaque2);
+                            restarVida(UserControl_Raichu_Derecha_P1.danoAtaque2);
                         }
                         else if (numeroDeAtaque == 3)
                         {
                             UserControl_Raichu_Derecha_P1.realizarAtaque3();
+                            restarEnergia(UserControl_Raichu_Derecha_P1.energiaAtaque3);
+                            restarVida(UserControl_Raichu_Derecha_P1.danoAtaque3);
                         }
                         else if (numeroDeAtaque == 4)
                         {
                             UserControl_Raichu_Derecha_P1.realizarAtaque4();
+                            restarEnergia(UserControl_Raichu_Derecha_P1.energiaAtaque4);
+                            restarVida(UserControl_Raichu_Derecha_P1.danoAtaque4);
                         }
 
                         break;
@@ -317,54 +358,78 @@ namespace IPO2_Pokemon_Pokedex
                         if (numeroDeAtaque == 1)
                         {
                             UserControl_Sandshrew_Izquierda_P2_IA.realizarAtaque1();
+                            restarEnergia(UserControl_Sandshrew_Izquierda_P2_IA.energiaAtaque1);
+                            restarVida(UserControl_Sandshrew_Izquierda_P2_IA.danoAtaque1);
                         }
                         else if (numeroDeAtaque == 2)
                         {
                             UserControl_Sandshrew_Izquierda_P2_IA.realizarAtaque2();
+                            restarEnergia(UserControl_Sandshrew_Izquierda_P2_IA.energiaAtaque2);
+                            restarVida(UserControl_Sandshrew_Izquierda_P2_IA.danoAtaque2);
                         }
                         else if (numeroDeAtaque == 3)
                         {
                             UserControl_Sandshrew_Izquierda_P2_IA.realizarAtaque3();
+                            restarEnergia(UserControl_Sandshrew_Izquierda_P2_IA.energiaAtaque3);
+                            restarVida(UserControl_Sandshrew_Izquierda_P2_IA.danoAtaque3);
                         }
                         else if (numeroDeAtaque == 4)
                         {
                             UserControl_Sandshrew_Izquierda_P2_IA.realizarAtaque4();
+                            restarEnergia(UserControl_Sandshrew_Izquierda_P2_IA.energiaAtaque4);
+                            restarVida(UserControl_Sandshrew_Izquierda_P2_IA.danoAtaque4);
                         }
                         break;
                     case "Snorlax":
                         if (numeroDeAtaque == 1)
                         {
                             UserControl_Snorlax_Izquierda_P2_IA.realizarAtaque1();
+                            restarEnergia(UserControl_Snorlax_Izquierda_P2_IA.energiaAtaque1);
+                            restarVida(UserControl_Snorlax_Izquierda_P2_IA.danoAtaque1);
                         }
                         else if (numeroDeAtaque == 2)
                         {
                             UserControl_Snorlax_Izquierda_P2_IA.realizarAtaque2();
+                            restarEnergia(UserControl_Snorlax_Izquierda_P2_IA.energiaAtaque2);
+                            restarVida(UserControl_Snorlax_Izquierda_P2_IA.danoAtaque2);
                         }
                         else if (numeroDeAtaque == 3)
                         {
                             UserControl_Snorlax_Izquierda_P2_IA.realizarAtaque3();
+                            restarEnergia(UserControl_Snorlax_Izquierda_P2_IA.energiaAtaque3);
+                            restarVida(UserControl_Snorlax_Izquierda_P2_IA.danoAtaque3);
                         }
                         else if (numeroDeAtaque == 4)
                         {
                             UserControl_Snorlax_Izquierda_P2_IA.realizarAtaque4();
+                            restarEnergia(UserControl_Snorlax_Izquierda_P2_IA.energiaAtaque4);
+                            restarVida(UserControl_Snorlax_Izquierda_P2_IA.danoAtaque4);
                         }
                         break;
                     case "Darumaka":
                         if (numeroDeAtaque == 1)
                         {
                             UserControl_Darumaka_Izquierda_P2_IA.realizarAtaque1();
+                            restarEnergia(UserControl_Darumaka_Izquierda_P2_IA.energiaAtaque1);
+                            restarVida(UserControl_Darumaka_Izquierda_P2_IA.danoAtaque1);
                         }
                         else if (numeroDeAtaque == 2)
                         {
                             UserControl_Darumaka_Izquierda_P2_IA.realizarAtaque2();
+                            restarEnergia(UserControl_Darumaka_Izquierda_P2_IA.energiaAtaque2);
+                            restarVida(UserControl_Darumaka_Izquierda_P2_IA.danoAtaque2);
                         }
                         else if (numeroDeAtaque == 3)
                         {
                             UserControl_Darumaka_Izquierda_P2_IA.realizarAtaque3();
+                            restarEnergia(UserControl_Darumaka_Izquierda_P2_IA.energiaAtaque3);
+                            restarVida(UserControl_Darumaka_Izquierda_P2_IA.danoAtaque3);
                         }
                         else if (numeroDeAtaque == 4)
                         {
                             UserControl_Darumaka_Izquierda_P2_IA.realizarAtaque4();
+                            restarEnergia(UserControl_Darumaka_Izquierda_P2_IA.energiaAtaque4);
+                            restarVida(UserControl_Darumaka_Izquierda_P2_IA.danoAtaque4);
                         }
                         break;
 
@@ -372,20 +437,27 @@ namespace IPO2_Pokemon_Pokedex
                         if (numeroDeAtaque == 1)
                         {
                             UserControl_Raichu_Izquierda_P2_IA.realizarAtaque1();
+                            restarEnergia(UserControl_Raichu_Izquierda_P2_IA.energiaAtaque1);
+                            restarVida(UserControl_Raichu_Izquierda_P2_IA.danoAtaque1);
                         }
                         else if (numeroDeAtaque == 2)
                         {
                             UserControl_Raichu_Izquierda_P2_IA.realizarAtaque2();
+                            restarEnergia(UserControl_Raichu_Izquierda_P2_IA.energiaAtaque2);
+                            restarVida(UserControl_Raichu_Izquierda_P2_IA.danoAtaque2);
                         }
                         else if (numeroDeAtaque == 3)
                         {
                             UserControl_Raichu_Izquierda_P2_IA.realizarAtaque3();
+                            restarEnergia(UserControl_Raichu_Izquierda_P2_IA.energiaAtaque3);
+                            restarVida(UserControl_Raichu_Izquierda_P2_IA.danoAtaque3);
                         }
                         else if (numeroDeAtaque == 4)
                         {
                             UserControl_Raichu_Izquierda_P2_IA.realizarAtaque4();
+                            restarEnergia(UserControl_Raichu_Izquierda_P2_IA.energiaAtaque4);
+                            restarVida(UserControl_Raichu_Izquierda_P2_IA.danoAtaque4);
                         }
-
                         break;
                 }
             }
@@ -503,6 +575,10 @@ namespace IPO2_Pokemon_Pokedex
             UserControl_Snorlax_Izquierda_P2_IA.IsEnabled = false;
             UserControl_Snorlax_Izquierda_P2_IA.Visibility = Visibility.Collapsed;
             UserControl_Snorlax_Izquierda_P2_IA.verFormaPokedex(false);
+            Image_LooserDerecha.Visibility = Visibility.Collapsed;
+            Image_WinnerIzquierda.Visibility = Visibility.Collapsed;
+            Image_WinnerDerecha.Visibility = Visibility.Collapsed;
+            Image_LooserIzquierda.Visibility = Visibility.Collapsed;
         }
         public void comprobarDarumaka(String ladoDelCampo) // Terminado
         {
@@ -510,6 +586,7 @@ namespace IPO2_Pokemon_Pokedex
             {
                 UserControl_Darumaka_Derecha_P1.IsEnabled = true;
                 UserControl_Darumaka_Derecha_P1.Visibility = Visibility.Visible;
+                UserControl_Darumaka_Derecha_P1.Vida = ProgressBar_Vida_Derecha.Value;
             }
             else if(ladoDelCampo.Equals("I"))
             {
@@ -563,6 +640,138 @@ namespace IPO2_Pokemon_Pokedex
             Btn_Ataque3.IsEnabled = estado;
             Btn_Ataque4.IsEnabled = estado;
         }
+        public void restarEnergia(double valor) // Terminado
+        {
+            if (accionPokemon1 == true)
+            {
+                dtTimeEnergiaDerecha = new DispatcherTimer();
+                energiaNueva = ProgressBar_Energia_Derecha.Value - valor;
+                dtTimeEnergiaDerecha.Interval = TimeSpan.FromMilliseconds(1);
+                dtTimeEnergiaDerecha.Tick += DisminuirEnergiaDerecha;
+                dtTimeEnergiaDerecha.Start();
+            }
+            else if (accionPokemon2 == true)
+            {
+                dtTimeEnergiaIzquierda = new DispatcherTimer();
+                energiaNueva = ProgressBar_Energia_Izquierda.Value - valor;
+                dtTimeEnergiaIzquierda.Interval = TimeSpan.FromMilliseconds(1);
+                dtTimeEnergiaIzquierda.Tick += DisminuirEnergiaIzquierda;
+                dtTimeEnergiaIzquierda.Start();
+            }
+        }
+        public void restarVida(double valor) // Terminado
+        {
+            if (accionPokemon1 == true)
+            {
+                dtTimeVidaIzquierda = new DispatcherTimer();
+                vidaNueva = ProgressBar_Vida_Izquierda.Value - valor;
+                dtTimeVidaIzquierda.Interval = TimeSpan.FromMilliseconds(1);
+                dtTimeVidaIzquierda.Tick += DisminuirVidaIzquierda;
+                dtTimeVidaIzquierda.Start();
+            }
+            else if (accionPokemon2 == true)
+            {
+                dtTimeVidaDerecha = new DispatcherTimer();
+                vidaNueva = ProgressBar_Vida_Derecha.Value - valor;
+                dtTimeVidaDerecha.Interval = TimeSpan.FromMilliseconds(1);
+                dtTimeVidaDerecha.Tick += DisminuirVidaDerecha;
+                dtTimeVidaDerecha.Start();
+            }
+        }
+        public void actualizarVidaYEnergia() // Terminado
+        {
+            // Condicionales para poder actualizar el pokemon elegido por el P1
+            switch (PokemonJugador1)
+            {
+                case "Sandshrew":
+                    actualizarSandshrew("D");
+                    break;
+
+                case "Snorlax":
+                    actualizarSnorlax("D");
+                    break;
+
+                case "Darumaka":
+                    actualizarDarumaka("D");
+                    break;
+
+                case "Raichu":
+                    actualizarRaichu("D");
+                    break;
+            }
+
+            // Condicionales para poder actualizar el pokemon elegido por la IA o el P2
+            switch (PokemonJugador2)
+            {
+                case "Sandshrew":
+                    actualizarSandshrew("I");
+                    break;
+
+                case "Snorlax":
+                    actualizarSnorlax("I");
+                    break;
+
+                case "Darumaka":
+                    actualizarDarumaka("I");
+                    break;
+
+                case "Raichu":
+                    actualizarRaichu("I");
+                    break;
+            }
+        }
+        public void actualizarDarumaka(String ladoDelCampo) // Terminado
+        {
+            if (ladoDelCampo.Equals("D"))
+            {
+                UserControl_Darumaka_Derecha_P1.Vida = ProgressBar_Vida_Derecha.Value;
+                UserControl_Darumaka_Derecha_P1.Energia = ProgressBar_Energia_Derecha.Value;
+            }
+            else if (ladoDelCampo.Equals("I"))
+            {
+                UserControl_Darumaka_Izquierda_P2_IA.Vida = ProgressBar_Vida_Izquierda.Value;
+                UserControl_Darumaka_Izquierda_P2_IA.Energia = ProgressBar_Energia_Izquierda.Value;
+            }
+        }
+        public void actualizarSandshrew(String ladoDelCampo) // Terminado
+        {
+            if (ladoDelCampo.Equals("D"))
+            {
+                UserControl_Sandshrew_Derecha_P1.Vida = ProgressBar_Vida_Derecha.Value;
+                UserControl_Sandshrew_Derecha_P1.Energia = ProgressBar_Energia_Derecha.Value;
+            }
+            else if (ladoDelCampo.Equals("I"))
+            {
+                UserControl_Sandshrew_Izquierda_P2_IA.Vida = ProgressBar_Vida_Izquierda.Value;
+                UserControl_Sandshrew_Izquierda_P2_IA.Energia = ProgressBar_Energia_Izquierda.Value;
+            }
+        }
+        public void actualizarSnorlax(String ladoDelCampo) // Terminado
+        {
+            if (ladoDelCampo.Equals("D"))
+            {
+                UserControl_Snorlax_Derecha_P1.Vida = ProgressBar_Vida_Derecha.Value;
+                UserControl_Snorlax_Derecha_P1.Energia = ProgressBar_Energia_Derecha.Value;
+            }
+            else if (ladoDelCampo.Equals("I"))
+            {
+                UserControl_Snorlax_Izquierda_P2_IA.Vida = ProgressBar_Vida_Izquierda.Value;
+                UserControl_Snorlax_Izquierda_P2_IA.Energia = ProgressBar_Energia_Izquierda.Value;
+            }
+        }
+        public void actualizarRaichu(String ladoDelCampo) // Terminado
+        {
+            if (ladoDelCampo.Equals("D"))
+            {
+                UserControl_Raichu_Derecha_P1.Vida = ProgressBar_Vida_Derecha.Value;
+                UserControl_Raichu_Derecha_P1.Energia = ProgressBar_Energia_Derecha.Value;
+            }
+            else if (ladoDelCampo.Equals("I"))
+            {
+                UserControl_Raichu_Izquierda_P2_IA.Vida = ProgressBar_Vida_Izquierda.Value;
+                UserControl_Raichu_Izquierda_P2_IA.Energia = ProgressBar_Energia_Izquierda.Value;
+            }
+        }
         private void aumentarVidaIzquierda(object sender, object e) // Terminado
         {
             this.ProgressBar_Vida_Izquierda.Value += 0.2;
@@ -597,6 +806,51 @@ namespace IPO2_Pokemon_Pokedex
             {
                 this.dtTimeEnergiaDerecha.Stop();
                 this.Image_Pocion_De_Energia_Derecha.Opacity = 1;
+            }
+        }
+        private void DisminuirVidaIzquierda(object sender, object e) // Terminado
+        {
+            this.ProgressBar_Vida_Izquierda.Value -= 0.4;
+            if (ProgressBar_Vida_Izquierda.Value <= vidaNueva)
+            {
+                this.dtTimeVidaIzquierda.Stop();
+            }
+        }
+        private void DisminuirEnergiaIzquierda(object sender, object e) // Terminado
+        {
+            this.ProgressBar_Energia_Izquierda.Value -= 0.4;
+            if (ProgressBar_Energia_Izquierda.Value <= energiaNueva)
+            {
+                this.dtTimeEnergiaIzquierda.Stop();
+            }
+        }
+        private void DisminuirVidaDerecha(object sender, object e) // Terminado
+        {
+            this.ProgressBar_Vida_Derecha.Value -= 0.4;
+            if (ProgressBar_Vida_Derecha.Value <= vidaNueva)
+            {
+                this.dtTimeVidaDerecha.Stop();
+            }
+        }
+        private void DisminuirEnergiaDerecha(object sender, object e) // Terminado
+        {
+            this.ProgressBar_Energia_Derecha.Value -= 0.4;
+            if (ProgressBar_Energia_Derecha.Value <= energiaNueva)
+            {
+                this.dtTimeEnergiaDerecha.Stop();
+            }
+        }
+        private void PonerResultado() // Terminado
+        {
+            if (ProgressBar_Vida_Derecha.Value <= 0)
+            {
+                Image_LooserDerecha.Visibility = Visibility.Visible;
+                Image_WinnerIzquierda.Visibility = Visibility.Visible;
+            }
+            else if (ProgressBar_Vida_Izquierda.Value <= 0)
+            {
+                Image_WinnerDerecha.Visibility = Visibility.Visible;
+                Image_LooserIzquierda.Visibility = Visibility.Visible;
             }
         }
     }

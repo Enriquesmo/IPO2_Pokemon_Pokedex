@@ -219,6 +219,7 @@
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
     <Content Include="Assets\llamarada-removebg-preview.png" />
+    <Content Include="Assets\Losser.png" />
     <Content Include="Assets\Manalightning.png" />
     <Content Include="Assets\manaPotion.png" />
     <Content Include="Assets\NicePng_spiral-png_160347.png" />
@@ -310,6 +311,7 @@
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="Assets\Winner.png" />
     <Content Include="Assets\zzz.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
