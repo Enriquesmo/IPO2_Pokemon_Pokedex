@@ -11,9 +11,24 @@
     <Viewbox>
 
         <Grid Height="1000" Width="1500">
-            <Button x:Name="Ir_A_La_Siguiente_Pagina1" Content="P1 vs P2" Margin="348,467,0,0" VerticalAlignment="Top" Click="Ir_A_La_Siguiente_Pagina1_Click"/>
-            <Button x:Name="Ir_A_La_Siguiente_Pagina2" Content="P1 vs IA
-                    " Margin="1028,467,0,0" VerticalAlignment="Top" Click="Ir_A_La_Siguiente_Pagina2_Click"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="750*"/>
+                <ColumnDefinition Width="750*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="291*"/>
+                <RowDefinition Height="435*"/>
+                <RowDefinition Height="274*"/>
+            </Grid.RowDefinitions>
+            <Image Grid.RowSpan="3" Grid.ColumnSpan="2" Source="/Assets/combatebk.png" Stretch="Fill"/>
+            <Button x:Name="Ir_A_La_Siguiente_Pagina1" Margin="50,50,50,50" VerticalAlignment="Stretch" Click="Ir_A_La_Siguiente_Pagina1_Click" Grid.Row="1" HorizontalAlignment="Stretch" FocusVisualPrimaryBrush="{x:Null}">
+                <Image Source="/Assets/PVP.png" Stretch="Fill" FocusVisualPrimaryBrush="{x:Null}" />
+            </Button>
+            <Button x:Name="Ir_A_La_Siguiente_Pagina2" 
+                    Margin="50,50,50,51" VerticalAlignment="Stretch" Click="Ir_A_La_Siguiente_Pagina2_Click" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="1" FocusVisualPrimaryBrush="{x:Null}">
+                <Image Source="/Assets/PVE.png" Stretch="Fill" />
+            </Button>
+            <Image Grid.ColumnSpan="2" Source="/Assets/seleccion.png" Margin="20,0,20,0"/>
         </Grid>
     </Viewbox>
 </Page>

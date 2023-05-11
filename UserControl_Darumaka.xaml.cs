@@ -137,7 +137,7 @@ namespace IPO2_Pokemon_Pokedex
             if (ReducirEnergía())
             {
                 Storyboard sbProteger = (Storyboard)this.Resources["Proteger"];
-                //if (_sbDescanso != null) { _sbDescanso.Stop(); }
+                if (_sbDescanso != null) { _sbDescanso.Stop(); }
                 sbProteger.Begin();
             }
         }
@@ -155,7 +155,7 @@ namespace IPO2_Pokemon_Pokedex
             if (ReducirEnergía())
             {
                 Storyboard sbTumbarocas = (Storyboard)this.Resources["Tumbarocas"];
-                //if (_sbDescanso != null) { _sbDescanso.Stop(); }
+                if (_sbDescanso != null) { _sbDescanso.Stop(); }
                 sbTumbarocas.Begin();
             }
         }
@@ -164,7 +164,7 @@ namespace IPO2_Pokemon_Pokedex
             if (ReducirEnergía())
             {
                 Storyboard sbLlamarada = (Storyboard)this.Resources["Llamarada"];
-                //if (_sbDescanso != null) { _sbDescanso.Stop(); }
+                if (_sbDescanso != null) { _sbDescanso.Stop(); }
                 sbLlamarada.Begin();
             }
         }

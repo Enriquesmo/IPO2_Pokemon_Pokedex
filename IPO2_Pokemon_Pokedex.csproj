@@ -178,6 +178,7 @@
     <Content Include="Assets\blood.png" />
     <Content Include="Assets\Bocadillo Habla.png" />
     <Content Include="Assets\BurbujasVeneno.png" />
+    <Content Include="Assets\combatebk.png" />
     <Content Include="Assets\corazon.png" />
     <Content Include="Assets\Daru.png" />
     <Content Include="Assets\Darumaka_NB.gif" />
@@ -251,6 +252,8 @@
     <Content Include="Assets\Pokemon_Type_Icon_Steel.png" />
     <Content Include="Assets\Pokemon_Type_Icon_Water.png" />
     <Content Include="Assets\protect.png" />
+    <Content Include="Assets\PVE.png" />
+    <Content Include="Assets\PVP.png" />
     <Content Include="Assets\Raichu.png" />
     <Content Include="Assets\Raichu_NB.gif" />
     <Content Include="Assets\rayo %282%29.png" />
@@ -263,6 +266,7 @@
     <Content Include="Assets\Schaden-Physisch.png" />
     <Content Include="Assets\Schaden-Spezial.png" />
     <Content Include="Assets\Schaden-Status.png" />
+    <Content Include="Assets\seleccion.png" />
     <Content Include="Assets\SmallTile.scale-100.png" />
     <Content Include="Assets\SmallTile.scale-125.png" />
     <Content Include="Assets\SmallTile.scale-150.png" />
