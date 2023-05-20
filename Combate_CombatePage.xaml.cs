@@ -46,9 +46,11 @@ namespace IPO2_Pokemon_Pokedex
         public Boolean accionPokemon1;
         public Boolean accionPokemon2;
         public Boolean Boton_presionado;
-
+        public Boolean Pocion_Utilizada;
+        public int EsperaEntreTurnos;
         public double vidaNueva;
         public double energiaNueva;
+
         /************************************************************************************************/
 
         /*Inicializacion de la pagina CombatePage*/
@@ -61,6 +63,8 @@ namespace IPO2_Pokemon_Pokedex
             accionPokemon1 = true;
             accionPokemon2 = false;
             Boton_presionado = false;
+            Pocion_Utilizada = false;
+            EsperaEntreTurnos = 8000;
         }
 
         /************************************************************************************************/
@@ -106,6 +110,7 @@ namespace IPO2_Pokemon_Pokedex
                 dtTimeVidaIzquierda.Tick += aumentarVidaIzquierda;
                 dtTimeVidaIzquierda.Start();
                 this.Image_Pocion_De_Vida_Izquierda.Opacity = 0.5;
+                notificarPocionTrasPulsarImagen("Vida");
             }
         }
         private void Image_Pocion_De_Energia_Izquierda_PointerReleased(object sender, PointerRoutedEventArgs e) // Terminado
@@ -117,6 +122,7 @@ namespace IPO2_Pokemon_Pokedex
                 dtTimeEnergiaIzquierda.Tick += aumentarEnergiaIzquierda;
                 dtTimeEnergiaIzquierda.Start();
                 this.Image_Pocion_De_Energia_Izquierda.Opacity = 0.5;
+                notificarPocionTrasPulsarImagen("Energia");
             }
         }
         private void Image_Pocion_De_Vida_Derecha_PointerReleased(object sender, PointerRoutedEventArgs e) // Terminado
@@ -128,6 +134,7 @@ namespace IPO2_Pokemon_Pokedex
                 dtTimeVidaDerecha.Tick += aumentarVidaDerecha;
                 dtTimeVidaDerecha.Start();
                 this.Image_Pocion_De_Vida_Derecha.Opacity = 0.5;
+                notificarPocionTrasPulsarImagen("Vida");
             }
         }
         private void Image_Pocion_De_Energia_Derecha_PointerReleased(object sender, PointerRoutedEventArgs e) // Terminado
@@ -139,6 +146,7 @@ namespace IPO2_Pokemon_Pokedex
                 dtTimeEnergiaDerecha.Tick += aumentarEnergiaDerecha;
                 dtTimeEnergiaDerecha.Start();
                 this.Image_Pocion_De_Energia_Derecha.Opacity = 0.5;
+                notificarPocionTrasPulsarImagen("Energia");
             }
         }
 
@@ -154,11 +162,16 @@ namespace IPO2_Pokemon_Pokedex
             ImgFondo_Pokemons.Source = Padre.Fondo.Source;
             modo_de_juego = Padre.modo_de_juego;
         }
-        private async Task EsperarBotonPresionado() // Terminado
+        private async Task EsperarAccionRealizada() // Terminado
         {
-            while (!Boton_presionado)
+            Boolean accionRealizada = false;
+            while (accionRealizada == false)
             {
                 await Task.Delay(100); //espera 100 milisegundos antes de verificar la variable de nuevo
+                if (Boton_presionado == true || Pocion_Utilizada == true)
+                {
+                    accionRealizada = true;
+                }
             }
         }
         public async void cicloCombate() // Terminado
@@ -200,13 +213,14 @@ namespace IPO2_Pokemon_Pokedex
                             break;
                     }
                 }
-                // Espera a que se presione uno de los ataques disponibles
-                await EsperarBotonPresionado();
+                // Espera a que se presione uno de los ataques disponibles o se utilice una de las pociones
+                await EsperarAccionRealizada();
                 Boton_presionado = false;
+                Pocion_Utilizada = false;
                 estadoBotones(false);
 
                 // Espera de 8 segundos a que se realicen correctamente todos los ataques
-                await Task.Delay(8000);
+                await Task.Delay(EsperaEntreTurnos);
                 TextBlock_MensajeCombate.Text = "";
                 estadoBotones(true);
 
@@ -472,6 +486,18 @@ namespace IPO2_Pokemon_Pokedex
             else if (accionPokemon2 == true)
             {
                 TextBlock_MensajeCombate.Text = PokemonJugador2 + " ha utilizando el ataque " + btn.Content;
+            }
+        }
+        public void notificarPocionTrasPulsarImagen(String tipoPocion)
+        {
+            Pocion_Utilizada = true;
+            if (accionPokemon1 == true)
+            {
+                TextBlock_MensajeCombate.Text = PokemonJugador1 + " ha utilizando una poción de " + tipoPocion;
+            }
+            else if (accionPokemon2 == true)
+            {
+                TextBlock_MensajeCombate.Text = PokemonJugador2 + " ha utilizando una poción de " + tipoPocion;
             }
         }
         public void cambiarNombresBotones(String NombreDelPokemon) // Terminado
