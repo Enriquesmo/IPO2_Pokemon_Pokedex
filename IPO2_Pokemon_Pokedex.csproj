@@ -167,6 +167,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Acerca de.png" />
     <Content Include="Assets\arañazo1-removebg-preview.png" />
     <Content Include="Assets\arañazo2.png" />
     <Content Include="Assets\arañazo3.png" />
@@ -204,6 +205,7 @@
     <Content Include="Assets\fondo_Seleccion_Escenarios.jpg" />
     <Content Include="Assets\Grieta 1.png" />
     <Content Include="Assets\Grieta 2.png" />
+    <Content Include="Assets\happy.png" />
     <Content Include="Assets\HealthPotion.png" />
     <Content Include="Assets\Heart.png" />
     <Content Include="Assets\Hipnotizar.png" />
@@ -223,6 +225,7 @@
     <Content Include="Assets\Losser.png" />
     <Content Include="Assets\Manalightning.png" />
     <Content Include="Assets\manaPotion.png" />
+    <Content Include="Assets\Nerdge.png" />
     <Content Include="Assets\NicePng_spiral-png_160347.png" />
     <Content Include="Assets\Original Pokemon Intro %28Sprite Edition!%29.mp4" />
     <Content Include="Assets\PngItem_1374629.png" />
@@ -272,6 +275,8 @@
     <Content Include="Assets\SmallTile.scale-150.png" />
     <Content Include="Assets\SmallTile.scale-200.png" />
     <Content Include="Assets\SmallTile.scale-400.png" />
+    <Content Include="Assets\smoking.jpeg" />
+    <Content Include="Assets\smoking.png" />
     <Content Include="Assets\Snorlax.png" />
     <Content Include="Assets\Sandshrew_NB.gif" />
     <Content Include="Assets\Snorlax_NB.gif" />
@@ -301,6 +306,8 @@
     <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-32.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\stare.jpeg" />
+    <Content Include="Assets\stare.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-125.png" />
     <Content Include="Assets\StoreLogo.scale-150.png" />

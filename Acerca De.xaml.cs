@@ -40,33 +40,11 @@ namespace IPO2_Pokemon_Pokedex
         public Acerca_De()
         {
             this.InitializeComponent();
-            ApplicationView.GetForCurrentView().VisibleBoundsChanged
-             += UcRatingText_VisibleBoundsChanged;
         }
 
         /************************************************************************************************/
 
         /*Botones de la propia pagina*/
-        private void UcRatingText_VisibleBoundsChanged(ApplicationView sender, object args)
-        {
-            var Width =
-            ApplicationView.GetForCurrentView().VisibleBounds.Width;
-            if (Width >= 600)
-            {
-                RelativePanel.SetBelow(tbPokemon, null);
-                RelativePanel.SetRightOf(tbPokemon, rcStars);
-                RelativePanel.SetAlignVerticalCenterWith(tbPokemon, rcStars);
-                RelativePanel.SetAlignVerticalCenterWithPanel(rcStars, true);
-            }
-            else
-            {
-                RelativePanel.SetRightOf(tbPokemon, null);
-                RelativePanel.SetBelow(tbPokemon, rcStars);
-                RelativePanel.SetAlignVerticalCenterWith(tbPokemon, null);
-                RelativePanel.SetAlignVerticalCenterWithPanel(rcStars, false);
-            }
-        }
-
         /************************************************************************************************/
 
         /*Metodos funcionales en la pagina*/

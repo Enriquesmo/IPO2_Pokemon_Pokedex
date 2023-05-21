@@ -103,7 +103,7 @@ namespace IPO2_Pokemon_Pokedex
         }
         private void Image_Pocion_De_Vida_Izquierda_PointerReleased(object sender, PointerRoutedEventArgs e) // Terminado
         {
-            if (ProgressBar_Vida_Izquierda.Value > 0)
+            if (ProgressBar_Vida_Izquierda.Value > 0 && accionPokemon2)
             {
                 dtTimeVidaIzquierda = new DispatcherTimer();
                 dtTimeVidaIzquierda.Interval = TimeSpan.FromMilliseconds(10); // Esto lo he cambiado para que se vea más fluido, deberia ser 100 milisegundos
@@ -115,7 +115,7 @@ namespace IPO2_Pokemon_Pokedex
         }
         private void Image_Pocion_De_Energia_Izquierda_PointerReleased(object sender, PointerRoutedEventArgs e) // Terminado
         {
-            if (ProgressBar_Energia_Izquierda.Value > 0)
+            if (ProgressBar_Energia_Izquierda.Value > 0 && accionPokemon2)
             {
                 dtTimeEnergiaIzquierda = new DispatcherTimer();
                 dtTimeEnergiaIzquierda.Interval = TimeSpan.FromMilliseconds(10); // Esto lo he cambiado para que se vea más fluido, deberia ser 100 milisegundos
@@ -127,7 +127,7 @@ namespace IPO2_Pokemon_Pokedex
         }
         private void Image_Pocion_De_Vida_Derecha_PointerReleased(object sender, PointerRoutedEventArgs e) // Terminado
         {
-            if (ProgressBar_Vida_Derecha.Value > 0)
+            if (ProgressBar_Vida_Derecha.Value > 0 && accionPokemon1)
             {
                 dtTimeVidaDerecha = new DispatcherTimer();
                 dtTimeVidaDerecha.Interval = TimeSpan.FromMilliseconds(10); // Esto lo he cambiado para que se vea más fluido, deberia ser 100 milisegundos
@@ -139,7 +139,7 @@ namespace IPO2_Pokemon_Pokedex
         }
         private void Image_Pocion_De_Energia_Derecha_PointerReleased(object sender, PointerRoutedEventArgs e) // Terminado
         {
-            if (ProgressBar_Energia_Derecha.Value > 0)
+            if (ProgressBar_Energia_Derecha.Value > 0 && accionPokemon1)
             {
                 dtTimeEnergiaDerecha = new DispatcherTimer();
                 dtTimeEnergiaDerecha.Interval = TimeSpan.FromMilliseconds(10); // Esto lo he cambiado para que se vea más fluido, deberia ser 100 milisegundos
