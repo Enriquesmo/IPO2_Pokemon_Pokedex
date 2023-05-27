@@ -52,7 +52,7 @@
                 </ListView.ItemTemplate>
             </ListView>
             <TextBlock x:Name="txtPropt" TextWrapping="Wrap" Text="Selecciona un Pokemon" FontSize="100" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="50,100,0,0" FocusVisualPrimaryBrush="White" Foreground="White" FontWeight="Bold"/>
-            <Rectangle x:Name="Upline" Grid.Column="3" HorizontalAlignment="Left" Height="2" Margin="-46,275,0,0" Stroke="Black" VerticalAlignment="Top" Width="1174" RenderTransformOrigin="0.5,0.5"/>
+            <Rectangle x:Name="Upline" HorizontalAlignment="Left" Margin="0,266,0,0" Stroke="Black" VerticalAlignment="Top" Width="1174" RenderTransformOrigin="0.5,0.5"/>
             <TextBlock x:Name="txtlvl" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" Text="LVL. ???" VerticalAlignment="Bottom" FocusVisualPrimaryBrush="White" Foreground="Black" FontSize="150" FontWeight="Bold" Margin="0,0,0,-50"/>
             <TextBlock x:Name="txtType" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" Text="TIPO ???" VerticalAlignment="Center" FocusVisualPrimaryBrush="White" Foreground="Black" FontSize="120" Grid.Row="1" Margin="0,0,0,1400"/>
             <Image x:Name="imgType" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Top" Source="/Assets/Pokemon_Type_Icon_Normal.png" RenderTransformOrigin="0.5,0.5" Width="166" Height="149" Margin="0,550,0,0"/>

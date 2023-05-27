@@ -52,6 +52,12 @@ namespace IPO2_Pokemon_Pokedex
             imgType.Source = new BitmapImage(pk.type.IconoUri);
             imgPokemon.Source = pk.icon;
         }
+
+        private void btnVerPokemon_Click(object sender, RoutedEventArgs e)
+        {
+            Frame DetallesPokemonVistaGeneralPage = (Frame)this.Parent;
+            DetallesPokemonVistaGeneralPage.Navigate(typeof(DetallesPokemonVistaGeneralPage), pk);
+        }
     }
 
     

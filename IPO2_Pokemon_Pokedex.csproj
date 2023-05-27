@@ -131,6 +131,9 @@
     <Compile Include="DetallesPokemonPage.xaml.cs">
       <DependentUpon>DetallesPokemonPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DetallesPokemonVistaGeneralPage.xaml.cs">
+      <DependentUpon>DetallesPokemonVistaGeneralPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Escenario_CombatePage.xaml.cs">
       <DependentUpon>Escenario_CombatePage.xaml</DependentUpon>
     </Compile>
@@ -350,6 +353,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DetallesPokemonPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DetallesPokemonVistaGeneralPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
