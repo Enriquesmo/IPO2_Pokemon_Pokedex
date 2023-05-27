@@ -8,56 +8,59 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="188*"/>
-            <ColumnDefinition Width="187*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="200*"/>
-            <RowDefinition Height="350*"/>
-            <RowDefinition Height="350*"/>
-            <RowDefinition Height="100*"/>
-        </Grid.RowDefinitions>
-        <RelativePanel Background="White" Grid.RowSpan="4" Grid.ColumnSpan="2"/>
-        <Image Source="/Assets/Acerca de.png" Grid.ColumnSpan="2" Margin="100,0,100,0" Stretch="Fill" Width="1276"/>
-        <StackPanel Grid.Row="1">
-            <Ellipse Height="190" Width="301">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="/Assets/stare.png" />
-                </Ellipse.Fill>
-            </Ellipse>
-            <TextBlock TextWrapping="Wrap" Text="Felipe Alcázar Gómez" FontSize="60" Height="69" Canvas.ZIndex="3" FontFamily="Impact" FocusVisualPrimaryBrush="White" Foreground="#FFB58F08" FontWeight="Bold" FontStyle="Normal" HorizontalAlignment="Center"/>
-            <TextBlock TextWrapping="Wrap" Text="PokedexPage/DetallesPokemonPage" FontFamily="Segoe UI Symbol" Foreground="#FF0C0000" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="31" FontWeight="Bold" TextDecorations="Underline"/>
-        </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="1">
-            <Ellipse Height="190" Width="301">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="/Assets/smoking.png" />
-                </Ellipse.Fill>
-            </Ellipse>
-            <TextBlock TextWrapping="Wrap" Text="Alonso Crespo Fernández" FontSize="60" Height="69" Canvas.ZIndex="3" FontFamily="Impact" FocusVisualPrimaryBrush="White" Foreground="#FFB58F08" FontWeight="Bold" FontStyle="Normal" HorizontalAlignment="Center"/>
-            <TextBlock TextWrapping="Wrap" Text="PokedexPage/DetallesPokemonPage" FontFamily="Segoe UI Symbol" Foreground="#FF0C0000" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="31" FontWeight="Bold" TextDecorations="Underline"/>
-        </StackPanel>
-        <StackPanel Grid.Row="2">
-            <Ellipse Height="190" Width="301">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="/Assets/happy.png" />
-                </Ellipse.Fill>
-            </Ellipse>
-            <TextBlock TextWrapping="Wrap" Text="Enrique Sánchez-Migallón" FontSize="60" Height="69" Canvas.ZIndex="3" FontFamily="Impact" FocusVisualPrimaryBrush="White" Foreground="#FFB58F08" FontWeight="Bold" FontStyle="Normal" HorizontalAlignment="Center"/>
-            <TextBlock TextWrapping="Wrap" Text="MainPage/CombatePokemon" FontFamily="Segoe UI Symbol" Foreground="#FF0C0000" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="31" FontWeight="Bold" TextDecorations="Underline"/>
+    <Viewbox>
 
-        </StackPanel>
-        <StackPanel Grid.Row="2" Grid.Column="1" Margin="10,10,10,10" Padding="10,0,0,0" Orientation="Vertical">
-            <Ellipse Height="190" Width="301">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="/Assets/Nerdge.png" />
-                </Ellipse.Fill>
-            </Ellipse>
-            <TextBlock TextWrapping="Wrap" Text="Javier Santos Sanz" FontSize="60" Height="69" Canvas.ZIndex="3" FontFamily="Impact" FocusVisualPrimaryBrush="White" Foreground="#FFB58F08" FontWeight="Bold" FontStyle="Normal" HorizontalAlignment="Center"/>
-            <TextBlock TextWrapping="Wrap" Text="SelectorModo/Personaje/Escenario/Acerca De" FontFamily="Segoe UI Symbol" Foreground="#FF0C0000" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="31" FontWeight="Bold" TextDecorations="Underline"/>
-        </StackPanel>
-        <Viewbox/>
-    </Grid>
+        <Grid Height="1000" Width="1500">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="188*"/>
+                <ColumnDefinition Width="187*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200*"/>
+                <RowDefinition Height="350*"/>
+                <RowDefinition Height="350*"/>
+                <RowDefinition Height="100*"/>
+            </Grid.RowDefinitions>
+            <RelativePanel Background="White" Grid.RowSpan="4" Grid.ColumnSpan="2"/>
+            <Image Source="/Assets/Acerca de.png" Grid.ColumnSpan="2" Margin="100,0,100,0" Stretch="Fill" Width="1276"/>
+            <StackPanel Grid.Row="1">
+                <Ellipse Height="190" Width="301">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="/Assets/stare.png" />
+                    </Ellipse.Fill>
+                </Ellipse>
+                <TextBlock TextWrapping="Wrap" Text="Felipe Alcázar Gómez" FontSize="60" Height="69" Canvas.ZIndex="3" FontFamily="Impact" FocusVisualPrimaryBrush="White" Foreground="#FFB58F08" FontWeight="Bold" FontStyle="Normal" HorizontalAlignment="Center"/>
+                <TextBlock TextWrapping="Wrap" Text="PokedexPage/DetallesPokemonPage" FontFamily="Segoe UI Symbol" Foreground="#FF0C0000" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="31" FontWeight="Bold" TextDecorations="Underline"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <Ellipse Height="190" Width="301">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="/Assets/smoking.png" />
+                    </Ellipse.Fill>
+                </Ellipse>
+                <TextBlock TextWrapping="Wrap" Text="Alonso Crespo Fernández" FontSize="60" Height="69" Canvas.ZIndex="3" FontFamily="Impact" FocusVisualPrimaryBrush="White" Foreground="#FFB58F08" FontWeight="Bold" FontStyle="Normal" HorizontalAlignment="Center"/>
+                <TextBlock TextWrapping="Wrap" Text="PokedexPage/DetallesPokemonPage" FontFamily="Segoe UI Symbol" Foreground="#FF0C0000" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="31" FontWeight="Bold" TextDecorations="Underline"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2">
+                <Ellipse Height="190" Width="301">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="/Assets/happy.png" />
+                    </Ellipse.Fill>
+                </Ellipse>
+                <TextBlock TextWrapping="Wrap" Text="Enrique Sánchez-Migallón" FontSize="60" Height="69" Canvas.ZIndex="3" FontFamily="Impact" FocusVisualPrimaryBrush="White" Foreground="#FFB58F08" FontWeight="Bold" FontStyle="Normal" HorizontalAlignment="Center"/>
+                <TextBlock TextWrapping="Wrap" Text="MainPage/CombatePokemon" FontFamily="Segoe UI Symbol" Foreground="#FF0C0000" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="31" FontWeight="Bold" TextDecorations="Underline"/>
+
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="1" Margin="10,10,10,10" Padding="10,0,0,0" Orientation="Vertical">
+                <Ellipse Height="190" Width="301">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="/Assets/Nerdge.png" />
+                    </Ellipse.Fill>
+                </Ellipse>
+                <TextBlock TextWrapping="Wrap" Text="Javier Santos Sanz" FontSize="60" Height="69" Canvas.ZIndex="3" FontFamily="Impact" FocusVisualPrimaryBrush="White" Foreground="#FFB58F08" FontWeight="Bold" FontStyle="Normal" HorizontalAlignment="Center"/>
+                <TextBlock TextWrapping="Wrap" Text="SelectorModo/Personaje/Escenario/Acerca De" FontFamily="Segoe UI Symbol" Foreground="#FF0C0000" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="31" FontWeight="Bold" TextDecorations="Underline"/>
+            </StackPanel>
+            <Viewbox/>
+        </Grid>
+    </Viewbox>
 </Page>
