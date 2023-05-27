@@ -118,17 +118,17 @@ namespace IPO2_Pokemon_Pokedex
                 }
             };
 
-            var notification = new TileNotification(content.GetXml());
+            /*var notification = new TileNotification(content.GetXml());
             notification.ExpirationTime = DateTimeOffset.UtcNow.AddSeconds(30);
             var updater = TileUpdateManager.CreateTileUpdaterForApplication();
             updater.Update(notification);
 
             // Este codigo sirve para que se cree una notificación nada mas se inicie la aplicación
-            NotificaciónSubida(this, null);
+            NotificaciónSubida(this, null);*/
             darBienvenida();
         }
 
-        private void NotificaciónSubida(object sender, PointerRoutedEventArgs e)
+        /*private void NotificaciónSubida(object sender, PointerRoutedEventArgs e)
         {
             new ToastContentBuilder()
             .AddArgument("action", "Favoritos")
@@ -142,7 +142,7 @@ namespace IPO2_Pokemon_Pokedex
             .AddArgument("action","reply")
             )
             .Show();
-        }
+        }*/
 
         private async void darBienvenida()
         {
