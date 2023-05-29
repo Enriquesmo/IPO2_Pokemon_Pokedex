@@ -237,7 +237,14 @@ namespace IPO2_Pokemon_Pokedex
         }
         private void Switch_Idioma_Toggled(object sender, RoutedEventArgs e)
         {
+            if (Switch_Idioma.IsOn)
+            {
 
+            }
+            else
+            {
+
+            }
         }
         private async void Switch_Lector_De_Voz_Toggled(object sender, RoutedEventArgs e)
         {
