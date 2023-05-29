@@ -31,6 +31,7 @@ namespace IPO2_Pokemon_Pokedex
 
         /*Inicializacion de las variables globales*/
 
+        public MediaElement mediaElement;
 
 
         /************************************************************************************************/
@@ -39,6 +40,8 @@ namespace IPO2_Pokemon_Pokedex
         public MainPage()
         {
             this.InitializeComponent();
+            mediaElement = new MediaElement();
+
 
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += opcionVolver;
@@ -151,7 +154,6 @@ namespace IPO2_Pokemon_Pokedex
 
         private async void darBienvenida()
         {
-            MediaElement mediaElement = new MediaElement();
             var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
             Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await
             synth.SynthesizeTextToStreamAsync("Bienvenido a IPOkemon, si necesitas ayuda, consulta Ajustes.");
@@ -241,7 +243,6 @@ namespace IPO2_Pokemon_Pokedex
         {
             if (Switch_Lector_De_Voz.IsOn)
             {
-                MediaElement mediaElement = new MediaElement();
                 var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
                 Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await
                 synth.SynthesizeTextToStreamAsync("Lector de Voz Activado.");
@@ -251,7 +252,6 @@ namespace IPO2_Pokemon_Pokedex
             }
             else
             {
-                MediaElement mediaElement = new MediaElement();
                 var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
                 Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await
                 synth.SynthesizeTextToStreamAsync("Lector de Voz Desactivado.");
