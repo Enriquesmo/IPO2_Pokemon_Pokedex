@@ -273,6 +273,7 @@
     <Content Include="Assets\Schaden-Spezial.png" />
     <Content Include="Assets\Schaden-Status.png" />
     <Content Include="Assets\seleccion.png" />
+    <Content Include="Assets\selectCombatEnglish.png" />
     <Content Include="Assets\SmallTile.scale-100.png" />
     <Content Include="Assets\SmallTile.scale-125.png" />
     <Content Include="Assets\SmallTile.scale-150.png" />
@@ -413,6 +414,9 @@
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="Strings\es-ES\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\en-GB\Resources.resw" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

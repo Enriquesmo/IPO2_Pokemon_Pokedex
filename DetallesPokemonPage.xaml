@@ -35,7 +35,7 @@
             <TextBlock x:Name="txtVida" TextWrapping="Wrap" Text="Vida: ?" FontSize="48" Grid.Row="2" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
             <TextBlock x:Name="txtAtaque" TextWrapping="Wrap" Text="Ataque: ?" FontSize="48" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             <TextBlock x:Name="txtDefensa" TextWrapping="Wrap" Text="Defensa: ?" FontSize="48" Grid.Row="4" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="443,0,0,0"/>
-            <TextBlock x:Name="txtAtributosAdd" TextWrapping="Wrap" Text="Info. Adicional" FontSize="36" Grid.Row="1" Grid.Column="3" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold" TextDecorations="None" FontStyle="Italic"/>
+            <TextBlock x:Name="txtAtributosAdd" x:Uid="txtAtributosAdd" TextWrapping="Wrap" Text="Info. Adicional" FontSize="36" Grid.Row="1" Grid.Column="3" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold" TextDecorations="None" FontStyle="Italic"/>
             <TextBlock x:Name="txtVelAtaque" TextWrapping="Wrap" Text="Vel. Ataque: ?" FontSize="36" Grid.Row="2" Grid.Column="3" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
             <TextBlock x:Name="txtVelDefensa" TextWrapping="Wrap" Text="Vel. Defensa: ?" FontSize="36" Grid.Row="3" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             <TextBlock x:Name="txtRapidez" TextWrapping="Wrap" Text="Rapidez: ?" FontSize="48" Grid.Row="4" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Center"/>
@@ -46,7 +46,7 @@
             <Border x:Name="borderDetalles" Background="White" BorderBrush="Red" BorderThickness="2" CornerRadius="40" Grid.Row="5" Grid.ColumnSpan="5" Grid.RowSpan="4" Margin="0,0,0,33">
                 <RichTextBlock x:Name="txtDescripcion" TextWrapping="Wrap" Grid.Row="5" Foreground="Black" Grid.ColumnSpan="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False" IsTextSelectionEnabled="False"/>
             </Border>
-            <Button x:Name="btnVerPokemon" Grid.Column="3" Content="Vista General" Margin="0,83,0,0" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center" Click="btnVerPokemon_Click"/>
+            <Button x:Name="btnVerPokemon" x:Uid="btnVerPokemon" Grid.Column="3" Content="Vista General" Margin="0,83,0,0" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center" Click="btnVerPokemon_Click"/>
         </Grid>
     </Viewbox>
 </Page>

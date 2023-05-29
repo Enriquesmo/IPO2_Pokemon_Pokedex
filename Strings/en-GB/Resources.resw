@@ -118,45 +118,45 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnVerPokemon.Content" xml:space="preserve">
-    <value>Vista General</value>
+    <value>General View</value>
   </data>
   <data name="btn_AcercaDe.Content" xml:space="preserve">
-    <value>Acerca de</value>
+    <value>About us</value>
   </data>
   <data name="btn_CombatePokemon.Content" xml:space="preserve">
-    <value>Combate Pokemon</value>
+    <value>Pokemon Combat</value>
   </data>
   <data name="btn_EmpezarCombate.Content" xml:space="preserve">
-    <value>¡Empezar Combate!</value>
+    <value>Start Combat!</value>
   </data>
   <data name="Btn_Inicio.Content" xml:space="preserve">
-    <value>Inicio</value>
+    <value>Main</value>
   </data>
   <data name="bttnDetalles.Content" xml:space="preserve">
-    <value>Más Detalles</value>
+    <value>More Details</value>
   </data>
   <data name="imgCombateEspañol.Visibility" xml:space="preserve">
-    <value>Visible</value>
-  </data>
-  <data name="imgCombateIngles.Visibility" xml:space="preserve">
     <value>Collapsed</value>
   </data>
+  <data name="imgCombateIngles.Visibility" xml:space="preserve">
+    <value>Visible</value>
+  </data>
   <data name="Ir_A_La_Siguiente_Pagina.Content" xml:space="preserve">
-    <value>Combatir</value>
+    <value>Fight</value>
   </data>
   <data name="Ir_A_La_Siguiente_Pagina2.Content" xml:space="preserve">
-    <value>Continuar</value>
+    <value>Proceed</value>
   </data>
   <data name="txtAtributosAdd.Text" xml:space="preserve">
-    <value>Info. Adicional</value>
+    <value>Aditional Info</value>
   </data>
   <data name="txtPropt.Text" xml:space="preserve">
-    <value>Selecciona un Pokemon</value>
+    <value>Select a Pokemon</value>
   </data>
   <data name="txtTitulo.Text" xml:space="preserve">
-    <value>¡Bienvenidos a Pokémon!</value>
+    <value>Welcome to Pokemon!</value>
   </data>
   <data name="txtTitulo2.Text" xml:space="preserve">
-    <value>¡Bienvenidos a Pokémon!</value>
+    <value>Welcome to Pokemon!</value>
   </data>
 </root>

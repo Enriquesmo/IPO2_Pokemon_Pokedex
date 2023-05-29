@@ -140,7 +140,7 @@
                 <TextBlock x:Name="TextBlock_TurnoDelJugador" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Height="31" Width="319" Grid.Row="1" RequestedTheme="Light" FontSize="20" FontWeight="Bold"/>
                 <TextBlock x:Name="TextBlock_MensajeCombate" TextWrapping="Wrap" Text="" Margin="214,243,135,142" Grid.Column="1" Grid.Row="2" FocusVisualPrimaryBrush="White" RequestedTheme="Light"/>
             </Grid>
-            <Button x:Name="btn_EmpezarCombate" Content="¡Empezar Combate!" Height="115" Width="258" HorizontalAlignment="Center" Click="btn_EmpezarCombate_Click" RequestedTheme="Light" FontWeight="Bold" FontSize="20"/>
+            <Button x:Name="btn_EmpezarCombate" x:Uid="btn_EmpezarCombate" Content="¡Empezar Combate!" Height="115" Width="258" HorizontalAlignment="Center" Click="btn_EmpezarCombate_Click" RequestedTheme="Light" FontWeight="Bold" FontSize="20"/>
 
         </Grid>
     </Viewbox>

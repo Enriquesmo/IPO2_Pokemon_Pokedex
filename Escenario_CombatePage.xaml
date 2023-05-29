@@ -52,7 +52,7 @@
                 <Button Width="150" Height="150" Margin="50,25,50,25" Click="Click_CambiarEscenario">
                     <Image x:Name="Img_Fondo9" Source="/Assets/fondo9.png" Stretch="Fill" d:IsLocked="True"/>
                 </Button>
-                <Button x:Name="Ir_A_La_Siguiente_Pagina" Content="COMBATIR" Click="Ir_A_La_Siguiente_Pagina_Click" Height="100" Width="150" Margin="50,0,50,0" FontSize="25" FontWeight="Bold" IsEnabled="False"/>
+                <Button x:Name="Ir_A_La_Siguiente_Pagina" x:Uid="Ir_A_La_Siguiente_Pagina" Content="COMBATIR" Click="Ir_A_La_Siguiente_Pagina_Click" Height="100" Width="150" Margin="50,0,50,0" FontSize="25" FontWeight="Bold" IsEnabled="False"/>
             </StackPanel>
 
         </Grid>

@@ -28,7 +28,8 @@
                     Margin="50,50,50,51" VerticalAlignment="Stretch" Click="Ir_A_La_Siguiente_Pagina2_Click" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="1" FocusVisualPrimaryBrush="{x:Null}">
                 <Image Source="/Assets/PVE.png" Stretch="Fill" />
             </Button>
-            <Image Grid.ColumnSpan="2" Source="/Assets/seleccion.png" Margin="20,0,20,0"/>
+            <Image x:Name="imgCombateEspañol" x:Uid="imgCombateEspañol" Grid.ColumnSpan="2" Source="/Assets/seleccion.png" Margin="20,0,20,0" Visibility="Collapsed"/>
+            <Image x:Name="imgCombateIngles" x:Uid="imgCombateIngles" Grid.ColumnSpan="2" Source="/Assets/selectCombatEnglish.png" Margin="20,0,20,0" Visibility="Collapsed"/>
         </Grid>
     </Viewbox>
 </Page>
