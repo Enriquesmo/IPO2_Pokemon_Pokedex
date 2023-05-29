@@ -1,8 +1,11 @@
 ﻿using Microsoft.Toolkit.Uwp.Notifications;
 using System;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.Resources.Core;
 using Windows.Foundation;
+using Windows.Globalization;
 using Windows.Media.SpeechSynthesis;
 using Windows.UI.Core;
 using Windows.UI.Notifications;
@@ -48,7 +51,17 @@ namespace IPO2_Pokemon_Pokedex
             FrameMain.Navigate(typeof(InicioPage), this);
             sView_Abajo_Principal.DisplayMode = SplitViewDisplayMode.CompactInline;
             sView_Abajo_Principal.IsPaneOpen = true;
-
+            string lang = ApplicationLanguages.PrimaryLanguageOverride;
+            if (lang == "es")
+            {
+                Switch_Idioma.IsOn= false;
+                ApplicationLanguages.PrimaryLanguageOverride = "es-ES";
+            }
+            else
+            {
+                Switch_Idioma.IsOn = true;
+                ApplicationLanguages.PrimaryLanguageOverride = "en-GB";
+            }
 
             // Estas lineas sirven para que cuando se redimensione la ventana se adapte, además de hacer un tamaño minimo
             Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(320, 320));
@@ -239,12 +252,16 @@ namespace IPO2_Pokemon_Pokedex
         {
             if (Switch_Idioma.IsOn)
             {
-
+                ApplicationLanguages.PrimaryLanguageOverride = "en-GB";
             }
             else
             {
-
+                ApplicationLanguages.PrimaryLanguageOverride = "es-ES";
             }
+            ResourceContext.GetForViewIndependentUse().Reset();
+            FrameMain.Navigate(typeof(InicioPage), this);
+            sView_Abajo_Principal.IsPaneOpen = false;
+            sView_Abajo_Principal.DisplayMode = SplitViewDisplayMode.CompactOverlay;
         }
         private async void Switch_Lector_De_Voz_Toggled(object sender, RoutedEventArgs e)
         {

@@ -48,7 +48,7 @@
                     <Button AutomationProperties.Name="Combate Pokemon" x:Name="btn_CombatePokemon" x:Uid="btn_CombatePokemon" Content="Combate Pokemon" Width="252" Margin="8,0,0,0" Click="btn_CombatePokemon_Click" Grid.Column="1" Grid.Row="2" Height="33"/>
                     <Button AutomationProperties.Name="Acerca De" x:Name="btn_AcercaDe" x:Uid="btn_AcercaDe" Content="Acerca De" Width="252" Margin="8,0,0,0" Click="btn_AcercaDe_Click" Grid.Column="1" Grid.Row="3" Height="33"/>
                     <ToggleSwitch AutomationProperties.Name="Habilitar / Deshabilitar Lector de Voz" x:Name="Switch_Lector_De_Voz" Header="Lector de Voz" Height="57" Width="249" Grid.Column="1" Margin="0,72,0,0" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center" Toggled="Switch_Lector_De_Voz_Toggled"/>
-                    <ToggleSwitch AutomationProperties.Name="Cambiar Idioma" x:Name="Switch_Idioma" Header="Idioma" Height="57" Width="250" Grid.Column="1" Margin="0,10,0,0" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center" Toggled="Switch_Idioma_Toggled"/>
+                    <ToggleSwitch AutomationProperties.Name="Cambiar Idioma" OffContent="Español" OnContent="English" x:Name="Switch_Idioma" Header="Idioma" Height="57" Width="250" Grid.Column="1" Margin="0,10,0,0" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center" Toggled="Switch_Idioma_Toggled"/>
                     <SymbolIcon x:Name="SymbolIcon_Ajustes" Grid.Row="4" Symbol="Setting" Height="40" Margin="0,10,0,698"/>
 
                 </Grid>
