@@ -1,13 +1,17 @@
 ﻿using Microsoft.Toolkit.Uwp.Notifications;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 using Windows.Foundation;
+using Windows.Media.SpeechSynthesis;
 using Windows.UI.Core;
 using Windows.UI.Notifications;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Automation;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
+
 
 namespace IPO2_Pokemon_Pokedex
 {
@@ -35,6 +39,7 @@ namespace IPO2_Pokemon_Pokedex
         public MainPage()
         {
             this.InitializeComponent();
+
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += opcionVolver;
             FrameMain.Navigate(typeof(InicioPage), this);
@@ -228,6 +233,33 @@ namespace IPO2_Pokemon_Pokedex
             sView_Abajo_Principal.IsPaneOpen = false;
             sView_Abajo_Principal.DisplayMode = SplitViewDisplayMode.CompactOverlay;
         }
+        private void Switch_Idioma_Toggled(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private async void Switch_Lector_De_Voz_Toggled(object sender, RoutedEventArgs e)
+        {
+            if (Switch_Lector_De_Voz.IsOn)
+            {
+                MediaElement mediaElement = new MediaElement();
+                var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
+                Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await
+                synth.SynthesizeTextToStreamAsync("Lector de Voz Activado.");
+                mediaElement.SetSource(stream, stream.ContentType);
+                mediaElement.Play();
+                IniciarEscuchaEnfoque();
+            }
+            else
+            {
+                MediaElement mediaElement = new MediaElement();
+                var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
+                Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await
+                synth.SynthesizeTextToStreamAsync("Lector de Voz Desactivado.");
+                mediaElement.SetSource(stream, stream.ContentType);
+                mediaElement.Play();
+                DetenerEscuchaEnfoque();
+            }
+        }
 
         /************************************************************************************************/
 
@@ -259,6 +291,37 @@ namespace IPO2_Pokemon_Pokedex
 
         /*Metodos Auxiliares*/
 
+        // Metodos utilizados en el lector de voz
+        // Para que el lector lea un elemento, hay que agegarle esta propiedad: AutomationProperties.Name=""
+        // Dentro de las comillas, le ponemos lo que va a leer el lector
+        private void IniciarEscuchaEnfoque()
+        {
+            UIElement root = Window.Current.Content;
+            root.GotFocus += ElementoPosicionado;
+        }
 
+        private async void ElementoPosicionado(object sender, RoutedEventArgs e)
+        {
+            var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
+            var focusedElement = FocusManager.GetFocusedElement() as FrameworkElement;
+
+            if (focusedElement != null)
+            {
+                string texto = AutomationProperties.GetName(focusedElement);
+                if (!string.IsNullOrEmpty(texto))
+                {
+                    Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await synth.SynthesizeTextToStreamAsync(texto);
+                    MediaElement mediaElement = new MediaElement();
+                    mediaElement.SetSource(stream, stream.ContentType);
+                    mediaElement.Play();
+                }
+            }
+        }
+
+        private void DetenerEscuchaEnfoque()
+        {
+            UIElement root = Window.Current.Content;
+            root.GotFocus -= ElementoPosicionado;
+        }
     }
 }

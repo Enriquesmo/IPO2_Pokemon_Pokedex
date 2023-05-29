@@ -18,7 +18,7 @@
         </Grid.ColumnDefinitions>
 
         <Border x:Name="Border_Arriba_Blanco" Grid.ColumnSpan="2">
-            <Button AutomationProperties.Name="Mostrar u ocultar menú" x:Name="Btn_Menu" Margin="4" Click="Btn_Menu_Click">
+            <Button AutomationProperties.Name="Menú"  x:Name="Btn_Menu" Margin="4" Click="Btn_Menu_Click">
                 <FontIcon x:Name="FontIcon_Btn_Menu" Foreground="White" Glyph="&#xE700;" FontFamily="Segoe MDL2 Assets" />
             </Button>
         </Border>
@@ -43,12 +43,12 @@
                     <SymbolIcon x:Name="SymbolIcon_Pokedex" Grid.Row="1" Symbol="Pictures" PointerReleased="SymbolIcon_Pokedex_PointerReleased" Width="45" Height="40"/>
                     <SymbolIcon x:Name="SymbolIcon_Combate" Grid.Row="2" Symbol="People" PointerReleased="SymbolIcon_Combate_PointerReleased" Width="45" Height="40"/>
                     <SymbolIcon x:Name="SymbolIcon_AcercaDe" Grid.Row="3" Symbol="Help" PointerReleased="SymbolIcon_AcercaDe_PointerReleased" Width="45" Height="40"/>
-                    <Button x:Uid="Btn_Inicio" x:Name="btn_Inicio" Content="Inicio" Width="252" Margin="8,0,0,0" Click="btn_Inicio_Click" Grid.Column="1" Height="33"/>
-                    <Button x:Name="btn_Pokedex" Content="Pokedex" Width="252" Margin="8,0,0,0" Click="btn_Pokedex_Click" Grid.Column="1" Grid.Row="1" Height="33"/>
-                    <Button x:Name="btn_CombatePokemon" x:Uid="btn_CombatePokemon" Content="Combate Pokemon" Width="252" Margin="8,0,0,0" Click="btn_CombatePokemon_Click" Grid.Column="1" Grid.Row="2" Height="33"/>
-                    <Button x:Name="btn_AcercaDe" x:Uid="btn_AcercaDe" Content="Acerca De" Width="252" Margin="8,0,0,0" Click="btn_AcercaDe_Click" Grid.Column="1" Grid.Row="3" Height="33"/>
-                    <ToggleSwitch x:Name="Switch_Lector_De_Voz" Header="Lector de Voz" Height="57" Width="249" Grid.Column="1" Margin="0,72,0,0" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-                    <ToggleSwitch x:Name="Switch_Idioma" Header="Idioma" Height="57" Width="250" Grid.Column="1" Margin="0,10,0,0" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+                    <Button AutomationProperties.Name="Inicio" x:Uid="Btn_Inicio" x:Name="btn_Inicio" Content="Inicio" Width="252" Margin="8,0,0,0" Click="btn_Inicio_Click" Grid.Column="1" Height="33"/>
+                    <Button AutomationProperties.Name="Pokedex" x:Name="btn_Pokedex" Content="Pokedex" Width="252" Margin="8,0,0,0" Click="btn_Pokedex_Click" Grid.Column="1" Grid.Row="1" Height="33"/>
+                    <Button AutomationProperties.Name="Combate Pokemon" x:Name="btn_CombatePokemon" x:Uid="btn_CombatePokemon" Content="Combate Pokemon" Width="252" Margin="8,0,0,0" Click="btn_CombatePokemon_Click" Grid.Column="1" Grid.Row="2" Height="33"/>
+                    <Button AutomationProperties.Name="Acerca De" x:Name="btn_AcercaDe" x:Uid="btn_AcercaDe" Content="Acerca De" Width="252" Margin="8,0,0,0" Click="btn_AcercaDe_Click" Grid.Column="1" Grid.Row="3" Height="33"/>
+                    <ToggleSwitch AutomationProperties.Name="Habilitar / Deshabilitar Lector de Voz" x:Name="Switch_Lector_De_Voz" Header="Lector de Voz" Height="57" Width="249" Grid.Column="1" Margin="0,72,0,0" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center" Toggled="Switch_Lector_De_Voz_Toggled"/>
+                    <ToggleSwitch AutomationProperties.Name="Cambiar Idioma" x:Name="Switch_Idioma" Header="Idioma" Height="57" Width="250" Grid.Column="1" Margin="0,10,0,0" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center" Toggled="Switch_Idioma_Toggled"/>
                     <SymbolIcon x:Name="SymbolIcon_Ajustes" Grid.Row="4" Symbol="Setting" Height="40" Margin="0,10,0,698"/>
 
                 </Grid>
