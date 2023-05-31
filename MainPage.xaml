@@ -19,7 +19,7 @@
         </Grid.ColumnDefinitions>
 
         <Border x:Name="Border_Arriba_Blanco" Grid.ColumnSpan="2">
-            <Button AutomationProperties.Name="Menú"  x:Name="Btn_Menu" Margin="4" Click="Btn_Menu_Click">
+            <Button x:Name="Btn_Menu" Margin="4" Click="Btn_Menu_Click">
                 <FontIcon x:Name="FontIcon_Btn_Menu" Foreground="White" Glyph="&#xE700;" FontFamily="Segoe MDL2 Assets" />
             </Button>
         </Border>

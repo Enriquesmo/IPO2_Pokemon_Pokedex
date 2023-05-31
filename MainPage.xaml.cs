@@ -1,6 +1,8 @@
 ﻿using Microsoft.Toolkit.Uwp.Notifications;
 using System;
+using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
 using Windows.ApplicationModel.Resources.Core;
 using Windows.Foundation;
 using Windows.Globalization;
@@ -179,6 +181,7 @@ namespace IPO2_Pokemon_Pokedex
             FrameMain.Navigate(typeof(InicioPage), this);
             sView_Abajo_Principal.IsPaneOpen = false;
             sView_Abajo_Principal.DisplayMode = SplitViewDisplayMode.CompactOverlay;
+            leerFrase("Inicio");
         }
         private void SymbolIcon_Pokedex_PointerReleased(object sender, PointerRoutedEventArgs e) // Terminado
         {
@@ -186,6 +189,7 @@ namespace IPO2_Pokemon_Pokedex
             FrameMain.Navigate(typeof(PokedexPage), this); // Este this es para que se le pase como parámetro a la pagina creada, la pagina anterior
             sView_Abajo_Principal.IsPaneOpen = false;
             sView_Abajo_Principal.DisplayMode = SplitViewDisplayMode.CompactOverlay;
+            leerFrase("Pokedex");
         }
         private void SymbolIcon_Combate_PointerReleased(object sender, PointerRoutedEventArgs e) // Terminado
         {
@@ -193,6 +197,7 @@ namespace IPO2_Pokemon_Pokedex
             FrameMain.Navigate(typeof(CombatePage), this); // Este this es para que se le pase como parámetro a la pagina creada, la pagina anterior
             sView_Abajo_Principal.IsPaneOpen = false;
             sView_Abajo_Principal.DisplayMode = SplitViewDisplayMode.CompactOverlay;
+            leerFrase("Combate Pokemon");
         }
         private void SymbolIcon_AcercaDe_PointerReleased(object sender, PointerRoutedEventArgs e) // Terminado
         {
@@ -200,8 +205,10 @@ namespace IPO2_Pokemon_Pokedex
             FrameMain.Navigate(typeof(Acerca_De), this); // Este this es para que se le pase como parámetro a la pagina creada, la pagina anterior
             sView_Abajo_Principal.IsPaneOpen = false;
             sView_Abajo_Principal.DisplayMode = SplitViewDisplayMode.CompactOverlay;
+            leerFrase("AcercaDe");
+
         }
-        private void Switch_Idioma_Toggled(object sender, RoutedEventArgs e)
+        private void Switch_Idioma_Toggled(object sender, RoutedEventArgs e) // Terminado
         {
             if (Switch_Idioma.IsOn)
             {
@@ -226,24 +233,16 @@ namespace IPO2_Pokemon_Pokedex
             sView_Abajo_Principal.IsPaneOpen = false;
             sView_Abajo_Principal.DisplayMode = SplitViewDisplayMode.CompactOverlay;
         }
-        private async void Switch_Lector_De_Voz_Toggled(object sender, RoutedEventArgs e) // Terminado
+        private void Switch_Lector_De_Voz_Toggled(object sender, RoutedEventArgs e) // Terminado
         {
             if (Switch_Lector_De_Voz.IsOn)
             {
-                var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
-                Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await
-                synth.SynthesizeTextToStreamAsync("Lector de Voz Activado.");
-                mediaElement.SetSource(stream, stream.ContentType);
-                mediaElement.Play();
+                leerFrase("Lector de Voz Activado.");
                 IniciarEscuchaEnfoque();
             }
             else
             {
-                var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
-                Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await
-                synth.SynthesizeTextToStreamAsync("Lector de Voz Desactivado.");
-                mediaElement.SetSource(stream, stream.ContentType);
-                mediaElement.Play();
+                leerFrase("Lector de Voz Desactivado.");
                 DetenerEscuchaEnfoque();
             }
         }
@@ -326,6 +325,16 @@ namespace IPO2_Pokemon_Pokedex
                 FrameMain.GoBack();
             }
         }
-
+        private async void leerFrase(String frase) // Terminado
+        {
+            if (Switch_Lector_De_Voz.IsOn)
+            {
+                var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
+                Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await
+                synth.SynthesizeTextToStreamAsync(frase);
+                mediaElement.SetSource(stream, stream.ContentType);
+                mediaElement.Play();
+            }
+        }
     }
 }
