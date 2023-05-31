@@ -47,7 +47,7 @@
             <Border x:Name="borderDetalles" Background="White" BorderBrush="Red" BorderThickness="2" CornerRadius="40" Grid.Row="5" Grid.ColumnSpan="5" Grid.RowSpan="4" Margin="0,0,0,33">
                 <RichTextBlock x:Name="txtDescripcion" TextWrapping="Wrap" Grid.Row="5" Foreground="Black" Grid.ColumnSpan="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False" IsTextSelectionEnabled="False" Height="343" Width="1380"/>
             </Border>
-            <Button AutomationProperties.Name="Vista General del Pokemon" x:Name="btnVerPokemon" x:Uid="btnVerPokemon" Grid.Column="3" Content="Vista General" Margin="0,83,0,0" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center" Click="btnVerPokemon_Click"/>
+            <Button AutomationProperties.Name="Vista General del Pokemon" x:Name="btnVerPokemon" x:Uid="btnVerPokemon" Grid.Column="3" Content="Vista General" Margin="0,83,0,0" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center" Click="btnVerPokemon_Click" RequestedTheme="Dark"/>
         </Grid>
     </Viewbox>
 </Page>
