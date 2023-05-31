@@ -22,7 +22,8 @@
                 <RowDefinition Height="100*"/>
             </Grid.RowDefinitions>
             <RelativePanel Background="White" Grid.RowSpan="4" Grid.ColumnSpan="2"/>
-            <Image Source="/Assets/Acerca de.png" Grid.ColumnSpan="2" Margin="100,0,100,0" Stretch="Fill" Width="1276"/>
+            <Image x:Name="imgAcercaDeES" x:Uid="imgAcercaDeES" Source="/Assets/Acerca de.png" Grid.ColumnSpan="2" Margin="100,0,100,0" Stretch="Fill" Width="1276" Visibility="Collapsed"/>
+            <Image x:Name="imgAcercaDeEN" x:Uid="imgAcercaDeEN" Source="/Assets/aboutUs.png" Grid.ColumnSpan="2" Margin="100,0,100,0" Stretch="Fill" Width="1276" Visibility="Collapsed"/>
             <StackPanel Grid.Row="1">
                 <Ellipse Height="190" Width="301">
                     <Ellipse.Fill>

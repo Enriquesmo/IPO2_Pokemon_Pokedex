@@ -170,6 +170,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\aboutUs.png" />
     <Content Include="Assets\Acerca de.png" />
     <Content Include="Assets\arañazo1-removebg-preview.png" />
     <Content Include="Assets\arañazo2.png" />

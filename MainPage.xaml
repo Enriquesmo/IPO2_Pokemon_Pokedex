@@ -5,7 +5,8 @@
     xmlns:local="using:IPO2_Pokemon_Pokedex"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    RequestedTheme="Dark">
 
     <Grid x:Name="Grid_Principal">
         <Grid.RowDefinitions>

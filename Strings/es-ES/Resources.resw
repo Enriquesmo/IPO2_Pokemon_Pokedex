@@ -135,6 +135,12 @@
   <data name="bttnDetalles.Content" xml:space="preserve">
     <value>Más Detalles</value>
   </data>
+  <data name="imgAcercaDeEN.Visibility" xml:space="preserve">
+    <value>Collapsed</value>
+  </data>
+  <data name="imgAcercaDeES.Visibility" xml:space="preserve">
+    <value>Visible</value>
+  </data>
   <data name="imgCombateEspañol.Visibility" xml:space="preserve">
     <value>Visible</value>
   </data>
