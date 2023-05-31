@@ -9,12 +9,15 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     RequestedTheme="Dark">
 
-    <Grid>
-        <Grid x:Name="Grid_FrameMain">
-            <MediaElement x:Name="MediaVideoIntro" Source="/Assets/Original Pokemon Intro (Sprite Edition!).mp4" IsMuted="True"/>
-            <TextBlock x:Name="txtTitulo2" x:Uid="txtTitulo2" HorizontalAlignment="Center" TextWrapping="WrapWholeWords" Text="¡Bienvenidos a Pokémon!" VerticalAlignment="Top" FontSize="72" FontFamily="MV Boli" Foreground="#FF84A4FF" FocusVisualPrimaryBrush="White" Margin="0,5,0,0"/>
-            <TextBlock x:Name="txtTitulo" x:Uid="txtTitulo" HorizontalAlignment="Center" TextWrapping="WrapWholeWords" Text="¡Bienvenidos a Pokémon!" VerticalAlignment="Top" FontSize="72" FontFamily="MV Boli" Foreground="White" FocusVisualPrimaryBrush="White"/>
-        </Grid>
+    <Viewbox>
 
-    </Grid>
+        <Grid Height="1000" Width="1500">
+            <Grid x:Name="Grid_FrameMain">
+                <MediaElement x:Name="MediaVideoIntro" Source="/Assets/Original Pokemon Intro (Sprite Edition!).mp4" IsMuted="True"/>
+                <TextBlock x:Name="txtTitulo2" x:Uid="txtTitulo2" HorizontalAlignment="Center" TextWrapping="WrapWholeWords" Text="¡Bienvenidos a Pokémon!" VerticalAlignment="Top" FontSize="72" FontFamily="MV Boli" Foreground="#FF84A4FF" FocusVisualPrimaryBrush="White" Margin="0,5,0,0"/>
+                <TextBlock x:Name="txtTitulo" x:Uid="txtTitulo" HorizontalAlignment="Center" TextWrapping="WrapWholeWords" Text="¡Bienvenidos a Pokémon!" VerticalAlignment="Top" FontSize="72" FontFamily="MV Boli" Foreground="White" FocusVisualPrimaryBrush="White"/>
+            </Grid>
+
+        </Grid>
+    </Viewbox>
 </Page>

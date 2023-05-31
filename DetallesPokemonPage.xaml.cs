@@ -57,6 +57,7 @@ namespace IPO2_Pokemon_Pokedex
 
             myParagraph.Inlines.Add(myRun);
             txtDescripcion.Blocks.Add(myParagraph);
+            txtDescripcion.FontSize = 30;
             txtName.Text = pk.name;
             txtType.Text = pk.type.Nombre;
             txtVida.Text = "Vida: " + Convert.ToString(pk.hp);
