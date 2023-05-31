@@ -209,6 +209,8 @@ namespace IPO2_Pokemon_Pokedex
                 btn_Inicio.Content = "Main";
                 btn_CombatePokemon.Content = "Pokemon Combat";
                 btn_AcercaDe.Content = "About Us";
+                Switch_Idioma.Header = "Languaje";
+                Switch_Lector_De_Voz.Header = "Voice Reader";
             }
             else
             {
@@ -216,6 +218,8 @@ namespace IPO2_Pokemon_Pokedex
                 btn_Inicio.Content = "Inicio";
                 btn_CombatePokemon.Content = "Combate Pokemon";
                 btn_AcercaDe.Content = "Acerca De";
+                Switch_Idioma.Header = "Idioma";
+                Switch_Lector_De_Voz.Header = "Lector de Voz";
             }
             ResourceContext.GetForViewIndependentUse().Reset();
             FrameMain.Navigate(typeof(InicioPage), this);
