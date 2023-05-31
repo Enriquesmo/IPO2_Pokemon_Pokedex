@@ -31,12 +31,12 @@
                             <ImageBrush Stretch="Uniform" ImageSource="/Assets/ImagenEscudo.png"/>
                         </Image.FocusVisualPrimaryBrush>
                     </Image>
-                    <Image x:Name="Image_Pocion_De_Vida_Derecha" PointerReleased="Image_Pocion_De_Vida_Derecha_PointerReleased" Source="/Assets/Pocion de Vida.png" Margin="704,0,-2,38">
+                    <Image AutomationProperties.Name="Pocion de Vida jugador 1" x:Name="Image_Pocion_De_Vida_Derecha" PointerReleased="Image_Pocion_De_Vida_Derecha_PointerReleased" Source="/Assets/Pocion de Vida.png" Margin="704,0,-2,38">
                         <Image.FocusVisualPrimaryBrush>
                             <ImageBrush Stretch="Uniform" ImageSource="/Assets/Pocion de Vida.png"/>
                         </Image.FocusVisualPrimaryBrush>
                     </Image>
-                    <Image x:Name="Image_Pocion_De_Energia_Derecha" Source="/Assets/Pocion de Escudo.png" PointerReleased="Image_Pocion_De_Energia_Derecha_PointerReleased" Margin="702,41,0,0">
+                    <Image AutomationProperties.Name="Pocion de Energía jugador 1" x:Name="Image_Pocion_De_Energia_Derecha" Source="/Assets/Pocion de Escudo.png" PointerReleased="Image_Pocion_De_Energia_Derecha_PointerReleased" Margin="702,41,0,0">
                         <Image.FocusVisualPrimaryBrush>
                             <ImageBrush Stretch="Uniform" ImageSource="/Assets/Pocion de Escudo.png"/>
                         </Image.FocusVisualPrimaryBrush>
@@ -47,6 +47,7 @@
                 </Grid>
                 <Image x:Name="Image_LooserDerecha" Height="100" Margin="219,192,219,193" Source="/Assets/Losser.png"/>
                 <Image x:Name="Image_WinnerDerecha" Height="100" Margin="219,192,219,193" Source="/Assets/Winner.png"/>
+                <Image x:Name="Image_IdentificadorJugador_P1" HorizontalAlignment="Left" Height="47" Margin="663,439,0,0" VerticalAlignment="Top" Width="76" Source="Assets\P1.png"/>
             </Grid>
             <Grid x:Name="Pokemons_Izquierda" Margin="10,308,761,192">
                 <Image x:Name="BaseCombate_PokemonIzquierda" Margin="114,388,115,0" Source="/Assets/BaseCombate.png" Width="500"/>
@@ -103,12 +104,12 @@
                             <ImageBrush Stretch="Uniform" ImageSource="/Assets/ImagenEscudo.png"/>
                         </Image.FocusVisualPrimaryBrush>
                     </Image>
-                    <Image x:Name="Image_Pocion_De_Vida_Izquierda" Source="/Assets/Pocion de Vida.png" Margin="704,0,-2,38" PointerReleased="Image_Pocion_De_Vida_Izquierda_PointerReleased">
+                    <Image AutomationProperties.Name="Pocion de Vida jugador 2" x:Name="Image_Pocion_De_Vida_Izquierda" Source="/Assets/Pocion de Vida.png" Margin="704,0,-2,38" PointerReleased="Image_Pocion_De_Vida_Izquierda_PointerReleased">
                         <Image.FocusVisualPrimaryBrush>
                             <ImageBrush Stretch="Uniform" ImageSource="/Assets/Pocion de Vida.png"/>
                         </Image.FocusVisualPrimaryBrush>
                     </Image>
-                    <Image x:Name="Image_Pocion_De_Energia_Izquierda" Source="/Assets/Pocion de Escudo.png" PointerReleased="Image_Pocion_De_Energia_Izquierda_PointerReleased" Margin="702,41,0,0">
+                    <Image AutomationProperties.Name="Pocion de Energía jugador 2" x:Name="Image_Pocion_De_Energia_Izquierda" Source="/Assets/Pocion de Escudo.png" PointerReleased="Image_Pocion_De_Energia_Izquierda_PointerReleased" Margin="702,41,0,0">
                         <Image.FocusVisualPrimaryBrush>
                             <ImageBrush Stretch="Uniform" ImageSource="/Assets/Pocion de Escudo.png"/>
                         </Image.FocusVisualPrimaryBrush>
@@ -119,6 +120,7 @@
                 </Grid>
                 <Image x:Name="Image_WinnerIzquierda" Height="100" Margin="219,192,209,208" Source="/Assets/Winner.png"/>
                 <Image x:Name="Image_LooserIzquierda" Height="100" Margin="219,192,209,208" Source="/Assets/Losser.png"/>
+                <Image x:Name="Image_IdentificadorJugador_P2" HorizontalAlignment="Left" Height="47" Margin="653,454,0,0" VerticalAlignment="Top" Width="76" Source="/Assets/P2.png"/>
             </Grid>
             <Grid x:Name="Grid_Botones" Margin="750,500,0,0">
                 <Grid.RowDefinitions>
@@ -133,14 +135,14 @@
                     <ColumnDefinition Width="20*"/>
                 </Grid.ColumnDefinitions>
                 <Image x:Name="ImgFondo_Botones" Grid.ColumnSpan="3" Grid.RowSpan="4" Stretch="Fill"/>
-                <Button x:Name="Btn_Ataque1" Content="Ataque1" Height="125" Width="300" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" Click="Btn_Ataque1_Click" Margin="10,10,0,0" RequestedTheme="Light" Background="White" FontSize="24" FontWeight="Bold"/>
-                <Button x:Name="Btn_Ataque2" Content="Ataque2" VerticalAlignment="Top" Height="125" Width="300" Grid.Column="1" Grid.Row="2" Click="Btn_Ataque2_Click" Margin="399,10,0,0" RequestedTheme="Light" FontSize="24" Background="White" FontWeight="Bold"/>
-                <Button x:Name="Btn_Ataque3" Content="Ataque3" Margin="10,275,0,0" VerticalAlignment="Top" Height="125" Width="300" Grid.Row="2" Click="Btn_Ataque3_Click" Grid.Column="1" RequestedTheme="Light" Background="White" FontSize="24" FontWeight="Bold"/>
-                <Button x:Name="Btn_Ataque4" Content="Ataque4" Margin="399,275,0,0" VerticalAlignment="Top" Height="125" Width="300" Click="Btn_Ataque4_Click" Grid.Column="1" Grid.Row="2" RequestedTheme="Light" Background="White" FontSize="24" FontWeight="Bold"/>
+                <Button AutomationProperties.Name="Ataque 1" x:Name="Btn_Ataque1" Content="Ataque1" Height="125" Width="300" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" Click="Btn_Ataque1_Click" Margin="10,10,0,0" RequestedTheme="Light" Background="White" FontSize="24" FontWeight="Bold"/>
+                <Button AutomationProperties.Name="Ataque 2" x:Name="Btn_Ataque2" Content="Ataque2" VerticalAlignment="Top" Height="125" Width="300" Grid.Column="1" Grid.Row="2" Click="Btn_Ataque2_Click" Margin="399,10,0,0" RequestedTheme="Light" FontSize="24" Background="White" FontWeight="Bold"/>
+                <Button AutomationProperties.Name="Ataque 3" x:Name="Btn_Ataque3" Content="Ataque3" Margin="10,275,0,0" VerticalAlignment="Top" Height="125" Width="300" Grid.Row="2" Click="Btn_Ataque3_Click" Grid.Column="1" RequestedTheme="Light" Background="White" FontSize="24" FontWeight="Bold"/>
+                <Button AutomationProperties.Name="Ataque 4" x:Name="Btn_Ataque4" Content="Ataque4" Margin="399,275,0,0" VerticalAlignment="Top" Height="125" Width="300" Click="Btn_Ataque4_Click" Grid.Column="1" Grid.Row="2" RequestedTheme="Light" Background="White" FontSize="24" FontWeight="Bold"/>
                 <TextBlock x:Name="TextBlock_TurnoDelJugador" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Height="31" Width="319" Grid.Row="1" RequestedTheme="Light" FontSize="20" FontWeight="Bold"/>
                 <TextBlock x:Name="TextBlock_MensajeCombate" TextWrapping="Wrap" Text="" Margin="214,243,135,142" Grid.Column="1" Grid.Row="2" FocusVisualPrimaryBrush="White" RequestedTheme="Light"/>
             </Grid>
-            <Button x:Name="btn_EmpezarCombate" x:Uid="btn_EmpezarCombate" Content="¡Empezar Combate!" Height="115" Width="258" HorizontalAlignment="Center" Click="btn_EmpezarCombate_Click" RequestedTheme="Light" FontWeight="Bold" FontSize="20"/>
+            <Button AutomationProperties.Name="Comenzar Combate" x:Name="btn_EmpezarCombate" x:Uid="btn_EmpezarCombate" Content="¡Empezar Combate!" Height="115" Width="258" HorizontalAlignment="Center" Click="btn_EmpezarCombate_Click" RequestedTheme="Light" FontWeight="Bold" FontSize="20"/>
 
         </Grid>
     </Viewbox>

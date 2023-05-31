@@ -1,25 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.ViewManagement;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
+﻿using Windows.UI.Xaml.Controls;
 
 namespace IPO2_Pokemon_Pokedex
 {
     /// <summary>
-    /// Página dedicada a la funcionalidad de Acerca de, la cual consiste en dar los datos de los desarrolladores del proyecto
+    /// Página dedicada a la funcionalidad de Acerca de, la cual consiste en dar los datos de los desarrolladores del proyecto.
     /// 
-    /// Hecho por:
+    /// Proyecto realizado por:
     /// Enrique Sánchez-Migallón Ochoa
     /// Javier Santos Sanz
     /// Alonso Crespo Fernández
@@ -37,7 +23,8 @@ namespace IPO2_Pokemon_Pokedex
         /************************************************************************************************/
 
         /*Inicializacion de la pagina CombatePage*/
-        public Acerca_De()
+
+        public Acerca_De() // Terminado
         {
             this.InitializeComponent();
         }
@@ -45,6 +32,9 @@ namespace IPO2_Pokemon_Pokedex
         /************************************************************************************************/
 
         /*Botones de la propia pagina*/
+
+
+
         /************************************************************************************************/
 
         /*Metodos funcionales en la pagina*/
@@ -54,7 +44,6 @@ namespace IPO2_Pokemon_Pokedex
         /************************************************************************************************/
 
         /*Metodos Auxiliares*/
-
 
     }
 }

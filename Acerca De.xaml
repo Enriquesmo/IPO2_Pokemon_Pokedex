@@ -48,7 +48,7 @@
                     </Ellipse.Fill>
                 </Ellipse>
                 <TextBlock TextWrapping="Wrap" Text="Enrique Sánchez-Migallón" FontSize="60" Height="69" Canvas.ZIndex="3" FontFamily="Impact" FocusVisualPrimaryBrush="White" Foreground="#FFB58F08" FontWeight="Bold" FontStyle="Normal" HorizontalAlignment="Center"/>
-                <TextBlock TextWrapping="Wrap" Text="MainPage/CombatePokemon" FontFamily="Segoe UI Symbol" Foreground="#FF0C0000" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="31" FontWeight="Bold" TextDecorations="Underline"/>
+                <TextBlock TextWrapping="Wrap" Text="MainPage/CombatePokemon/Lector de Voz" FontFamily="Segoe UI Symbol" Foreground="#FF0C0000" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="31" FontWeight="Bold" TextDecorations="Underline"/>
 
             </StackPanel>
             <StackPanel Grid.Row="2" Grid.Column="1" Margin="10,10,10,10" Padding="10,0,0,0" Orientation="Vertical">

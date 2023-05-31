@@ -1,27 +1,16 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
-using Windows.UI.Xaml.Navigation;
 
 namespace IPO2_Pokemon_Pokedex
 {
     /// <summary>
-    /// Página dedicada a la funcionalidad de la pokedex
+    /// Página dedicada a la funcionalidad de la pokedex.
     /// 
-    /// Hecho por:
+    /// Proyecto realizado por:
     /// Enrique Sánchez-Migallón Ochoa
     /// Javier Santos Sanz
     /// Alonso Crespo Fernández
@@ -40,7 +29,8 @@ namespace IPO2_Pokemon_Pokedex
         /************************************************************************************************/
 
         /*Inicializacion de la pagina PokedexPage*/
-        public PokedexPage()
+
+        public PokedexPage() // Terminado
         {
             this.InitializeComponent();
             createPokemonList();
@@ -55,18 +45,17 @@ namespace IPO2_Pokemon_Pokedex
 
         /*Botones de la propia pagina*/
 
-
+        private void mostrarDetalles(object sender, RoutedEventArgs e) // Terminado
+        {
+            Frame PokedexFrame = (Frame)this.Parent;
+            PokedexFrame.Navigate(typeof(DetallesPokemonPage), pk);
+        }
 
         /************************************************************************************************/
 
         /*Metodos funcionales en la pagina*/
 
-
-
-        /************************************************************************************************/
-
-        /*Metodos Auxiliares*/
-        public ArrayList createPokemonList()
+        public ArrayList createPokemonList() // Terminado
         {
             pokemonList = new ArrayList
             {
@@ -75,12 +64,9 @@ namespace IPO2_Pokemon_Pokedex
                 new Pokemon(03, "Darumaka", DatosTipoDePokemon.Fuego, 30, 100, 30, 90, 40, 120, 80, new BitmapImage(new Uri("ms-appx:///Assets/Daru.png")), "Darumaka está basado en un muñeco Daruma y en un mono. Su cuerpo es pequeño y redondo, con tonos rojos y amarillos.\r\n\r\nLa llama que arde en su interior es la fuente de su poder y no para quieto si arden las llamas de su estómago. Si el fuego mengua, se sume en un estado de sopor de inmediato. De hecho, cuando se dispone a dormir, retrae sus piernas y sus brazos, y reduce la llama de su interior a 600 ºC para relajarse."),
                 new Pokemon(04, "Sandshrew", DatosTipoDePokemon.Tierra, 62, 100, 65, 130, 35, 130, 90, new BitmapImage (new Uri("ms-appx:///Assets/Sandshrew.png")), "El entorno natural de Sandshrew son los lugares profundos bajo tierra en localizaciones áridas con muy poca humedad, siendo los desiertos el ejemplo más claro, aunque también se encuentra en praderas secas. Elige este hábitat para mantenerse seco, mientras que la arena le provee con un buen camuflaje.\r\n\r\nCuando es molestado, la primera reacción de defensa es instantáneamente enrollar su cuerpo hasta convertirlo en una bola, dejando sólo su fuerte piel expuesta (comparable al sistema de defensa de erizos, armadillos y pangolines). Cuando se enrolla de esta manera, Sandshrew tiene el potencial de resistir varios ataques y caer desde una gran altura sin dañarse y siendo capaz de rebotar.")
             };
-
-
             return pokemonList;
         }
-
-        private void MostrarPokemon(object sender, SelectionChangedEventArgs e)
+        private void MostrarPokemon(object sender, SelectionChangedEventArgs e) // Terminado
         {
             pk = (Pokemon)pokemonList[lvAux.SelectedIndex];
             txtlvl.Text = "LVL. " + Convert.ToString(pk.level);
@@ -94,16 +80,14 @@ namespace IPO2_Pokemon_Pokedex
             double position = selectedIndex * stackAux.Children.ElementAt(selectedIndex).ActualSize.Y;
             lvPokemon.ChangeView(null, position, null);
         }
-
-        private void lvPokemon_GotFocus(object sender, RoutedEventArgs e)
+        private void lvPokemon_GotFocus(object sender, RoutedEventArgs e) // Terminado
         {
             lvAux.Focus(FocusState.Programmatic);
         }
 
-        private void mostrarDetalles(object sender, RoutedEventArgs e)
-        {
-            Frame PokedexFrame = (Frame)this.Parent;
-            PokedexFrame.Navigate(typeof(DetallesPokemonPage), pk);
-        }
+        /************************************************************************************************/
+
+        /*Metodos Auxiliares*/
+
     }
 }

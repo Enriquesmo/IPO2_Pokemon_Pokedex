@@ -59,7 +59,7 @@
             <TextBlock x:Name="txtHP" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" Text="HP: ???" VerticalAlignment="Center" FocusVisualPrimaryBrush="White" Foreground="Black" FontSize="120" Grid.Row="1" Margin="0,0,0,550"/>
             <TextBlock x:Name="txtAttack" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Ataque: ???" VerticalAlignment="Center" FocusVisualPrimaryBrush="White" Foreground="Black" FontSize="120" Grid.Row="1" Margin="0,0,0,200"/>
             <TextBlock x:Name="txtDefense" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Defensa: ???" VerticalAlignment="Center" FocusVisualPrimaryBrush="White" Foreground="Black" FontSize="120" Grid.Row="1" Margin="0,150,0,0"/>
-            <Button x:Name="bttnDetalles" x:Uid="bttnDetalles" Grid.Column="3" Content="Más detalles" Height="150" Margin="0,1885,191,0" HorizontalAlignment="Right" Grid.Row="1" Width="750" Background="Black" FontSize="50" Click="mostrarDetalles"/>
+            <Button AutomationProperties.Name="Detalles del Pokemon" x:Name="bttnDetalles" x:Uid="bttnDetalles" Grid.Column="3" Content="Más detalles" Height="150" Margin="0,1885,191,0" HorizontalAlignment="Right" Grid.Row="1" Width="750" Background="Black" FontSize="50" Click="mostrarDetalles"/>
 
         </Grid>
     </Viewbox>

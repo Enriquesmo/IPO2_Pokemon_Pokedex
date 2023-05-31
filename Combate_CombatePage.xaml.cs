@@ -1,32 +1,22 @@
 ﻿using Microsoft.Toolkit.Uwp.Notifications;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Threading;
 using System.Threading.Tasks;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Notifications;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 namespace IPO2_Pokemon_Pokedex
 {
     /// <summary>
-    /// Página dedicada a la funcionalidad del combate pokemon
+    /// Página dedicada a la funcionalidad del combate pokemon.
     /// 
-    /// Hecho por:
+    /// Proyecto realizado por:
     /// Enrique Sánchez-Migallón Ochoa
     /// Javier Santos Sanz
+    /// Alonso Crespo Fernández
+    /// Felipe Alcázar Gómez
     /// </summary>
 
     public sealed partial class Combate_CombatePage : Page
@@ -58,7 +48,7 @@ namespace IPO2_Pokemon_Pokedex
 
         /************************************************************************************************/
 
-        /*Inicializacion de la pagina CombatePage*/
+        /*Inicializacion de la pagina Combate_CombatePage*/
 
         public Combate_CombatePage() // Terminado
         {
@@ -163,6 +153,7 @@ namespace IPO2_Pokemon_Pokedex
         /************************************************************************************************/
 
         /*Metodos funcionales en la pagina*/
+
         protected override void OnNavigatedTo(NavigationEventArgs e) // Terminado
         {
             base.OnNavigatedTo(e);
@@ -179,6 +170,7 @@ namespace IPO2_Pokemon_Pokedex
                 Image_Pocion_De_Energia_Izquierda.IsTapEnabled = false;
                 Image_Pocion_De_Vida_Izquierda.Opacity = 0.3;
                 Image_Pocion_De_Energia_Izquierda.Opacity = 0.3;
+                Image_IdentificadorJugador_P2.Opacity = 0;
             }
         }
         private async Task EsperarAccionRealizada() // Terminado

@@ -1,26 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 namespace IPO2_Pokemon_Pokedex
 {
     /// <summary>
-    /// Página dedicada a la funcionalidad del combate pokemon
+    /// Página dedicada al selector de modo del combate pokemon.
     /// 
-    /// Hecho por:
+    /// Proyecto realizado por:
     /// Enrique Sánchez-Migallón Ochoa
     /// Javier Santos Sanz
+    /// Alonso Crespo Fernández
+    /// Felipe Alcázar Gómez
     /// </summary>
 
     public sealed partial class CombatePage : Page
@@ -34,7 +24,8 @@ namespace IPO2_Pokemon_Pokedex
         /************************************************************************************************/
 
         /*Inicializacion de la pagina CombatePage*/
-        public CombatePage()
+
+        public CombatePage() // Terminado
         {
             this.InitializeComponent();
         }
@@ -42,15 +33,15 @@ namespace IPO2_Pokemon_Pokedex
         /************************************************************************************************/
 
         /*Botones de la propia pagina*/
-        private void Ir_A_La_Siguiente_Pagina1_Click(object sender, RoutedEventArgs e)
+
+        private void Ir_A_La_Siguiente_Pagina1_Click(object sender, RoutedEventArgs e) // Terminado
         {
             // Continuar el combate en modo P1 vs P2
             modo_de_Juego = "VS";
             Frame CombateFrame = (Frame)this.Parent;
             CombateFrame.Navigate(typeof(Seleccion_CombatePage), this);
         }
-
-        private void Ir_A_La_Siguiente_Pagina2_Click(object sender, RoutedEventArgs e)
+        private void Ir_A_La_Siguiente_Pagina2_Click(object sender, RoutedEventArgs e) // Terminado
         {
             // Continuar el combate en modo P1 vs IA
             modo_de_Juego = "IA";
@@ -67,7 +58,6 @@ namespace IPO2_Pokemon_Pokedex
         /************************************************************************************************/
 
         /*Metodos Auxiliares*/
-
 
     }
 }

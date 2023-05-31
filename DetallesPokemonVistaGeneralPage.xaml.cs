@@ -1,36 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Xml.Linq;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Documents;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
-
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace IPO2_Pokemon_Pokedex
 {
     /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// Página dedicada a mostrar una Demo de las habilidades del pokemon seleccionado.
+    /// 
+    /// Proyecto realizado por:
+    /// Enrique Sánchez-Migallón Ochoa
+    /// Javier Santos Sanz
+    /// Alonso Crespo Fernández
+    /// Felipe Alcázar Gómez
     /// </summary>
+    
     public sealed partial class DetallesPokemonVistaGeneralPage : Page
     {
+
+        /************************************************************************************************/
+
+        /*Inicializacion de las variables globales*/
+
         Pokemon pk;
-        public DetallesPokemonVistaGeneralPage()
+
+        /************************************************************************************************/
+
+        /*Inicializacion de la pagina DetallesPokemonVistaGeneralPage*/
+        
+        public DetallesPokemonVistaGeneralPage() // Terminado
         {
             this.InitializeComponent();
         }
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+
+        /************************************************************************************************/
+
+        /*Botones de la propia pagina*/
+
+
+
+        /************************************************************************************************/
+
+        /*Metodos funcionales en la pagina*/
+
+        protected override void OnNavigatedTo(NavigationEventArgs e) // Terminado
         {
             pk = e.Parameter as Pokemon;
             Paragraph myParagraph = new Paragraph();
@@ -39,19 +52,23 @@ namespace IPO2_Pokemon_Pokedex
             switch (pk.name)
             {
                 case "Snorlax":
-                    userControlSnorlax.Visibility= Visibility.Visible;
-                break;
+                    userControlSnorlax.Visibility = Visibility.Visible;
+                    break;
                 case "Darumaka":
-                    userControlDarumaka.Visibility= Visibility.Visible;
-                break;
+                    userControlDarumaka.Visibility = Visibility.Visible;
+                    break;
                 case "Raichu":
-                    userControlRaichu.Visibility= Visibility.Visible;
-                break;
+                    userControlRaichu.Visibility = Visibility.Visible;
+                    break;
                 case "Sandshrew":
-                    userControlSandshrew.Visibility= Visibility.Visible;
-                break;
+                    userControlSandshrew.Visibility = Visibility.Visible;
+                    break;
             }
- 
         }
+
+        /************************************************************************************************/
+
+        /*Metodos Auxiliares*/
+
     }
 }
