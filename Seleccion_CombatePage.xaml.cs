@@ -52,8 +52,11 @@ namespace IPO2_Pokemon_Pokedex
         private void Ir_A_La_Siguiente_Pagina_Click(object sender, RoutedEventArgs e)
         {
             // Boton que sirve para poder pasar a la seleccion de escenario
-            Frame EscenarioFrame = (Frame)this.Parent;
-            EscenarioFrame.Navigate(typeof(Escenario_CombatePage), this);
+            if (eleccionPokemon2)
+            {
+                Frame EscenarioFrame = (Frame)this.Parent;
+                EscenarioFrame.Navigate(typeof(Escenario_CombatePage), this);
+            }
         }
         private void SeleccionarSandshrew()
         {
