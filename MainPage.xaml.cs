@@ -206,10 +206,16 @@ namespace IPO2_Pokemon_Pokedex
             if (Switch_Idioma.IsOn)
             {
                 ApplicationLanguages.PrimaryLanguageOverride = "en-GB";
+                btn_Inicio.Content = "Main";
+                btn_CombatePokemon.Content = "Pokemon Combat";
+                btn_AcercaDe.Content = "About Us";
             }
             else
             {
                 ApplicationLanguages.PrimaryLanguageOverride = "es-ES";
+                btn_Inicio.Content = "Inicio";
+                btn_CombatePokemon.Content = "Combate Pokemon";
+                btn_AcercaDe.Content = "Acerca De";
             }
             ResourceContext.GetForViewIndependentUse().Reset();
             FrameMain.Navigate(typeof(InicioPage), this);
